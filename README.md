@@ -13,6 +13,8 @@ The features of this configuration are:
 - Use Lua plugins instead of classic plugins. For example: use [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for syntax highlighting, [telescope](https://github.com/nvim-telescope/telescope.nvim) for searching, [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) for file tree, [lualine.nvim](https://github.com/hoob3rt/lualine.nvim) for statusline, native lsp for code completion, etc.
 - Quick installation and customization.
 
+The spacenvim is well tested in neovim `v0.7.x`, if you are using a lower version, there may be a risk of incompatibility.
+
 ## Install
 
 First of all, you should have [Neovim](https://neovim.io) installed in your machine. If you are using mac, run:
