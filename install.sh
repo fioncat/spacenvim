@@ -20,5 +20,5 @@ echo "Installing Spacenvim..."
 git clone https://github.com/fioncat/nvim-dotfiles.git $HOME/.config/nvim > /dev/null
 
 echo "Congratulations! Spacenvim was successfully installed on your machine."
-echo 'To complete the plugin installation, open neovim and execute the `:PackerInstall` and `:PackerCompile` commands.'
-echo "For more infomation, please refer to: https://github.com/fioncat/nvim-dotfiles"
+echo 'To complete the plugin installation, open neovim and execute the `PackerInstall` and `PackerCompile` commands.'
+echo "For more infomation, please refer to: https://github.com/fioncat/spacenvim"

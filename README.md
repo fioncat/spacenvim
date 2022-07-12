@@ -3,6 +3,7 @@
 This configuration comes from [ayamir/nvimdots](https://github.com/ayamir/nvimdots), but there are the following differences:
 
 - Use `Space` key as leader.
+- The code layout is simpler more user-friendly.
 - Pinned the version for all plugins. Update plugins manually to prevent breaking changes making the configuration invalid.
 - Try to keep the minimum number of plugins and easy to customize.
 
@@ -38,4 +39,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/fioncat/spacenvim/master/i
 
 Then, just enter neovim and execute the `PackerInstall` and `PackerCompile` commands to complete the installation.
 
-**Note that the `PackerInstall` command may fail due to network reasons, please try several times. Please make sure `PackerCompile` executes after `PackerInstall` is successful.**
+**Note that the `PackerInstall` command may fail due to network reasons, please try several times.**
+
+**The `PackerCompile` command must be executed after the `PackerInstall` command is successful, otherwise errors might be reported when starting neovim.**
