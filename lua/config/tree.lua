@@ -1,4 +1,4 @@
-return function() 
+return function()
 	require("nvim-tree").setup({
 		diagnostics = {
 			enable = false,
@@ -18,7 +18,8 @@ return function()
 			number = false,
 			relativenumber = false,
 			signcolumn = "yes",
-			adaptive_size = true,
+			width = 40,
+			-- adaptive_size = true,
 		},
 		trash = { cmd = "trash", require_confirm = true },
 		renderer = {

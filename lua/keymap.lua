@@ -22,6 +22,7 @@ local key_mapping = {
 	-- 打开当前文件的FileTree
 	["n|<leader>ff"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
 	["n|<leader>tt"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
+	["n|<leader>tr"] = map_cmd(":NvimTreeResize "):with_noremap(),
 
 	-- 搜索相关命令
 	["n|<leader>sf"] = map_cr("Telescope git_files"):with_noremap():with_silent(),
