@@ -21,7 +21,7 @@ First of all, you should have [Neovim](https://neovim.io) installed in your mach
 brew install neovim
 ```
 
-The spacenvim is well tested in neovim `v0.7.x`, if you are using a lower version, there may be a risk of incompatibility.
+The spacenvim is well tested in neovim `v0.7.x`, if you are using a lower version, there may be a risk of incompatibility. You can use `nvim -version` to check it.
 
 Spacenvim requires Nerd Font to display some special characters, you should go to [Nerd Font Downloads](https://www.nerdfonts.com/font-downloads) to choose a Nerd Font you like and install it in the terminal. Otherwise spacenvim will display garbled characters.
 
@@ -54,8 +54,30 @@ Now, you only need to run a simple command to install spacenvim:
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/fioncat/spacenvim/master/install.sh)"
 ```
 
-Then, just enter neovim and execute the `PackerInstall` and `PackerCompile` commands to complete the installation.
+Then, just enter neovim (using command `nvim`) and execute the `PackerInstall` and `PackerCompile` commands to complete the installation.
 
 **Note that the `PackerInstall` command may fail due to network reasons, please try several times.**
 
 **The `PackerCompile` command must be executed after the `PackerInstall` command is successful, otherwise errors might be reported when starting neovim.**
+
+## Coding support
+
+When you first open a code file with spacenvim, the treesitter plugin will try to download all syntax highlighting support. This may take a while. When the download is complete, please reopen the editor and you will find that treesitter syntax highlighting has taken effect. If some syntax highlighting downloads fail, reopening the editor triggers a redownload of them.
+
+Spacenvim uses native lsp, and plugin [williamboman/nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) to install lsp servers for different languages.
+
+You can use `LspInstallInfo` to display the lsp server list. Use `LspInstall <lsp-server>` to install a lsp server. Also, you can open a code file with spacenvim, and execute `LspInstall` with no args, the plugin will automatically select the appropriate lsp server for you based on the current code.
+
+Some language features may requires additional tools. For example, Go requires `goimports`, `gotags`, `delve`, etc.
+
+## Layout
+
+The layout of this configuration is very simple:
+
+- [lua/options.lua](lua/options.lua): Basic vim configuration options.
+- [lua/plugins.lua](lua/plugins.lua): Plugin list.
+- [lua/config](lua/config): Plugin configuration.
+- [lua/keymap.lua](lua/keymap.lua): Edit shortcut keys.
+- [snippets](snippets): Customized code snippet.
+
+You can edit these files to customize your neovim easily.
