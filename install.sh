@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ehttps://github.com/fioncat/spacenvim/blob/master/install.sh
+set -e
 
 if [[ -d $HOME/.config/nvim ]]; then
 	echo "A previous version of neovim configuration was detected, please backup or delete it: ~/.config/nvim"
