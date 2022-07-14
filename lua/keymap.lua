@@ -5,23 +5,21 @@ local map_cmd = bind.map_cmd
 
 
 local key_mapping = {
-	-- 分屏
+	-- Windows
 	["n|<leader>w/"] = map_cr("vs"):with_noremap():with_silent(),
 	["n|<leader>w-"] = map_cr("sv"):with_noremap():with_silent(),
-
-	-- 调整窗口大小
 	["n|<leader>w["] = map_cmd(":vertical resize+"):with_noremap(),
 	["n|<leader>w]"] = map_cmd(":vertical resize-"):with_noremap(),
 
-	-- 内置终端
+	-- Terminal
 	['n|<leader>"'] = map_cr("VTerm"):with_noremap():with_silent(),
 	["n|<leader>'"] = map_cr("Term"):with_noremap():with_silent(),
-	-- 一键关闭终端
 	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
 
 	-- 打开当前文件的FileTree
 	["n|<leader>ff"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent(),
 	["n|<leader>tt"] = map_cr("NvimTreeToggle"):with_noremap():with_silent(),
+	["n|<leader>tf"] = map_cr("NvimTreeFocus"):with_noremap():with_silent(),
 	["n|<leader>tr"] = map_cmd(":NvimTreeResize "):with_noremap(),
 
 	-- 搜索相关命令
@@ -31,22 +29,26 @@ local key_mapping = {
 	["n|<leader>ss"] = map_cr("Telescope find_files"):with_noremap():with_silent(),
 	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols"):with_noremap():with_silent(),
 	["n|<leader>sd"] = map_cr("Telescope lsp_document_symbols"):with_noremap():with_silent(),
+	["n|<leader>so"] = map_cr("Telescope oldfiles"):with_noremap():with_silent(),
+
+	-- Git search.
+	["n|<leader>gs"] = map_cr("Telescope git_status"):with_noremap():with_silent(),
+	["n|<leader>gb"] = map_cr("Telescope git_branches"):with_noremap():with_silent(),
+	["n|<leader>gc"] = map_cr("Telescope git_commits"):with_noremap():with_silent(),
 
 	-- LSP相关，代码跳转
 	["n|gd"] = map_cr("Telescope lsp_definitions"):with_noremap():with_silent(),
 	["n|gr"] = map_cr("Telescope lsp_references"):with_noremap():with_silent(),
 	["n|gi"] = map_cr("Telescope lsp_implementations"):with_noremap():with_silent(),
+	["n|gt"] = map_cr("Telescope lsp_type_definitions"):with_noremap():with_silent(),
 	["n|K"] = map_cr("Lspsaga hover_doc"):with_noremap():with_silent(),
 	["n|<leader>en"] = map_cr("Lspsaga diagnostic_jump_next"):with_noremap():with_silent(),
 	["n|<leader>ep"] = map_cr("Lspsaga diagnostic_jump_prev"):with_noremap():with_silent(),
-	["n|<leader>ee"] = map_cr("Trouble"):with_noremap():with_silent(),
+	["n|<leader>ee"] = map_cr("Telescope diagnostics"):with_noremap():with_silent(),
 
 	-- 快速注释
 	["n|<leader>ci"] = map_cr("CommentToggle"):with_noremap():with_silent(),
 	["v|<leader>ci"] = map_cr("CommentToggle"):with_silent(),
-
-	-- 显示Git blame
-	["n|<leader>gb"] = map_cr("Git blame"):with_noremap():with_silent(),
 
 	-- Buffer 快速跳转
 	["n|<leader>bb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),

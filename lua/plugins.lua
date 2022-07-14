@@ -196,14 +196,6 @@ return packer.startup(function ()
 	}
 
 	use {
-		-- Git manager
-		"tpope/vim-fugitive",
-		opt = true,
-		cmd = { "Git", "G" },
-		commit = "c29ef11cd6478da675678265e76f9e527843876f"
-	}
-
-	use {
 		-- delete buffers.
 		"famiu/bufdelete.nvim",
 		opt = true,
@@ -285,15 +277,6 @@ return packer.startup(function ()
 			})
 		end,
 		commit = "4d2c0d4488a05f9b0d18a7e2004c0182e350bb45"
-	}
-
-	use {
-		-- Show the error list
-		"folke/trouble.nvim",
-		opt = true,
-		cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
-		config = require("config.error"),
-		commit = "20469be985143d024c460d95326ebeff9971d714"
 	}
 
 	use {

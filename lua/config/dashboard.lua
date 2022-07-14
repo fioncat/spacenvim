@@ -23,33 +23,33 @@ return function()
 	db.custom_center = {
 		{
 			icon = '  ',
-			desc = 'Recently opened files                   ',
-			action =  'DashboardFindHistory',
-			shortcut = 'SPC f h'
+			desc = 'Recently opened files                  ',
+			action =  'Telescope oldfiles',
+			shortcut = 'SPC s o'
 		},
 		{
 			icon = '  ',
-			desc = 'Find  File                              ',
-			action = 'Telescope find_files find_command=rg,--hidden,--files',
+			desc = 'Find file                              ',
+			action = 'Telescope git_files',
 			shortcut = 'SPC s f'
 		},
 		{
 			icon = '  ',
-			desc ='File Browser                            ',
-			action =  'Telescope file_browser',
-			shortcut = 'SPC f b'
+			desc = 'Search LSP                             ',
+			action =  'Telescope lsp_dynamic_workspace_symbols',
+			shortcut = 'SPC s l'
 		},
 		{
 			icon = '  ',
-			desc = 'Find  word                              ',
+			desc = 'Find word                              ',
 			action = 'Telescope live_grep',
 			shortcut = 'SPC s g'
 		},
 		{
 			icon = '  ',
-			desc = 'Open Personal dotfiles                  ',
-			action = 'Telescope dotfiles path=' .. home ..'/.zshrc',
-			shortcut = 'SPC f d'
+			desc = 'Config neovim                 ',
+			action = 'cd ' .. home ..'/.config/nvim | Ex',
+			shortcut = 'cd ~/.config/nvim'
 		},
     }
 end
