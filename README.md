@@ -60,9 +60,11 @@ Then, just enter neovim (using command `nvim`) and execute the `PackerInstall` a
 
 **The `PackerCompile` command must be executed after the `PackerInstall` command is successful, otherwise errors might be reported when starting neovim.**
 
+Goodbye vim: `alias vim='nvim'`.
+
 ## Coding support
 
-When you first open a code file with spacenvim, the treesitter plugin will try to download all syntax highlighting support. This may take a while. When the download is complete, please reopen the editor and you will find that treesitter syntax highlighting has taken effect. If some syntax highlighting downloads fail, reopening the editor triggers a redownload of them.
+When you first open a code file with spacenvim, the treesitter plugin will try to download all syntax highlighting support. This may take a while. When the download is complete, please reopen the editor and you will find that treesitter syntax highlighting has taken effect. If some of them download fail, reopening the editor will trigger a redownload.
 
 Spacenvim uses native lsp, and plugin [williamboman/nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer) to install lsp servers for different languages.
 
@@ -78,6 +80,14 @@ The layout of this configuration is very simple:
 - [lua/plugins.lua](lua/plugins.lua): Plugin list.
 - [lua/config](lua/config): Plugin configuration.
 - [lua/keymap.lua](lua/keymap.lua): Edit shortcut keys.
-- [snippets](snippets): Customized code snippet.
+- [snippets](snippets): Customized code snippet. The format is vscode-like.
 
-You can edit these files to customize your neovim easily.
+You can edit these files to customize your neovim easily. But notice that if you change the files under `lua/config`, you need to execute `PackerCompile` to take affect.
+
+## Screenshot
+
+![](images/screenshot-0.jpg)
+
+![](images/screenshot-1.jpg)
+
+![](images/screenshot-2.jpg)
