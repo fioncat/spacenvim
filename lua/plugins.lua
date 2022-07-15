@@ -417,7 +417,8 @@ return packer.startup(function ()
 			vim.api.nvim_command([[autocmd FileType go nnoremap gat :GoAddTags ]])
 			vim.api.nvim_command([[autocmd FileType go nnoremap grt :GoRemoveTags ]])
 			vim.api.nvim_command([[autocmd FileType go nnoremap gfs :GoFillStruct<CR>]])
-			vim.api.nvim_command([[autocmd BufWriteCmd *.go call go#fmt#Format(1)]])
+			vim.api.nvim_command([[autocmd FileType go nnoremap gw :call go#fmt#Format(1)<CR>]])
+			-- vim.api.nvim_command([[autocmd BufWriteCmd *.go call go#fmt#Format(1)]])
 		end,
 	}
 
