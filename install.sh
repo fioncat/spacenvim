@@ -12,9 +12,9 @@ if [[ -d $HOME/.local/share/nvim ]]; then
 	exit 1
 fi
 
-PACKER_COMMIT_ID="e4c2afb37d31e99b399425e102c58b091fbc16be"
+# PACKER_COMMIT_ID="e4c2afb37d31e99b399425e102c58b091fbc16be"
 echo "Installing packer.nvim..."
-git clone --branch $PACKER_COMMIT_ID https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim > /dev/null
+git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim > /dev/null
 
 echo "Installing Spacenvim..."
 git clone https://github.com/fioncat/nvim-dotfiles.git $HOME/.config/nvim > /dev/null
