@@ -1,56 +1,49 @@
+-- Custome your vim options here.
+
 local options = {
-	-- 关闭兼容模式
+	-- Diable compatible with vi
 	nocompatible = true,
 
-	-- 编码集，某些插件需要这个配置
+	-- Some plugins might need this
 	encoding = 'UTF-8',
 
-	-- 显示相对行号
+	-- Relative Number
 	number = true,
 	relativenumber = true,
 
-	-- 突出显示当前行
 	cursorline = true,
 
-	-- 突出显示搜索匹配项
 	showmatch = true,
 
-	-- tab占用4空格
 	ts = 4,
 	shiftwidth = 4,
 
-	-- TODO: 开启之后，使用spaces代替tab进行插入
+	-- NOTE: If you enable this, the <TAB> will be replaced to spaces
 	-- expandtab = true,
 
-	-- 自动对齐
 	autoindent = true,
 
-	-- 分屏在右边和下面打开
 	splitright = true,
 	splitbelow = true,
 
-	-- 实时搜索模式
 	incsearch = true,
-	-- 搜索高亮，需要通过:noh关闭
+	-- Use command `:noh` or shortcut <C-L> to clean hlsearch
 	hlsearch = true,
-
-	-- 搜索忽略大小写
+	-- Search ignore case
 	ignorecase = true,
 
-	-- 不生成中间临时文件
 	noswapfile = true,
 
-	-- 命令行高度
 	cmdheight = 1,
 
-	-- vim自带的命令行补全
+	-- The command completion provided by vim
 	wildmenu = true,
 	wildmode = "longest,list",
 
-	-- 文件有变更时，自动重新加载
+	-- autoload file when it is changed on disk by other instance
 	autoread = true,
 
-	-- 关闭响铃
+	-- Disable bell in terminal
 	noeb = true,
 	vb = true,
 	t_vb = '',
@@ -58,12 +51,11 @@ local options = {
 	laststatus = 2,
 	display = "lastline",
 
-	-- 主题相关配置
 	background = 'dark',
 	termguicolors = true,
 
+	-- Always show signcolumn
 	signcolumn='yes:1',
-
 }
 
 for k, v in pairs(options) do
@@ -76,21 +68,25 @@ for k, v in pairs(options) do
 	end
 end
 
+-- Use "cy" in visual mode to copy selected content into system clipboard
 vim.cmd('vmap cy "+y')
 
--- :w命令时常会误输入为:W，因此这里做一个映射
+-- In command mode, w is often mistakenly entered as W, so make a mapping
 vim.cmd([[cnoreabbrev W w]])
+vim.cmd([[cnoreabbrev Wq wq]])
 
--- Ctrl-A 跳转到当前行首，就像Emacs那样
--- 重新将Ctrl-S映射为数字加2
+-- Remapping:
+-- <C-a>: Jump the first non-empty character ("^")
+-- <C-s>: Number increment, original function for <C-a>
 vim.cmd([[nnoremap <C-s> <C-a>]])
 vim.cmd([[nnoremap <C-a> ^]])
 
--- git blamer配置
+-- Git blamer. If no added here, will not work?
 vim.cmd([[let g:blamer_date_format = '%y-%m-%d']])
 vim.cmd([[let g:blamer_show_in_visual_modes = 0]])
 vim.cmd([[let g:blamer_show_in_insert_modes = 0]])
 
+-- Convert <Tab> to spaces in some files
 vim.cmd([[autocmd FileType json setlocal tabstop=2]])
 vim.cmd([[autocmd FileType json setlocal shiftwidth=2]])
 vim.cmd([[autocmd FileType json setlocal expandtab]])

@@ -12,6 +12,7 @@ The features of this configuration are:
 - Completely based on Lua configuration, abandon Vimscript.
 - Use Lua plugins instead of classic plugins. For example: use [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for syntax highlighting, [telescope](https://github.com/nvim-telescope/telescope.nvim) for searching, [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) for file tree, [lualine.nvim](https://github.com/hoob3rt/lualine.nvim) for statusline, native lsp for code completion, etc.
 - Quick installation and customization.
+- Very Fast!
 
 ## Install
 

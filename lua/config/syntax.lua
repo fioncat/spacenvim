@@ -47,4 +47,9 @@ return function()
 	for _, p in pairs(parsers) do
 		p.install_info.url = p.install_info.url:gsub("https://github.com/", "git@github.com:")
 	end
+
+	-- Enable folding
+	vim.cmd("set foldmethod=expr")
+	vim.cmd("set foldexpr=nvim_treesitter#foldexpr()")
+	vim.cmd("set foldlevel=99")
 end
