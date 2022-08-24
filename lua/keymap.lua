@@ -31,7 +31,9 @@ local key_mapping = {
 	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols"):with_noremap():with_silent(),
 	["n|<leader>sd"] = map_cr("Telescope lsp_document_symbols"):with_noremap():with_silent(),
 	["n|<leader>so"] = map_cr("Telescope oldfiles"):with_noremap():with_silent(),
+	["n|<leader>sh"] = map_cr("Telescope frecency"):with_noremap():with_silent(),
 	["n|<leader>sn"] = map_cr("Telescope notify"):with_noremap():with_silent(),
+	["n|<leader>sc"] = map_cr("Telescope colorscheme"):with_noremap():with_silent(),
 	["n|<leader>sp"] = map_cr("lua require('telescope').extensions.project.project{}"):with_noremap():with_silent(),
 	["n|<C-K>"] = map_cr("noh"):with_noremap():with_silent(),
 

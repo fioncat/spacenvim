@@ -53,28 +53,28 @@ return function()
 		}
 	end
 
-	local leader = "comma"
+	local leader = "SPC"
 	dashboard.section.buttons.val = {
-		button("comma s c", " Scheme change", leader, "<cmd>Telescope colorscheme<cr>"),
-		button("comma f r", " File frecency", leader, "<cmd>Telescope frecency<cr>"),
-		button("comma f e", " File history", leader, "<cmd>Telescope oldfiles<cr>"),
-		button("comma f p", " Project find", leader, "<cmd>Telescope project<cr>"),
-		button("comma f f", " File find", leader, "<cmd>Telescope find_files<cr>"),
-		button("comma f n", " File new", leader, "<cmd>enew<cr>"),
-		button("comma f w", " Word find", leader, "<cmd>Telescope live_grep<cr>"),
+		button("SPC s c", " Scheme change", leader, "<cmd>Telescope colorscheme<cr>"),
+		button("SPC s h", " File frecency", leader, "<cmd>Telescope frecency<cr>"),
+		button("SPC s o", " File history", leader, "<cmd>Telescope oldfiles<cr>"),
+		button("SPC s p", " Project find", leader, "<cmd>Telescope project<cr>"),
+		button("SPC s s", " File find", leader, "<cmd>Telescope find_files<cr>"),
+		button("enew", " File new", leader, "<cmd>enew<cr>"),
+		button("SPC s g", " Word find", leader, "<cmd>Telescope live_grep<cr>"),
 	}
 	dashboard.section.buttons.opts.hl = "String"
 
 	local function footer()
 		local total_plugins = #vim.tbl_keys(packer_plugins)
-		return "   Have Fun with neovim"
-			.. "   v"
+		return "neovim"
+			.. " v"
 			.. vim.version().major
 			.. "."
 			.. vim.version().minor
 			.. "."
 			.. vim.version().patch
-			.. "   "
+			.. " with "
 			.. total_plugins
 			.. " plugins"
 	end

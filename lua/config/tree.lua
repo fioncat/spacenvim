@@ -16,7 +16,7 @@ return function()
 		view = {
 			adaptive_size = false,
 			centralize_selection = false,
-			width = 30,
+			width = 40,
 			height = 30,
 			side = "left",
 			preserve_window_proportions = false,
@@ -138,7 +138,7 @@ return function()
 		},
 		git = {
 			enable = true,
-			ignore = true,
+			ignore = false,
 			show_on_dirs = true,
 			timeout = 400,
 		},
