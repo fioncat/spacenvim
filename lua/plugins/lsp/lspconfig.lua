@@ -1,4 +1,13 @@
 return function()
+	vim.cmd([[packadd lsp_signature.nvim]])
+	vim.cmd([[packadd lspsaga.nvim]])
+	vim.cmd([[packadd cmp-nvim-lsp]])
+	vim.cmd([[packadd nvim-navic]])
+
+	local nvim_lsp = require("lspconfig")
+	local mason = require("mason")
+	local mason_lsp = require("mason-lspconfig")
+
 	local function custom_attach(client, bufnr)
 		require("lsp_signature").on_attach({
 			bind = true,
@@ -13,34 +22,6 @@ return function()
 		})
 		require("nvim-navic").attach(client, bufnr)
 	end
-	local function switch_source_header_splitcmd(bufnr, splitcmd)
-		bufnr = nvim_lsp.util.validate_bufnr(bufnr)
-		local clangd_client = nvim_lsp.util.get_active_client_by_name(bufnr, "clangd")
-		local params = { uri = vim.uri_from_bufnr(bufnr) }
-		if clangd_client then
-			clangd_client.request("textDocument/switchSourceHeader", params, function(err, result)
-				if err then
-					error(tostring(err))
-				end
-				if not result then
-					print("Corresponding file can’t be determined")
-					return
-				end
-				vim.api.nvim_command(splitcmd .. " " .. vim.uri_to_fname(result))
-			end)
-		else
-			print("method textDocument/switchSourceHeader is not supported by any servers active on the current buffer")
-		end
-	end
-
-	vim.cmd([[packadd lsp_signature.nvim]])
-	vim.cmd([[packadd lspsaga.nvim]])
-	vim.cmd([[packadd cmp-nvim-lsp]])
-	vim.cmd([[packadd nvim-navic]])
-
-	local nvim_lsp = require("lspconfig")
-	local mason = require("mason")
-	local mason_lsp = require("mason-lspconfig")
 
 	mason.setup()
 	mason_lsp.setup({

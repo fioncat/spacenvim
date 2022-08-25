@@ -91,6 +91,18 @@ local key_mapping = {
 
 	-- Undo tree
 	["n|<leader>ud"] = map_cr("UndotreeToggle"):with_silent():with_noremap(),
+
+	-- Debug
+	["n|<leader>dc"] = map_cr("lua require('dap').continue()"):with_noremap():with_silent(),
+	["n|<leader>db"] = map_cr("lua require('dap').toggle_breakpoint()"):with_noremap():with_silent(),
+	["n|<leader>dq"] = map_cr("lua require('dap').terminate() require('dapui').close()"):with_noremap():with_silent(),
+	["n|<leader>dl"] = map_cr("lua require('dap').list_breakpoints()"):with_noremap():with_silent(),
+	["n|<leader>drc"] = map_cr("lua require('dap').run_to_cursor()"):with_noremap():with_silent(),
+	["n|<leader>drl"] = map_cr("lua require('dap').run_last()"):with_noremap():with_silent(),
+	["n|<leader>dn"] = map_cr("lua require('dap').step_over()"):with_noremap():with_silent(),
+	["n|<leader>di"] = map_cr("lua require('dap').step_into()"):with_noremap():with_silent(),
+	["n|<leader>do"] = map_cr("lua require('dap').step_out()"):with_noremap():with_silent(),
+
 }
 
 vim.g.mapleader = " "
