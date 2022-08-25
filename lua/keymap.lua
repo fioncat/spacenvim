@@ -103,6 +103,8 @@ local key_mapping = {
 	["n|<leader>di"] = map_cr("lua require('dap').step_into()"):with_noremap():with_silent(),
 	["n|<leader>do"] = map_cr("lua require('dap').step_out()"):with_noremap():with_silent(),
 
+	-- Formatter
+	["n|gw"] = map_cr("FormatWrite"):with_noremap():with_silent(),
 }
 
 vim.g.mapleader = " "
