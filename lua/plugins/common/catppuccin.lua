@@ -181,7 +181,7 @@ return function()
 				IncSearch = { bg = cp.pink, fg = cp.surface1 },
 
 				Pmenu = { bg = cp.base, fg = cp.overlay2 },
-				PmenuSel = { fg = cp.text, bg = cp.surface1, style = "bold" }, -- Popup menu: selected item.
+				PmenuSel = { fg = cp.text, bg = cp.surface1, style = { "bold" } }, -- Popup menu: selected item.
 				PmenuSbar = { bg = cp.subtext1 }, -- Popup menu: scrollbar.
 				PmenuThumb = { bg = cp.overlay1 }, -- Popup menu: Thumb of the scrollbar.
 
