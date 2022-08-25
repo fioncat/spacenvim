@@ -12,13 +12,12 @@ if [[ -d $HOME/.local/share/nvim ]]; then
 	exit 1
 fi
 
-# PACKER_COMMIT_ID="e4c2afb37d31e99b399425e102c58b091fbc16be"
 echo "Installing packer.nvim..."
-git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim > /dev/null
+git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 echo "Installing Spacenvim..."
-git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim > /dev/null
+git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim
 
 echo "Congratulations! Spacenvim was successfully installed on your machine."
-echo 'To complete the plugin installation, open neovim and execute the `PackerInstall` and `PackerCompile` commands.'
+echo 'To complete the plugins installation, please open neovim and execute the `PackerInstall` and `PackerCompile` commands.'
 echo "For more infomation, please refer to: https://github.com/fioncat/spacenvim"

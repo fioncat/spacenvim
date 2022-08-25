@@ -11,7 +11,7 @@ Features:
 
 ## Install
 
-First of all, you should have [Neovim](https://neovim.io) installed in your machine. If you are using mac, run:
+You should have [Neovim](https://neovim.io) installed in your machine:
 
 ```shell
 brew install neovim
@@ -19,7 +19,7 @@ brew install neovim
 
 The spacenvim is well tested in neovim `v0.7.x`, if you are using a lower version, there may be a risk of incompatibility. You can use `nvim -version` to check it.
 
-Spacenvim requires Nerd Font to display some special characters, you should go to [Nerd Font Downloads](https://www.nerdfonts.com/font-downloads) to choose a Nerd Font you like and install it in the terminal. Otherwise spacenvim will display garbled characters.
+Spacenvim requires `Nerd Font` to display `iconic fonts`, you should go to [Nerd Font Downloads](https://www.nerdfonts.com/font-downloads) to choose a Nerd Font you like and install it in the terminal. Otherwise spacenvim will display garbled characters.
 
 The terminal type should be `xterm-256color` to make spacenvim display the correct colors, add this to your terminal profile:
 
@@ -27,7 +27,7 @@ The terminal type should be `xterm-256color` to make spacenvim display the corre
 export TERM=xterm-256color
 ```
 
-Also, if you are using `tmux`, add this to your tmux profile:
+If you are using spacenvim in `tmux`, add this to your tmux profile:
 
 ```tmux
 set -g default-terminal "tmux-256color"
@@ -44,16 +44,14 @@ brew install node
 brew install bat
 ```
 
-Now, you only need to run a simple command to install spacenvim:
+Install spacenvim:
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/fioncat/spacenvim/master/install.sh)"
 ```
 
-Then, just enter neovim (using command `nvim`) and execute the `PackerInstall` and `PackerCompile` commands to complete the installation.
+The spacenvim will be installed to `~/.config/nvim`,  Spacenvim use [packer](https://github.com/wbthomason/packer.nvim) to manage plugins, you should open neovim (using command `nvim`) and execute `PackerInstall` and `PackerCompile` to complete the plugin installation. For more infomation about packer, please go to [official documentation](https://github.com/wbthomason/packer.nvim/blob/master/doc/packer.txt).
 
 **Note that the `PackerInstall` command may fail due to network reasons, please try several times.**
 
-**The `PackerCompile` command must be executed after the `PackerInstall` command is successful, otherwise errors might be reported when starting neovim.**
-
-Goodbye vim: `alias vim='nvim'`.
+When you first open spacenvim, the `treesitter` will try to install the `syntax highlight`, and the `mason` will try to install some `LSP servers`. Some functions are unavailable until the installation is complete.

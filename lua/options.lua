@@ -58,7 +58,7 @@ local options = {
 	signcolumn='yes:1',
 
 	-- Show tail whitespace
-	listchars = [[tab:▸\ ,trail:·]],
+	listchars = [[tab:▸\ ,trail:•]],
 	list = true,
 }
 
