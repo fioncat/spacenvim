@@ -25,9 +25,8 @@ return function()
 			entry_prefix = " ",
 			scroll_strategy = "limit",
 			results_title = false,
-			borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
 			layout_strategy = "horizontal",
-			path_display = { "absolute" },
+			path_display = { "truncate" },
 			file_ignore_patterns = {},
 			layout_config = {
 				prompt_position = "bottom",
