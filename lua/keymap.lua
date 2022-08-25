@@ -88,6 +88,9 @@ local key_mapping = {
 	-- Plugin Diffview
 	["n|<leader>D"] = map_cr("DiffviewOpen"):with_silent():with_noremap(),
 	["n|<leader><leader>D"] = map_cr("DiffviewClose"):with_silent():with_noremap(),
+
+	-- Undo tree
+	["n|<leader>ud"] = map_cr("UndotreeToggle"):with_silent():with_noremap(),
 }
 
 vim.g.mapleader = " "

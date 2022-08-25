@@ -56,6 +56,10 @@ local options = {
 
 	-- Always show signcolumn
 	signcolumn='yes:1',
+
+	-- Show tail whitespace
+	listchars = [[tab:▸\ ,trail:·]],
+	list = true,
 }
 
 for k, v in pairs(options) do

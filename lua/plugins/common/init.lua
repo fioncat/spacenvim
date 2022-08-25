@@ -130,4 +130,20 @@ M["APZelos/blamer.nvim"] = {
 	end,
 }
 
+-- The plug-in visualizes undo history and makes it easier to browse and
+-- switch between different undo branches.
+M["mbbill/undotree"] = {
+	opt = true,
+	cmd = "UndotreeToggle",
+}
+
+-- Neovim plugin to stabilize buffer content on window open/close events.
+-- There is a currently outstanding PR to Neovim core that supercedes this plugin:
+--     https://github.com/neovim/neovim/pull/19243
+-- After this is merged, this plugin can be removed.
+M["luukvbaal/stabilize.nvim"] = {
+	opt = true,
+	event = "BufReadPost",
+}
+
 return M
