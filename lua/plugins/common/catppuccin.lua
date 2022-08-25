@@ -1,4 +1,4 @@
-return function() 
+return function()
 
 	local function get_modified_palette()
 		-- We need to explicitly declare our new color.

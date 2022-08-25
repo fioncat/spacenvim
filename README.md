@@ -1,15 +1,11 @@
 # Spacenvim
 
-This configuration comes from [ayamir/nvimdots](https://github.com/ayamir/nvimdots), but there are the following differences:
+This neovim configuration is a personal customization based on [ayamir/nvimdots](https://github.com/ayamir/nvimdots).
 
-- Use `Space` key as leader.
-- The code layout is simpler more user-friendly.
-- Try to keep the minimum number of plugins and easy to customize.
-
-The features of this configuration are:
+Features:
 
 - Completely based on Lua configuration, abandon Vimscript.
-- Use Lua plugins instead of classic plugins. For example: use [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) for syntax highlighting, [telescope](https://github.com/nvim-telescope/telescope.nvim) for searching, [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) for file tree, [lualine.nvim](https://github.com/hoob3rt/lualine.nvim) for statusline, native lsp for code completion, etc.
+- Use Lua plugins instead of classic vim plugins.
 - Quick installation and customization.
 - Very Fast!
 
@@ -61,15 +57,3 @@ Then, just enter neovim (using command `nvim`) and execute the `PackerInstall` a
 **The `PackerCompile` command must be executed after the `PackerInstall` command is successful, otherwise errors might be reported when starting neovim.**
 
 Goodbye vim: `alias vim='nvim'`.
-
-## Layout
-
-The layout of this configuration is very simple:
-
-- [lua/options.lua](lua/options.lua): Basic vim configuration options.
-- [lua/plugins.lua](lua/plugins.lua): Plugin list.
-- [lua/config](lua/config): Plugin configuration.
-- [lua/keymap.lua](lua/keymap.lua): Edit shortcut keys.
-- [snippets](snippets): Customized code snippet. The format is vscode-like.
-
-You can edit these files to customize your neovim easily. But notice that if you change the files under `lua/config`, you need to execute `PackerCompile` to take affect.

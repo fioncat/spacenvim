@@ -1,4 +1,4 @@
-return function() 
+return function()
 	local notify = require("notify")
 	notify.setup({
 		---@usage Animation style one of { "fade", "slide", "fade_in_slide_out", "static" }
