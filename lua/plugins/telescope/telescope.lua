@@ -1,4 +1,4 @@
-return function() 
+return function()
 	vim.cmd([[packadd sqlite.lua]])
 	vim.cmd([[packadd telescope-fzf-native.nvim]])
 	vim.cmd([[packadd telescope-project.nvim]])
@@ -62,7 +62,7 @@ return function()
 			frecency = {
 				show_scores = true,
 				show_unindexed = true,
-				ignore_patterns = { "*.git/*", "*/tmp/*" },
+				ignore_patterns = { "*.git/*", "*/tmp/*", "*/vendor/*" },
 			},
 		},
 		pickers = {
