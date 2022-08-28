@@ -12,13 +12,8 @@ if [[ -d $HOME/.local/share/nvim ]]; then
 	exit 1
 fi
 
-echo "Installing packer.nvim..."
 git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-echo "Installing Spacenvim..."
 git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim
-
-cp $HOME/.config/nvim/plugins_snapshot $HOME/.cache/nvim/packer.nvim/spacenvim
 
 echo "Congratulations! Spacenvim was successfully installed on your machine."
 echo 'To complete the plugins installation, please open neovim and execute the `PackerInstall` and `PackerCompile` commands.'
