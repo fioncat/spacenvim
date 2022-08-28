@@ -18,6 +18,8 @@ git clone https://github.com/wbthomason/packer.nvim $HOME/.local/share/nvim/site
 echo "Installing Spacenvim..."
 git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim
 
+cp $HOME/.config/nvim/plugins_snapshot $HOME/.cache/nvim/packer.nvim/spacenvim
+
 echo "Congratulations! Spacenvim was successfully installed on your machine."
 echo 'To complete the plugins installation, please open neovim and execute the `PackerInstall` and `PackerCompile` commands.'
 echo "For more infomation, please refer to: https://github.com/fioncat/spacenvim"
