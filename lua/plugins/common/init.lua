@@ -146,4 +146,10 @@ M["luukvbaal/stabilize.nvim"] = {
 	event = "BufReadPost",
 }
 
+-- todo-comments is a lua plugin for Neovim 0.5 to highlight and search
+-- for todo comments like TODO, HACK, BUG in your code base.
+M["folke/todo-comments.nvim"] = {
+	opt = false,
+}
+
 return M
