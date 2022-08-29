@@ -54,13 +54,15 @@ The spacenvim will be installed to `~/.config/nvim`,  Spacenvim use [packer](htt
 
 **Note that the `PackerInstall` command may fail due to network reasons, please try several times.**
 
-When you first open spacenvim, the `treesitter` will try to install the `syntax highlight`, and the `mason` will try to install some `LSP servers`. Some functions are unavailable until the installation is complete.
+When you first open spacenvim, the treesitter will try to install the syntax highlight, and the mason will try to install some LSP servers. Some functions are unavailable until the installation is complete.
 
 ## Snapshot
 
-By default, we will install the latest version of the plugins for you. But plugins may be incompatible with spacenvim due to the breaking changes. This can cause plugins to behave inconsistently as expected, and even neovim to report errors.
+By default, we will install the latest version of plugins for you.
 
-If this happens, you can rollback the plugins version to the version expected by spacenvim.
+But the latest version of plugins may be incompatible with spacenvim due to the breaking changes. This can cause plugins to behave inconsistently as expected, and even neovim to report errors.
+
+If this happens, you can rollback the plugins to the version expected by spacenvim.
 
 Spacenvim stores plugins snapshot in `~/.config/nvim/snapshot`, you can import the snapshot file by:
 
