@@ -1,5 +1,28 @@
 local packer = require('packer')
 
+-- Enabled plugin sets. A plugin set contains multiple plugins that have the same type of functionality
+-- or need to cooperate with each other.
+-- If you don't want to use a plugin set, you can delete it here.
+local plugin_set = {
+	-- Basic plugins, not recommended to delete
+	"common",
+
+	-- Searching
+	"telescope",
+
+	-- Syntax highlight
+	"treesitter",
+
+	-- Completion
+	"cmp",
+
+	-- LSP support
+	"lsp",
+
+	-- Language support
+	"lang",
+}
+
 return packer.startup(function()
 	-- Init packer plugin manager.
 	packer.init({
@@ -22,12 +45,9 @@ return packer.startup(function()
 		end
 	end
 
-	add_plugins("common")
-	add_plugins("telescope")
-	add_plugins("treesitter")
-	add_plugins("cmp")
-	add_plugins("lsp")
-	add_plugins("lang")
+	for _, set_name in ipairs(plugin_set) do
+		add_plugins(set_name)
+	end
 
 	use "wbthomason/packer.nvim"
 	use "nvim-lua/plenary.nvim"

@@ -1,3 +1,5 @@
 require("options")
+require("commands")
 require("plugins")
 require("keymap")
+require("autogroup")
