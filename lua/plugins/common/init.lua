@@ -149,7 +149,9 @@ M["luukvbaal/stabilize.nvim"] = {
 -- todo-comments is a lua plugin for Neovim 0.5 to highlight and search
 -- for todo comments like TODO, HACK, BUG in your code base.
 M["folke/todo-comments.nvim"] = {
+	after = "plenary.nvim",
 	opt = false,
+	config = require("plugins.common.todo-comments"),
 }
 
 return M
