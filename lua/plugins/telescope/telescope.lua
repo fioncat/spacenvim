@@ -27,7 +27,6 @@ return function()
 			results_title = false,
 			layout_strategy = "horizontal",
 			path_display = { "truncate" },
-			file_ignore_patterns = {},
 			layout_config = {
 				prompt_position = "bottom",
 				horizontal = {
@@ -51,6 +50,7 @@ return function()
 				"╰",
 			},
 			dynamic_preview_title = true,
+			file_ignore_patterns = { "vendor", "*.git/*" },
 		},
 		extensions = {
 			fzf = {
