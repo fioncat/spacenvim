@@ -31,6 +31,7 @@ return function()
 	local saga = require("lspsaga")
 	saga.init_lsp_saga({
 		diagnostic_header = { " ", " ", "  ", " " },
+		code_action_icon = "",
 	})
 	vim.cmd([[highlight LspFloatWinNormal guifg='None' guibg='None']])
 end
