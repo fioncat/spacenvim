@@ -154,4 +154,11 @@ M["folke/todo-comments.nvim"] = {
 	config = require("plugins.common.todo-comments"),
 }
 
+-- WhichKey is a lua plugin for Neovim 0.5 that displays a popup with
+-- possible key bindings of the command you started typing.
+-- Heavily inspired by the original emacs-which-key and vim-which-key.
+M["folke/which-key.nvim"] = {
+	config = require("plugins.common.which-key"),
+}
+
 return M
