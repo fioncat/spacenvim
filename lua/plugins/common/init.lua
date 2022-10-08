@@ -146,14 +146,6 @@ M["luukvbaal/stabilize.nvim"] = {
 	event = "BufReadPost",
 }
 
--- todo-comments is a lua plugin for Neovim 0.5 to highlight and search
--- for todo comments like TODO, HACK, BUG in your code base.
-M["folke/todo-comments.nvim"] = {
-	after = "plenary.nvim",
-	opt = false,
-	config = require("plugins.common.todo-comments"),
-}
-
 -- WhichKey is a lua plugin for Neovim 0.5 that displays a popup with
 -- possible key bindings of the command you started typing.
 -- Heavily inspired by the original emacs-which-key and vim-which-key.
