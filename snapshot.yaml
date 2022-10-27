@@ -1,0 +1,187 @@
+repos:
+  - url: https://github.com/antoinemadec/FixCursorHold.nvim.git
+    path: opt/FixCursorHold.nvim
+    commit: 5aa5ff18da3cdc306bb724cf1a138533768c9f5e
+  - url: https://github.com/L3MON4D3/LuaSnip.git
+    path: opt/LuaSnip
+    commit: 04f90900f2a57938921fd25169c7f282e7eefe85
+  - url: https://github.com/goolord/alpha-nvim.git
+    path: opt/alpha-nvim
+    commit: 6af70dda0c8bd96645064202263230c571eacbf5
+  - url: https://github.com/rmagatti/auto-session.git
+    path: opt/auto-session
+    commit: 9c302e01ebb474f9b19998488060d9f110ef75c5
+  - url: https://github.com/jdhao/better-escape.vim.git
+    path: opt/better-escape.vim
+    commit: 6b16a45a839727977277f6ab11bded63e9ed86bb
+  - url: https://github.com/APZelos/blamer.nvim.git
+    path: opt/blamer.nvim
+    commit: f4eb22a9013642c411725fdda945ae45f8d93181
+  - url: https://github.com/akinsho/bufferline.nvim.git
+    path: opt/bufferline.nvim
+    commit: 8383034f103a6e9c0b3178a56e27acb2215986c1
+  - url: https://github.com/hrsh7th/cmp-buffer.git
+    path: opt/cmp-buffer
+    commit: 3022dbc9166796b644a841a02de8dd1cc1d311fa
+  - url: https://github.com/kdheepak/cmp-latex-symbols.git
+    path: opt/cmp-latex-symbols
+    commit: 46e7627afa8c8ff57158d1c29d721d8efebbc39f
+  - url: https://github.com/hrsh7th/cmp-nvim-lsp.git
+    path: opt/cmp-nvim-lsp
+    commit: affe808a5c56b71630f17aa7c38e15c59fd648a8
+  - url: https://github.com/hrsh7th/cmp-nvim-lua.git
+    path: opt/cmp-nvim-lua
+    commit: d276254e7198ab7d00f117e88e223b4bd8c02d21
+  - url: https://github.com/hrsh7th/cmp-path.git
+    path: opt/cmp-path
+    commit: 447c87cdd6e6d6a1d2488b1d43108bfa217f56e1
+  - url: https://github.com/f3fora/cmp-spell.git
+    path: opt/cmp-spell
+    commit: 5602f1a0de7831f8dad5b0c6db45328fbd539971
+  - url: https://github.com/andersevenrud/cmp-tmux.git
+    path: opt/cmp-tmux
+    commit: e32f2f1417c9ff307ad348a134788eabd76c6112
+  - url: https://github.com/saadparwaiz1/cmp_luasnip.git
+    path: opt/cmp_luasnip
+    commit: a9de941bcbda508d0a45d28ae366bb3f08db2e36
+  - url: https://github.com/sindrets/diffview.nvim.git
+    path: opt/diffview.nvim
+    commit: 04cdfafee557c84e01724de8c6a4f24d40f7414f
+  - url: https://github.com/j-hui/fidget.nvim.git
+    path: opt/fidget.nvim
+    commit: 492492e7d50452a9ace8346d31f6d6da40439f0e
+  - url: https://github.com/mhartington/formatter.nvim.git
+    path: opt/formatter.nvim
+    commit: 6e5fbf459ebb522b84cd3ae5f6c76fe3f58039d2
+  - url: https://github.com/romgrk/fzy-lua-native.git
+    path: opt/fzy-lua-native
+    commit: aa00feb01128c4d279c8471898e15898e75d5df5
+  - url: https://github.com/phaazon/hop.nvim.git
+    path: opt/hop.nvim
+    commit: 75f73d3959a0df7ef3642fd5138acdb1ce50fdc8
+  - url: https://github.com/lukas-reineke/indent-blankline.nvim.git
+    path: opt/indent-blankline.nvim
+    commit: c15bbe9f23d88b5c0b4ca45a446e01a0a3913707
+  - url: https://github.com/ray-x/lsp_signature.nvim.git
+    path: opt/lsp_signature.nvim
+    commit: e65a63858771db3f086c8d904ff5f80705fd962b
+  - url: https://github.com/glepnir/lspsaga.nvim.git
+    path: opt/lspsaga.nvim
+    commit: da3ec06ad8ef99264ef32470c9f727a210518326
+  - url: https://github.com/hoob3rt/lualine.nvim.git
+    path: opt/lualine.nvim
+    commit: 3cf45404d4ab5e3b5da283877f57b676cb78d41d
+  - url: https://github.com/karb94/neoscroll.nvim.git
+    path: opt/neoscroll.nvim
+    commit: 54c5c419f6ee2b35557b3a6a7d631724234ba97a
+  - url: https://github.com/windwp/nvim-autopairs.git
+    path: opt/nvim-autopairs
+    commit: 0a18e10a0c3fde190437567e40557dcdbbc89ea1
+  - url: https://github.com/hrsh7th/nvim-cmp.git
+    path: opt/nvim-cmp
+    commit: 058100d81316239f3874064064f0f0c5d43c2103
+  - url: https://github.com/mfussenegger/nvim-dap.git
+    path: opt/nvim-dap
+    commit: 618c068e4265e8e1f428b93868141ac92c7dde8e
+  - url: https://github.com/rcarriga/nvim-dap-ui.git
+    path: opt/nvim-dap-ui
+    commit: 225115ae986b39fdaffaf715e571dd43b3ac9670
+  - url: https://github.com/neovim/nvim-lspconfig.git
+    path: opt/nvim-lspconfig
+    commit: 4b5ed82dd0fe59fef15ce183978f2597a03237f1
+  - url: https://github.com/SmiteshP/nvim-navic.git
+    path: opt/nvim-navic
+    commit: 94bf6fcb1dc27bdad230d9385da085e72c390019
+  - url: https://github.com/kyazdani42/nvim-tree.lua.git
+    path: opt/nvim-tree.lua
+    commit: c3ea264947671f44d836af5b7587e12c4b4611f9
+  - url: https://github.com/nvim-treesitter/nvim-treesitter.git
+    path: opt/nvim-treesitter
+    commit: a59e6e0ef064b7a4c96f8f26c9e407d53f017211
+  - url: https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
+    path: opt/nvim-treesitter-textobjects
+    commit: e6ed975f8c34d0e35072d45d542cce12f48a8b40
+  - url: https://github.com/JoosepAlviste/nvim-ts-context-commentstring.git
+    path: opt/nvim-ts-context-commentstring
+    commit: 37a97a04c39f26fffe7745815517e1ce1a0eb3be
+  - url: https://github.com/nvim-lua/popup.nvim.git
+    path: opt/popup.nvim
+    commit: b7404d35d5d3548a82149238289fa71f7f6de4ac
+  - url: https://github.com/edluffy/specs.nvim.git
+    path: opt/specs.nvim
+    commit: e043580a65409ea071dfe34e94284959fd24e3be
+  - url: https://github.com/vimlab/split-term.vim.git
+    path: opt/split-term.vim
+    commit: a4e28cab77ad07fc8a0ebb62a982768c02eb287c
+  - url: https://github.com/tami5/sqlite.lua.git
+    path: opt/sqlite.lua
+    commit: 56c5aacd5e31496d9b3cd3d1b0e570bb9a65d35b
+  - url: https://github.com/luukvbaal/stabilize.nvim.git
+    path: opt/stabilize.nvim
+    commit: f7c4d93d6822df1770a90b7fdb46f6df5c94052e
+  - url: https://github.com/nvim-telescope/telescope-frecency.nvim.git
+    path: opt/telescope-frecency.nvim
+    commit: 6d2db0ee0ca6487bf3fc9eda581e83eaea25cb07
+  - url: https://github.com/nvim-telescope/telescope-fzf-native.nvim.git
+    path: opt/telescope-fzf-native.nvim
+    commit: 6791f74e9f08a9412c43dcba805ecf2f8888bdde
+  - url: https://github.com/nvim-telescope/telescope-project.nvim.git
+    path: opt/telescope-project.nvim
+    commit: dc9a1977d159e3feb98774729f5c30584e2b700a
+  - url: https://github.com/nvim-telescope/telescope.nvim.git
+    path: opt/telescope.nvim
+    commit: 3e944f02ff8040056b44f6a9aed48842317b33ac
+  - url: https://github.com/folke/todo-comments.nvim.git
+    path: opt/todo-comments.nvim
+    commit: 98b1ebf198836bdc226c0562b9f906584e6c400e
+  - url: https://github.com/mbbill/undotree.git
+    path: opt/undotree
+    commit: bfc9b060c9e84497b15b4d602095ba008383b664
+  - url: https://github.com/fioncat/vim-bufclean.git
+    path: opt/vim-bufclean
+    commit: 4a9424ea41e54380c95d675bd349b6f4a9547e91
+  - url: https://github.com/andymass/vim-matchup.git
+    path: opt/vim-matchup
+    commit: e59d5c73f1bf696c7de9fc13090a240d1ceb13f7
+  - url: https://github.com/gelguy/wilder.nvim.git
+    path: opt/wilder.nvim
+    commit: 679f348dc90d80ff9ba0e7c470c40a4d038dcecf
+  - url: https://github.com/catppuccin/nvim.git
+    path: start/catppuccin
+    commit: 3a5f324694b0bef9206bc85c10bbf14817f81f98
+  - url: https://github.com/lukas-reineke/cmp-under-comparator.git
+    path: start/cmp-under-comparator
+    commit: 6857f10272c3cfe930cece2afa2406e1385bfef8
+  - url: https://github.com/nathom/filetype.nvim.git
+    path: start/filetype.nvim
+    commit: b522628a45a17d58fc0073ffd64f9dc9530a8027
+  - url: https://github.com/rafamadriz/friendly-snippets.git
+    path: start/friendly-snippets
+    commit: 6227548c97d7bd7d2f5f0897814c16649fcce368
+  - url: https://github.com/williamboman/mason-lspconfig.nvim.git
+    path: start/mason-lspconfig.nvim
+    commit: d9365e72afb2f876a62cd3cade555dc1a95031d9
+  - url: https://github.com/williamboman/mason.nvim.git
+    path: start/mason.nvim
+    commit: b4484e29d619778daa4522294b5e88c24dda267a
+  - url: https://github.com/terrortylor/nvim-comment.git
+    path: start/nvim-comment
+    commit: e9ac16ab056695cad6461173693069ec070d2b23
+  - url: https://github.com/rcarriga/nvim-notify.git
+    path: start/nvim-notify
+    commit: 60bb6bfd6992549ee5336bbb761705b62797ce1d
+  - url: https://github.com/kyazdani42/nvim-web-devicons.git
+    path: start/nvim-web-devicons
+    commit: 2d02a56189e2bde11edd4712fea16f08a6656944
+  - url: https://github.com/wbthomason/packer.nvim
+    path: start/packer.nvim
+    commit: 3a9f9801f683946b9f1047d8f4bf9946c29e927d
+  - url: https://github.com/nvim-lua/plenary.nvim.git
+    path: start/plenary.nvim
+    commit: 31807eef4ed574854b8a53ae40ea3292033a78ea
+  - url: https://github.com/fioncat/vim-minigo.git
+    path: start/vim-minigo
+    commit: f0ee4f3ae50e634499e43f19c51eb4ad374c082e
+  - url: https://github.com/folke/which-key.nvim.git
+    path: start/which-key.nvim
+    commit: 2dcf8126c52812b252bc893bd37207bd67a1f106
