@@ -1,4 +1,5 @@
 return function()
+	require("telescope").load_extension("notify")
 	vim.cmd([[packadd sqlite.lua]])
 	vim.cmd([[packadd telescope-fzf-native.nvim]])
 	vim.cmd([[packadd telescope-project.nvim]])
@@ -78,5 +79,4 @@ return function()
 	require("telescope").load_extension("fzf")
 	require("telescope").load_extension("project")
 	require("telescope").load_extension("frecency")
-	require("telescope").load_extension("notify")
 end
