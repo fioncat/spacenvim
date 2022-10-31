@@ -2,6 +2,8 @@
 
 set -e
 
+command -v nvim >/dev/null || { echo "ERROR: cannot find neovim, please install neovim 0.7.x"; exit 1; }
+
 # TODO: install dependencies
 
 packer_root="$HOME/.local/share/nvim/site/pack/packer"
