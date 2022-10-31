@@ -2,9 +2,9 @@
 
 This neovim configuration is a personal customization based on [ayamir/nvimdots](https://github.com/ayamir/nvimdots).
 
-**I pinned the versions of all plugins to prevent configuration incompatibilities due to plugin updates.**
+**I pinned the versions of all plugins to prevent configuration incompatibilities due to plugin updates. Please use `make` to install or upgrade plugins rather than PackerInstall.**
 
-**This configuration only support neovim `0.7.x` now*
+**This configuration only support neovim `0.7.x` now**
 
 Features:
 

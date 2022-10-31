@@ -8,3 +8,7 @@ install:
 snapshot:
 	@bash ./scripts/make_snapshot.sh
 
+.PHONY: clean
+clean:
+	@rm -rf plugin
+	@rm -rf ${HOME}/.local/share/nvim/site/pack/packer
