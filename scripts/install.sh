@@ -21,3 +21,5 @@ cd $packer_root/opt/telescope-fzf-native.nvim
 make
 
 cd $cur_dir
+
+nvim +PackerCompile

@@ -53,5 +53,3 @@ git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim
 cd $HOME/.config/nvim
 make
 ```
-
-Then, enter `nvim`, execute command `PackerCompile` to finish installation.
