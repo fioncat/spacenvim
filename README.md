@@ -67,7 +67,7 @@ brew install sqlite3 fzf rg
 <summary>Install dependencies on ArchLinux/Manjaro</summary>
 
 ```shell
-sudo pacman -S sqlite3 fzf ripgrep xclip
+sudo pacman -S sqlite3 fzf ripgrep xclip zip unzip
 ```
 
 </details>
@@ -93,3 +93,18 @@ If you want to remove all plugins, run:
 ```shell
 make clean
 ```
+
+## Language Support
+
+You can use command `Mason` to manage your `LSP servers`, some language plugins need additional requirements:
+
+<details>
+<summary>Golang</summary>
+
+```shell
+go install golang.org/x/tools/cmd/goimports@latest
+go install github.com/fatih/gomodifytags@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+```
+
+</details>
