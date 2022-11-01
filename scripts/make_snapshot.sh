@@ -25,6 +25,7 @@ list_repo() {
 
 list_repo $HOME/.local/share/nvim/site/pack/packer
 
+IFS=$'\n' repos=($(sort <<<"${repos[*]}")); unset IFS
 for repo_path in "${repos[@]}"; do
 	repo_name=${repo_path#"$HOME/.local/share/nvim/site/pack/packer/"}
 	commit_id=`git -C $repo_path rev-parse HEAD`
