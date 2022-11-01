@@ -16,7 +16,7 @@ return function()
 			show_tab_indicators = true,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = true,
-			separator_style = "thin",
+			separator_style = "slant",
 			offsets = {
 				{
 					filetype = "NvimTree",
