@@ -32,6 +32,8 @@ return function()
 		},
 	})
 
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 	-- Override server settings here
 	for _, server in ipairs(mason_lsp.get_installed_servers()) do
@@ -40,6 +42,7 @@ return function()
 				on_attach = custom_attach,
 				flags = { debounce_text_changes = 500 },
 				cmd = { "gopls", "-remote=auto" },
+				capabilities = capabilities,
 				settings = {
 					gopls = {
 						-- usePlaceholders = true,
@@ -73,6 +76,7 @@ return function()
 			})
 		elseif server == "jsonls" then
 			nvim_lsp.jsonls.setup({
+				capabilities = capabilities,
 				flags = { debounce_text_changes = 500 },
 				on_attach = custom_attach,
 				settings = {
@@ -129,12 +133,14 @@ return function()
 			})
 		else
 			nvim_lsp[server].setup({
+				capabilities = capabilities,
 				on_attach = custom_attach,
 			})
 		end
 	end
 
 	nvim_lsp.html.setup({
+		capabilities = capabilities,
 		cmd = { "html-languageserver", "--stdio" },
 		filetypes = { "html" },
 		init_options = {
