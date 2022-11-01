@@ -11,6 +11,7 @@ while IFS= read -r line; do
 	plugin_path=$HOME/.local/share/nvim/site/pack/packer/$name
 	if [ -d $plugin_path ]; then
 		echo "$plugin_path -> $commit_id"
+		git -C $plugin_path fetch origin
 		git -C $plugin_path checkout $commit_id
 	else
 		echo "cloning $clone_url to $plugin_path"

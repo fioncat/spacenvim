@@ -4,6 +4,10 @@ all: install
 install:
 	@bash ./scripts/install.sh
 
+.PHONY: upgrade
+upgrade:
+	@bash ./scripts/upgrade.sh
+
 .PHONY: snapshot
 snapshot:
 	@bash ./scripts/make_snapshot.sh
