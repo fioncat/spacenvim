@@ -1,7 +1,14 @@
-return function() 
+return function()
+	local icons = {
+		diagnostics = require("icons").get("diagnostics"),
+		documents = require("icons").get("documents"),
+		git = require("icons").get("git"),
+		ui = require("icons").get("ui"),
+	}
+
 	require("nvim-tree").setup({
 		create_in_closed_folder = false,
-		respect_buf_cwd = true,
+		respect_buf_cwd = false,
 		auto_reload_on_write = true,
 		disable_netrw = false,
 		hijack_cursor = true,
@@ -12,12 +19,11 @@ return function()
 		open_on_setup_file = false,
 		open_on_tab = false,
 		sort_by = "name",
-		update_cwd = true,
+		sync_root_with_cwd = true,
 		view = {
 			adaptive_size = false,
 			centralize_selection = false,
-			width = 40,
-			height = 30,
+			width = 30,
 			side = "left",
 			preserve_window_proportions = false,
 			number = false,
@@ -66,20 +72,29 @@ return function()
 				padding = " ",
 				symlink_arrow = "  ",
 				glyphs = {
-					default = "", --
-					symlink = "",
-					bookmark = "",
+					default = icons.documents.Default, --
+					symlink = icons.documents.Symlink, --
+					bookmark = icons.ui.Bookmark,
+					git = {
+						unstaged = icons.git.Mod_alt,
+						staged = icons.git.Add, --
+						unmerged = icons.git.Unmerged,
+						renamed = icons.git.Rename, --
+						untracked = icons.git.Untracked, -- "ﲉ"
+						deleted = icons.git.Remove, --
+						ignored = icons.git.Ignore, --◌
+					},
 					folder = {
 						-- arrow_open = "",
 						-- arrow_closed = "",
 						arrow_open = "",
 						arrow_closed = "",
-						default = "",
-						open = "",
-						empty = "",
-						empty_open = "",
-						symlink = "",
-						symlink_open = "",
+						default = icons.ui.Folder,
+						open = icons.ui.FolderOpen,
+						empty = icons.ui.EmptyFolder,
+						empty_open = icons.ui.EmptyFolderOpen,
+						symlink = icons.ui.SymlinkFolder,
+						symlink_open = icons.ui.FolderOpen,
 					},
 				},
 			},
@@ -89,8 +104,8 @@ return function()
 			auto_open = true,
 		},
 		update_focused_file = {
-			enable = false,
-			update_cwd = false,
+			enable = true,
+			update_root = false,
 			ignore_list = {},
 		},
 		ignore_ft_on_setup = {},
@@ -126,10 +141,10 @@ return function()
 			show_on_dirs = false,
 			debounce_delay = 50,
 			icons = {
-				hint = "",
-				info = "",
-				warning = "",
-				error = "",
+				hint = icons.diagnostics.Hint_alt,
+				info = icons.diagnostics.Information_alt,
+				warning = icons.diagnostics.Warning_alt,
+				error = icons.diagnostics.Error_alt,
 			},
 		},
 		filesystem_watchers = {
@@ -138,7 +153,7 @@ return function()
 		},
 		git = {
 			enable = true,
-			ignore = false,
+			ignore = true,
 			show_on_dirs = true,
 			timeout = 400,
 		},
@@ -164,26 +179,5 @@ return function()
 				watcher = false,
 			},
 		},
-	})
-	-- nvim-tree is also there in modified buffers so this function filter it out
-	local modifiedBufs = function(bufs)
-		local t = 0
-		for k,v in pairs(bufs) do
-			if v.name:match("NvimTree_") == nil then
-				t = t + 1
-			end
-		end
-		return t
-	end
-
-	vim.api.nvim_create_autocmd("BufEnter", {
-		nested = true,
-		callback = function()
-			if #vim.api.nvim_list_wins() == 1 and
-			vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil and
-			modifiedBufs(vim.fn.getbufinfo({bufmodified = 1})) == 0 then
-				vim.cmd "quit"
-			end
-		end
 	})
 end

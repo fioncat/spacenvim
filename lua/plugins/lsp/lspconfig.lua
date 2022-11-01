@@ -26,17 +26,12 @@ return function()
 	mason.setup()
 	mason_lsp.setup({
 		ensure_installed = {
-			"bash-language-server",
 			"efm",
-			"lua-language-server",
-			"clangd",
 			"gopls",
 			"pyright",
 		},
 	})
 
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 	-- Override server settings here
 	for _, server in ipairs(mason_lsp.get_installed_servers()) do
@@ -44,7 +39,6 @@ return function()
 			nvim_lsp.gopls.setup({
 				on_attach = custom_attach,
 				flags = { debounce_text_changes = 500 },
-				capabilities = capabilities,
 				cmd = { "gopls", "-remote=auto" },
 				settings = {
 					gopls = {
@@ -80,7 +74,6 @@ return function()
 		elseif server == "jsonls" then
 			nvim_lsp.jsonls.setup({
 				flags = { debounce_text_changes = 500 },
-				capabilities = capabilities,
 				on_attach = custom_attach,
 				settings = {
 					json = {
@@ -136,7 +129,6 @@ return function()
 			})
 		else
 			nvim_lsp[server].setup({
-				capabilities = capabilities,
 				on_attach = custom_attach,
 			})
 		end
@@ -152,7 +144,6 @@ return function()
 		settings = {},
 		single_file_support = true,
 		flags = { debounce_text_changes = 500 },
-		capabilities = capabilities,
 		on_attach = custom_attach,
 	})
 end

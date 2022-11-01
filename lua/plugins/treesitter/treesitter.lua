@@ -1,6 +1,6 @@
-return function() 
-	vim.api.nvim_command("set foldmethod=expr")
-	vim.api.nvim_command("set foldexpr=nvim_treesitter#foldexpr()")
+return function()
+	vim.api.nvim_set_option_value("foldmethod", "expr", {})
+	vim.api.nvim_set_option_value("foldexpr", "nvim_treesitter#foldexpr()", {})
 	vim.api.nvim_command("set foldlevel=99")
 
 	require("nvim-treesitter.configs").setup({
@@ -23,7 +23,11 @@ return function()
 			"vue",
 			"css",
 		},
-		highlight = { enable = true, disable = { "vim" } },
+		highlight = {
+			enable = true,
+			disable = { "vim", "help" },
+			additional_vim_regex_highlighting = false,
+		},
 		textobjects = {
 			select = {
 				enable = true,
@@ -64,4 +68,8 @@ return function()
 		matchup = { enable = true },
 	})
 	require("nvim-treesitter.install").prefer_git = true
+	local parsers = require("nvim-treesitter.parsers").get_parser_configs()
+	for _, p in pairs(parsers) do
+		p.install_info.url = p.install_info.url:gsub("https://github.com/", "git@github.com:")
+	end
 end

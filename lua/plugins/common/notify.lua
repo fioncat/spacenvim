@@ -1,5 +1,10 @@
 return function()
 	local notify = require("notify")
+	local icons = {
+		diagnostics = require("icons").get("diagnostics"),
+		ui = require("icons").get("ui"),
+	}
+
 	notify.setup({
 		---@usage Animation style one of { "fade", "slide", "fade_in_slide_out", "static" }
 		stages = "slide",
@@ -15,13 +20,15 @@ return function()
 		background_colour = "Normal",
 		---@usage minimum width for notification windows
 		minimum_width = 50,
+		---@usage notifications with level lower than this would be ignored. [ERROR > WARN > INFO > DEBUG > TRACE]
+		level = "TRACE",
 		---@usage Icons for the different levels
 		icons = {
-			ERROR = "",
-			WARN = "",
-			INFO = "",
-			DEBUG = "",
-			TRACE = "✎",
+			ERROR = icons.diagnostics.Error,
+			WARN = icons.diagnostics.Warning,
+			INFO = icons.diagnostics.Information,
+			DEBUG = icons.ui.Bug,
+			TRACE = icons.ui.Pencil,
 		},
 	})
 
