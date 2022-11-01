@@ -4,7 +4,7 @@ This neovim configuration is a personal customization based on [ayamir/nvimdots]
 
 **I pinned the versions of all plugins to prevent configuration incompatibilities due to plugin updates. Please use `make` to install or upgrade plugins rather than PackerInstall.**
 
-**If you are using neovim `0.7.x`, please switch to branch `0.7`, the configuration is incompatible. But `0.7` is no longer maintained, please consider upgrading neovim.**
+**The `master` branch is based on neovim `0.8.x`. If you are using neovim `0.7.x`, please switch to branch `0.7`, the configuration is incompatible. But this branch is no longer maintained, it is more recommanded to upgrade neovim to `0.8.x`.**
 
 Features:
 
