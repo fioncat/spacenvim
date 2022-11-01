@@ -38,13 +38,23 @@ set-option -ga terminal-overrides ",xterm-256color:Tc"
 
 Spacenvim has some additional dependencies:
 
+<details>
+<summary>Install dependencies on Mac</summary>
+
 ```shell
-brew install sqlite3
-brew install fzf
-brew install rg
-brew install node
-brew install bat
+brew install sqlite3 fzf rg
 ```
+
+</details>
+
+<details>
+<summary>Install dependencies on ArchLinux/Manjaro</summary>
+
+```shell
+sudo pacman -S sqlite3 fzf ripgrep xclip
+```
+
+</details>
 
 Install spacenvim:
 
