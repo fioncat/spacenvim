@@ -17,9 +17,25 @@ Features:
 
 You should have [Neovim](https://neovim.io) installed in your machine:
 
+<details>
+<summary>Install neovim on Mac</summary>
+
 ```shell
 brew install neovim
 ```
+
+</details>
+
+<details>
+<summary>Install neovim on ArchLinux/Manjaro</summary>
+
+```shell
+sudo pacman -S neovim
+```
+
+</details>
+
+Before continuing, please use `nvim -v` to confirm the version is `0.8.x`.
 
 Spacenvim requires `Nerd Font` to display `iconic fonts`, you should go to [Nerd Font Downloads](https://www.nerdfonts.com/font-downloads) to choose a Nerd Font you like and install it in the terminal. Otherwise spacenvim will display garbled characters.
 
