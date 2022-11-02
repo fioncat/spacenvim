@@ -1,5 +1,7 @@
 # Spacenvim
 
+![screenshot](https://raw.githubusercontent.com/fioncat/images/master/neovim/screenshot.png)
+
 This neovim configuration is a personal customization based on [ayamir/nvimdots](https://github.com/ayamir/nvimdots).
 
 **I pinned the versions of all plugins to prevent configuration incompatibilities due to plugin updates. Please use `make` to install or upgrade plugins rather than PackerInstall.**
