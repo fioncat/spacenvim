@@ -117,6 +117,11 @@ local key_mapping = {
 
 	-- Formatter
 	["n|gw"] = map_cr("FormatWrite"):with_noremap():with_silent(),
+
+	-- Git tools
+	["n|<leader>Gb"] = map_cr("Git blame"):with_noremap():with_silent(),
+	["n|<leader>Gm"] = map_cr("Git mergetool"):with_noremap():with_silent(),
+	["n|<leader>Gg"] = map_cr("Git"):with_noremap():with_silent(),
 }
 
 vim.g.mapleader = " "
