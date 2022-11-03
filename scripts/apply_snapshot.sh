@@ -4,9 +4,9 @@ set -e
 
 while IFS= read -r line; do
 	tmp=(${line//;/ })
-	name=${tmp[0]}
-	clone_url=${tmp[1]}
-	commit_id=${tmp[2]}
+	commit_id=${tmp[0]}
+	name=${tmp[1]}
+	clone_url=${tmp[2]}
 
 	plugin_path=$HOME/.local/share/nvim/site/pack/packer/$name
 	if [ -d $plugin_path ]; then

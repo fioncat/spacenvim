@@ -29,7 +29,7 @@ for repo_path in "${repos[@]}"; do
 	repo_name=${repo_path#"$HOME/.local/share/nvim/site/pack/packer/"}
 	commit_id=`git -C $repo_path rev-parse HEAD`
 	remote_url=`git -C $repo_path remote get-url origin`
-	echo "$repo_name $remote_url $commit_id" >> snapshot
+	echo "$commit_id $repo_name $remote_url" >> snapshot
 	echo "Plugin: $remote_url, Commit: $commit_id"
 done
 
