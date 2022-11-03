@@ -1,6 +1,6 @@
 return function ()
 	require("todo-comments").setup {
-		signs = false,
+		signs = true,
 		highlight = {
 			keyword = "bg",
 			after = "fg",
