@@ -5,12 +5,7 @@ local commands = {
 		{"Wq", "wq"},
 	},
 
-	let = {
-		-- Git blamer. If no added here, will not work?
-		{"g:blamer_date_format = '%y-%m-%d'"},
-		{"g:blamer_show_in_visual_modes = 0"},
-		{"g:blamer_show_in_insert_modes = 0"},
-	},
+	let = {},
 }
 
 for cmd_name, cmd_contents in pairs(commands) do

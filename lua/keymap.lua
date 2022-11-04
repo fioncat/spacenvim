@@ -37,7 +37,7 @@ local key_mapping = {
 
 	-- Searching
 	["n|<leader>sf"] = map_cr("Telescope git_files"):with_noremap():with_silent(),
-	["n|<leader>sg"] = map_cr("Telescope live_grep"):with_noremap():with_silent(),
+	["n|<leader>sr"] = map_cr("Telescope live_grep"):with_noremap():with_silent(),
 	["n|<leader>sb"] = map_cr("Telescope buffers"):with_noremap():with_silent(),
 	["n|<leader>ss"] = map_cr("Telescope find_files"):with_noremap():with_silent(),
 	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols"):with_noremap():with_silent(),
@@ -47,12 +47,19 @@ local key_mapping = {
 	["n|<leader>sn"] = map_cr("Telescope notify"):with_noremap():with_silent(),
 	["n|<leader>sc"] = map_cr("Telescope colorscheme"):with_noremap():with_silent(),
 	["n|<leader>sp"] = map_cr("lua require('telescope').extensions.project.project{}"):with_noremap():with_silent(),
+	["n|<leader>sgs"] = map_cr("Telescope git_status"):with_noremap():with_silent(),
+	["n|<leader>sgb"] = map_cr("Telescope git_branches"):with_noremap():with_silent(),
+	["n|<leader>sgc"] = map_cr("Telescope git_commits"):with_noremap():with_silent(),
 	["n|<C-K>"] = map_cr("noh"):with_noremap():with_silent(),
 
-	-- Git searching
-	["n|<leader>gs"] = map_cr("Telescope git_status"):with_noremap():with_silent(),
-	["n|<leader>gb"] = map_cr("Telescope git_branches"):with_noremap():with_silent(),
-	["n|<leader>gc"] = map_cr("Telescope git_commits"):with_noremap():with_silent(),
+	-- Git
+	["n|<leader>gg"] = map_cr("lua require('gitsigns').toggle_signs()"):with_noremap():with_silent(),
+	["n|<leader>gl"] = map_cr("lua require('gitsigns').toggle_current_line_blame()"):with_noremap():with_silent(),
+	["n|<leader>gn"] = map_cr("lua require('gitsigns').next_hunk()"):with_noremap():with_silent(),
+	["n|<leader>gp"] = map_cr("lua require('gitsigns').prev_hunk()"):with_noremap():with_silent(),
+	["n|<leader>gb"] = map_cr("Git blame"):with_noremap():with_silent(),
+	["n|<leader>gm"] = map_cr("Git mergetool"):with_noremap():with_silent(),
+	["n|<leader>gs"] = map_cr("Git"):with_noremap():with_silent(),
 
 	-- LSP
 	["n|gd"] = map_cr("Telescope lsp_definitions"):with_noremap():with_silent(),
@@ -117,11 +124,6 @@ local key_mapping = {
 
 	-- Formatter
 	["n|gw"] = map_cr("FormatWrite"):with_noremap():with_silent(),
-
-	-- Git tools
-	["n|<leader>Gb"] = map_cr("Git blame"):with_noremap():with_silent(),
-	["n|<leader>Gm"] = map_cr("Git mergetool"):with_noremap():with_silent(),
-	["n|<leader>Gg"] = map_cr("Git"):with_noremap():with_silent(),
 }
 
 vim.g.mapleader = " "

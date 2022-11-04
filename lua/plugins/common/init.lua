@@ -109,7 +109,7 @@ M["gelguy/wilder.nvim"] = {
 	requires = { { "romgrk/fzy-lua-native", after = "wilder.nvim" } },
 }
 
--- This plugin is a replacement for the included filetype.vim that is 
+-- This plugin is a replacement for the included filetype.vim that is
 -- sourced on startup.
 M["nathom/filetype.nvim"] = {
 	config = require("plugins.common.filetype"),
@@ -121,13 +121,11 @@ M["fioncat/vim-bufclean"] = {
 	cmd = { "BufClean" }
 }
 
--- A git blame plugin for (neo)vim inspired by VS Code's GitLens plugin.
-M["APZelos/blamer.nvim"] = {
+-- Super fast git decorations implemented purely in lua/teal.
+M["lewis6991/gitsigns.nvim"] = {
 	opt = true,
-	event = "BufEnter",
-	config = function()
-		vim.g.blamer_enabled = 1
-	end,
+	event = { "BufReadPost", "BufNewFile" },
+	config = require("plugins.common.gitsigns"),
 }
 
 -- The plug-in visualizes undo history and makes it easier to browse and
