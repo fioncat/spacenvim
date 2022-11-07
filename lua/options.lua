@@ -5,7 +5,7 @@ local options = {
 	nocompatible = true,
 
 	-- Some plugins might need this
-	encoding = 'UTF-8',
+	encoding = "UTF-8",
 
 	-- Relative Number
 	number = true,
@@ -46,16 +46,16 @@ local options = {
 	-- Disable bell in terminal
 	noeb = true,
 	vb = true,
-	t_vb = '',
+	t_vb = "",
 
 	laststatus = 2,
 	display = "lastline",
 
-	background = 'dark',
+	background = "dark",
 	termguicolors = true,
 
 	-- Always show signcolumn
-	signcolumn='yes:1',
+	signcolumn = "yes:1",
 
 	-- Show tail whitespace
 	listchars = [[tab:▸\ ,trail:•]],

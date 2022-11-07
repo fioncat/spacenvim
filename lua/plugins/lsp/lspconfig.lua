@@ -17,8 +17,8 @@ return function()
 			hint_enable = true,
 			hi_parameter = "Search",
 			handler_opts = {
-        		border = "rounded"
-      		},
+				border = "rounded",
+			},
 		})
 		require("nvim-navic").attach(client, bufnr)
 	end

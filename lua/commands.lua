@@ -1,8 +1,8 @@
 local commands = {
 	cnoreabbrev = {
 		-- In command mode, w is often mistakenly entered as W, so make a mapping
-		{"W", "w"},
-		{"Wq", "wq"},
+		{ "W", "w" },
+		{ "Wq", "wq" },
 	},
 
 	let = {},

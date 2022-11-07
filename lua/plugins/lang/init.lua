@@ -1,7 +1,7 @@
 local M = {}
 
 M["fioncat/vim-minigo"] = {
-	config = function ()
+	config = function()
 		vim.api.nvim_command([[autocmd FileType go nnoremap gat :GoAddTags ]])
 		vim.api.nvim_command([[autocmd FileType go nnoremap grt :GoRemoveTags ]])
 		-- vim.api.nvim_command([[autocmd FileType go nnoremap gw :call go#fmt#Format(1)<CR>]])

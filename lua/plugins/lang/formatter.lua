@@ -7,10 +7,10 @@ return function()
 
 		filetype = {
 			go = {
-				require("formatter.filetypes.go").goimports
+				require("formatter.filetypes.go").goimports,
 			},
 			rust = {
-				require("formatter.filetypes.rust").rustfmt
+				require("formatter.filetypes.rust").rustfmt,
 			},
 		},
 	})

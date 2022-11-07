@@ -20,3 +20,7 @@ snapshot:
 clean:
 	@rm -f ./plugin/packer_compiled.lua
 	@rm -rf ${HOME}/.local/share/nvim/site/pack/packer
+
+.PHONY: fmt
+fmt:
+	@stylua -g '*.lua' -g '!*_compiled.lua' --config-path=./.github/stylua.toml -- .

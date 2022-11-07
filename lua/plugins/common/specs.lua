@@ -1,4 +1,4 @@
-return function() 
+return function()
 	require("specs").setup({
 		show_jumps = true,
 		min_jump = 30,

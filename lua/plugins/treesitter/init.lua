@@ -45,7 +45,7 @@ M["andymass/vim-matchup"] = {
 	after = "nvim-treesitter",
 	config = function()
 		vim.cmd([[let g:matchup_matchparen_offscreen = {'method': 'popup'}]])
-	end
+	end,
 }
 
 -- Indent the blankline (required treesitter to indent context).

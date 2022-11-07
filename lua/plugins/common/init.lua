@@ -46,7 +46,7 @@ M["akinsho/bufferline.nvim"] = {
 	config = require("plugins.common.bufferline"),
 }
 
--- Hop is an EasyMotion-like plugin allowing you to jump anywhere 
+-- Hop is an EasyMotion-like plugin allowing you to jump anywhere
 -- in a document with as few keystrokes as possible.
 M["phaazon/hop.nvim"] = {
 	opt = true,
@@ -92,7 +92,6 @@ M["edluffy/specs.nvim"] = {
 	opt = true,
 	event = "CursorMoved",
 	config = require("plugins.common.specs"),
-
 }
 
 -- Single tabpage interface for easily cycling through diffs for all
@@ -118,7 +117,7 @@ M["nathom/filetype.nvim"] = {
 -- Clean buffers.
 M["fioncat/vim-bufclean"] = {
 	opt = true,
-	cmd = { "BufClean" }
+	cmd = { "BufClean" },
 }
 
 -- Super fast git decorations implemented purely in lua/teal.

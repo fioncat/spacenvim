@@ -1,4 +1,4 @@
-local packer = require('packer')
+local packer = require("packer")
 
 -- Enabled plugin sets. A plugin set contains multiple plugins that have the same type of functionality
 -- or need to cooperate with each other.
@@ -43,8 +43,8 @@ return packer.startup(function()
 
 	local all_plugins = {}
 
-	local add_plugins = function (mod)
-		mod = 'plugins.' .. mod
+	local add_plugins = function(mod)
+		mod = "plugins." .. mod
 		local plugins = require(mod)
 		for k, v in pairs(plugins) do
 			all_plugins[k] = v
@@ -55,12 +55,11 @@ return packer.startup(function()
 		add_plugins(set_name)
 	end
 
-	use "wbthomason/packer.nvim"
-	use "nvim-lua/plenary.nvim"
-	use { "nvim-lua/popup.nvim", opt = true }
+	use("wbthomason/packer.nvim")
+	use("nvim-lua/plenary.nvim")
+	use({ "nvim-lua/popup.nvim", opt = true })
 
 	for name, conf in pairs(all_plugins) do
 		use(vim.tbl_extend("force", { name }, conf))
 	end
-
 end)

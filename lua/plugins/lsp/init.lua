@@ -13,13 +13,13 @@ M["neovim/nvim-lspconfig"] = {
 M["williamboman/mason.nvim"] = {
 	requires = {
 		{ "williamboman/mason-lspconfig.nvim" },
-	}
+	},
 }
 
 -- Show function signature when you type.
 M["ray-x/lsp_signature.nvim"] = {
 	opt = true,
-	after = "nvim-lspconfig"
+	after = "nvim-lspconfig",
 }
 
 -- A light-weight lsp plugin based on neovim's built-in lsp with a
