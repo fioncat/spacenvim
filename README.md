@@ -4,13 +4,13 @@
 
 This neovim configuration is a personal customization based on [ayamir/nvimdots](https://github.com/ayamir/nvimdots).
 
-I pinned the versions of all plugins to prevent configuration incompatibilities due to plugin updates. Please use `make` to install or upgrade plugins rather than PackerInstall.
+Updates to plugins may corrupt the current configuration and cause unexpected behavior. So I save the stable versions of plugins in [snapshot](snapshot). If you want nvim to behave as expected from the Spacenvim, you can choose to use snapshot during installation.
 
-The `master` branch is based on neovim `0.8.x`. If you are using neovim `0.7.x`, please switch to branch `0.7`, the configuration is incompatible. But branch `0.7` is no longer maintained, it is more recommanded to upgrade neovim to `0.8.x`.
+Spacenvim only support neovim `0.8.x`, if you are using a lower version, please upgrade neovim first.
 
 ## Install
 
-You should have [Neovim](https://neovim.io) installed in your machine:
+You should have [neovim](https://neovim.io) installed in your machine:
 
 <details>
 <summary>Install neovim on Mac</summary>
@@ -22,15 +22,13 @@ brew install neovim
 </details>
 
 <details>
-<summary>Install neovim on ArchLinux/Manjaro</summary>
+<summary>Install neovim on ArchLinux</summary>
 
 ```shell
 sudo pacman -S neovim
 ```
 
 </details>
-
-Before continuing, please use `nvim -v` to confirm the version is `0.8.x`.
 
 Spacenvim requires `Nerd Font` to display `iconic fonts`, you should go to [Nerd Font Downloads](https://www.nerdfonts.com/font-downloads) to choose a Nerd Font you like and install it in the terminal. Otherwise spacenvim will display garbled characters.
 
@@ -59,7 +57,7 @@ brew install sqlite3 fzf rg
 </details>
 
 <details>
-<summary>Install dependencies on ArchLinux/Manjaro</summary>
+<summary>Install dependencies on ArchLinux</summary>
 
 ```shell
 sudo pacman -S sqlite3 fzf ripgrep xclip zip unzip
@@ -70,23 +68,14 @@ sudo pacman -S sqlite3 fzf ripgrep xclip zip unzip
 Install spacenvim:
 
 ```shell
-git clone https://github.com/fioncat/spacenvim.git $HOME/.config/nvim
-cd $HOME/.config/nvim
-make install
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/fioncat/spacenvim/HEAD/scripts/install.sh)"
 ```
 
-This will clone all expected plugins to local.
-
-If you want to upgrade plugins, run:
+If you update the plugins and find that they are not compatible with Spacenvim, you can execute the following command to rollback the plugins versions to the expected:
 
 ```shell
-make upgrade
-```
-
-If you want to remove all plugins, run:
-
-```shell
-make clean
+cd ~/.config/nvim
+make rollback
 ```
 
 ## Language Support
