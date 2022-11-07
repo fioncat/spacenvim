@@ -16,8 +16,7 @@ def list_plugins(root: str, type: str):
     for file in dirs:
         plugin_path = os.path.join(path, file)
         commit_id = exec_git(plugin_path, ["rev-parse", "--short", "HEAD"])
-        clone_url = exec_git(plugin_path, ["remote", "get-url", "origin"])
-        list.append({"name": file, "commit": commit_id, "clone_url": clone_url})
+        list.append({"name": file, "commit": commit_id})
 
     return sorted(list, key=lambda plugin: plugin["name"])
 
