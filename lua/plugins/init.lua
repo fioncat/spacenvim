@@ -26,7 +26,13 @@ local plugin_set = {
 return packer.startup(function()
 	-- Init packer plugin manager.
 	packer.init({
-		git = { clone_timeout = 60, default_url_format = "git@github.com:%s" },
+		git = {
+			clone_timeout = 60,
+			default_url_format = "git@github.com:%s",
+			subcommands = {
+				install = "clone",
+			},
+		},
 		disable_commands = true,
 		display = {
 			open_fn = function()

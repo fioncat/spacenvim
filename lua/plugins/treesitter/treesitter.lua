@@ -6,8 +6,6 @@ return function()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
-			"c",
-			"cpp",
 			"lua",
 			"go",
 			"gomod",
@@ -17,11 +15,7 @@ return function()
 			"make",
 			"python",
 			"rust",
-			"html",
-			"javascript",
-			"typescript",
-			"vue",
-			"css",
+			"dockerfile",
 		},
 		highlight = {
 			enable = true,

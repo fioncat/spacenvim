@@ -4,15 +4,19 @@ all: install
 install:
 	@bash ./scripts/install.sh
 
-.PHONY: upgrade
-upgrade:
-	@bash ./scripts/upgrade.sh
+.PHONY: sync
+sync:
+	@rm -f ./plugin/packer_compiled.lua
+	@git pull
+	@nvim +"PackerInstall"
+	@python3 ./scripts/snapshot/rollback.py
+	@nvim +"PackerCompile"
 
 .PHONY: snapshot
 snapshot:
-	@bash ./scripts/make_snapshot.sh
+	@python3 ./scripts/snapshot/build.py
 
 .PHONY: clean
 clean:
-	@rm -rf plugin
+	@rm -f ./plugin/packer_compiled.lua
 	@rm -rf ${HOME}/.local/share/nvim/site/pack/packer

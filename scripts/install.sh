@@ -3,6 +3,7 @@
 set -e
 
 command -v nvim >/dev/null || { echo "ERROR: cannot find neovim, please install neovim 0.7.x"; exit 1; }
+command -v python3 >/dev/null || { echo "ERROR: cannot find python3 which is required to build spacenvim"; exit 1; }
 
 # TODO: install dependencies
 
@@ -13,13 +14,6 @@ if [ ! -d $packer_home ]; then
 	git clone https://github.com/wbthomason/packer.nvim $packer_home
 fi
 
-bash ./scripts/apply_snapshot.sh
-
-cur_dir=$(pwd)
-
-cd $packer_root/opt/telescope-fzf-native.nvim
-make
-
-cd $cur_dir
-
-nvim +PackerCompile
+nvim +'PackerInstall'
+python3 ./scripts/snapshot/rollback.py
+nvim +'PackerCompile'
