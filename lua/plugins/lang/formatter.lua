@@ -12,6 +12,15 @@ return function()
 			rust = {
 				require("formatter.filetypes.rust").rustfmt,
 			},
+			python = {
+				require("formatter.filetypes.python").yapf,
+			},
+			lua = {
+				require("formatter.filetypes.lua").stylua,
+			},
+			["*"] = {
+				require("formatter.filetypes.any").remove_trailing_whitespace,
+			},
 		},
 	})
 end

@@ -3,11 +3,13 @@ from pathlib import Path
 import subprocess
 import json
 
+
 def exec_git(path: str, args: list):
     cmd = ["git", "-C", path]
     cmd.extend(args)
     result = subprocess.run(cmd, stdout=subprocess.PIPE)
     return result.stdout.decode('utf-8').strip()
+
 
 def list_plugins(root: str, type: str):
     path = os.path.join(root, type)
@@ -19,6 +21,7 @@ def list_plugins(root: str, type: str):
         list.append({"name": file, "commit": commit_id})
 
     return sorted(list, key=lambda plugin: plugin["name"])
+
 
 if __name__ == "__main__":
     home_dir = Path.home()
