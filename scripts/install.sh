@@ -3,7 +3,6 @@
 set -e
 
 command -v nvim >/dev/null || { echo "ERROR: cannot find neovim, please install neovim 0.7.x"; exit 1; }
-command -v python3 >/dev/null || { echo "ERROR: cannot find python3 which is required to build spacenvim"; exit 1; }
 
 # TODO: install dependencies
 
@@ -14,12 +13,13 @@ if [ ! -d $packer_home ]; then
 	git clone https://github.com/wbthomason/packer.nvim $packer_home
 fi
 
-read -p "About to open nvim to install plugins, please exit after installation done, press any key to continue... " -n 1 -r
+read -p "About to open nvim to install plugins, please exit nvim after installation done, press any key to continue... " -n 1 -r
 nvim +'PackerInstall'
 
-read -p "Do you want to use plugins snapshot? This can make nvim more stable (y/n) " -n 1 -r
+read -p "Do you want to use plugins snapshot? This can make nvim more stable (require python3) (y/n) " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+	command -v python3 >/dev/null || { echo "ERROR: cannot find python3"; exit 1; }
 	python3 ./scripts/snapshot/rollback.py
 fi
 
