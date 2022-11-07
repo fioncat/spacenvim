@@ -4,16 +4,16 @@ all: install
 install:
 	@bash ./scripts/install.sh
 
-.PHONY: sync
-sync:
+.PHONY: rollback
+rollback:
 	@rm -f ./plugin/packer_compiled.lua
 	@git pull
 	@nvim +"PackerInstall"
 	@python3 ./scripts/snapshot/rollback.py
 	@nvim +"PackerCompile"
 
-.PHONY: snapshot
-snapshot:
+.PHONY: build-snapshot
+build-snapshot:
 	@python3 ./scripts/snapshot/build.py
 
 .PHONY: clean
