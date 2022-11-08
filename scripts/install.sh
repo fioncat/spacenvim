@@ -3,7 +3,7 @@
 set -u
 
 DEST_PATH="${HOME}/.config/nvim"
-DEST_URL="git@github.com:fioncat/spacenvim.git"
+DEST_URL="https://github.com/fioncat/spacenvim.git"
 BACKUP_DIR=$(pwd)
 
 # string formatters

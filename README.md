@@ -15,7 +15,7 @@ You should have [neovim](https://neovim.io) installed in your machine:
 <details>
 <summary>Install neovim on Mac</summary>
 
-```shell
+```bash
 brew install neovim
 ```
 
@@ -24,7 +24,7 @@ brew install neovim
 <details>
 <summary>Install neovim on ArchLinux</summary>
 
-```shell
+```bash
 sudo pacman -S neovim
 ```
 
@@ -40,7 +40,7 @@ export TERM=xterm-256color
 
 If you are using spacenvim in `tmux`, add this to your tmux profile:
 
-```tmux
+```bash
 set -g default-terminal "tmux-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc"
 ```
@@ -50,7 +50,7 @@ Spacenvim has some additional dependencies:
 <details>
 <summary>Install dependencies on Mac</summary>
 
-```shell
+```bash
 brew install sqlite3 fzf rg
 ```
 
@@ -59,7 +59,7 @@ brew install sqlite3 fzf rg
 <details>
 <summary>Install dependencies on ArchLinux</summary>
 
-```shell
+```bash
 sudo pacman -S sqlite3 fzf ripgrep xclip zip unzip
 ```
 
@@ -67,13 +67,13 @@ sudo pacman -S sqlite3 fzf ripgrep xclip zip unzip
 
 Install spacenvim:
 
-```shell
+```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/fioncat/spacenvim/HEAD/scripts/install.sh)"
 ```
 
 If you update the plugins and find that they are not compatible with Spacenvim, you can execute the following command to rollback the plugins versions to the expected:
 
-```shell
+```bash
 cd ~/.config/nvim
 make rollback
 ```
@@ -85,7 +85,7 @@ You can use command `Mason` to manage your `LSP servers`, some language plugins 
 <details>
 <summary>Golang</summary>
 
-```shell
+```bash
 go install golang.org/x/tools/cmd/goimports@latest
 go install github.com/fatih/gomodifytags@latest
 go install github.com/go-delve/delve/cmd/dlv@latest

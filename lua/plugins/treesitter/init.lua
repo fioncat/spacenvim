@@ -5,7 +5,6 @@ local M = {}
 -- some basic functionality such as highlighting.
 M["nvim-treesitter/nvim-treesitter"] = {
 	opt = true,
-	run = ":TSUpdate",
 	event = "BufRead",
 	config = require("plugins.treesitter.treesitter"),
 }
