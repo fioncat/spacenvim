@@ -104,7 +104,7 @@ return function()
 			auto_open = true,
 		},
 		update_focused_file = {
-			enable = true,
+			enable = false,
 			update_root = false,
 			ignore_list = {},
 		},
