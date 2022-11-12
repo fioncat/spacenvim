@@ -98,7 +98,7 @@ local key_mapping = {
 	["n|<leader>8"] = map_cr("BufferLineGoToBuffer 8"):with_noremap():with_silent(),
 	["n|<leader>9"] = map_cr("BufferLineGoToBuffer 9"):with_noremap():with_silent(),
 	["n|<leader>bd"] = map_cr("Bdelete"):with_noremap():with_silent(),
-	["n|<leader>bc"] = map_cr("BufClean"):with_noremap():with_silent(),
+	["n|<leader>bc"] = map_cr("ClearHiddenBuffer"):with_noremap():with_silent(),
 
 	-- Jump
 	["n|<leader>jj"] = map_cr("HopLine"):with_noremap():with_silent(),
@@ -124,6 +124,11 @@ local key_mapping = {
 
 	-- Formatter
 	["n|gw"] = map_cr("FormatWrite"):with_noremap():with_silent(),
+
+	-- Golang tool
+	["n|<leader>gat"] = map_cmd(":GoModifyTagsAdd "):with_noremap(),
+	["n|<leader>grt"] = map_cmd(":GoModifyTagsRemove "):with_noremap(),
+	["n|<leader>gct"] = map_cr("GoModifyTagsClear"):with_noremap():with_silent(),
 }
 
 vim.g.mapleader = " "

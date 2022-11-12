@@ -114,12 +114,6 @@ M["nathom/filetype.nvim"] = {
 	config = require("plugins.common.filetype"),
 }
 
--- Clean buffers.
-M["fioncat/vim-bufclean"] = {
-	opt = true,
-	cmd = { "BufClean" },
-}
-
 -- Super fast git decorations implemented purely in lua/teal.
 M["lewis6991/gitsigns.nvim"] = {
 	opt = true,
