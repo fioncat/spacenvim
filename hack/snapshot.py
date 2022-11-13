@@ -84,7 +84,7 @@ def list():
     return results
 
 
-def rollback():
+def rollback(fetch: bool):
     plugins = list()
     for plugin in plugins:
         path = plugin["path"]
@@ -99,6 +99,9 @@ def rollback():
         if cur_commit_id == commit:
             continue
         exec_git(path, ["reset", "--hard", plugin["commit"]])
+        if fetch:
+            print(f"fetching {tty_cyan}{name}{tty_reset}")
+            exec_git(path, ["fetch"])
         print(
             f"{tty_cyan}{name}{tty_reset} rollback to {tty_blue}{commit}{tty_reset}"
         )
@@ -157,7 +160,9 @@ if __name__ == "__main__":
     if action == "build":
         build()
     elif action == "rollback":
-        rollback()
+        rollback(False)
+    elif action == "fetch-rollback":
+        rollback(True)
     elif action == "home":
         home()
     elif action == "update":

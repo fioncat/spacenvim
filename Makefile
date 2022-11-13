@@ -2,6 +2,10 @@
 rollback:
 	@python3 ./hack/snapshot.py rollback
 
+.PHONY: fetch-rollback
+fetch-rollback:
+	@python3 ./hack/snapshot.py fetch-rollback
+
 .PHONY: update
 update:
 	@python3 ./hack/snapshot.py update
