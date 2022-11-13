@@ -1,28 +1,26 @@
-all: install
-
-.PHONY: install
-install:
-	@bash ./scripts/install.sh
-
 .PHONY: rollback
 rollback:
-	@rm -f ./plugin/packer_compiled.lua
-	@git pull
-	@nvim +"PackerInstall"
-	@python3 ./hack/rollback-snapshot.py
-	@nvim +"PackerCompile"
+	@python3 ./hack/snapshot.py rollback
 
-.PHONY: upgrade
-upgrade:
-	@rm -f ./plugin/packer_compiled.lua
-	@git pull
-	@nvim +"PackerUpdate"
-	@python3 ./hack/rollback-snapshot.py
-	@nvim +"PackerCompile"
+.PHONY: fetch-rollback
+fetch-rollback:
+	@python3 ./hack/snapshot.py fetch-rollback
+
+.PHONY: update
+update:
+	@python3 ./hack/snapshot.py update
+
+.PHONY: check-update
+check-update:
+	@python3 ./hack/snapshot.py check-update
+
+.PHONY: fetch-check-update
+fetch-check-update:
+	@python3 ./hack/snapshot.py fetch-check-update
 
 .PHONY: build-snapshot
 build-snapshot:
-	@python3 ./hack/build-snapshot.py
+	@python3 ./hack/snapshot.py build
 
 .PHONY: clean
 clean:
