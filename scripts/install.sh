@@ -120,7 +120,7 @@ read -p "Do you want to use plugins snapshot? This can make nvim more stable (re
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	command -v python3 >/dev/null || { echo "ERROR: cannot find python3"; exit 1; }
-	python3 ./scripts/snapshot/rollback.py
+	python3 ./hack/rollback-snapshot.py
 fi
 
 echo
