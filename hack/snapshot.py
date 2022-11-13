@@ -5,6 +5,12 @@ import sys
 from pathlib import Path
 import subprocess
 import json
+from colorama import Fore, Style
+
+tty_yellow = Fore.YELLOW
+tty_cyan = Fore.CYAN
+tty_blue = Fore.BLUE
+tty_reset = Style.RESET_ALL
 
 home_dir = Path.home()
 nvim_dir = os.path.join(home_dir, ".config/nvim")
@@ -49,6 +55,7 @@ def build():
             plugin_path = os.path.join(type_path, name)
             commit_id = exec_git(plugin_path, ["rev-parse", "--short", "HEAD"])
             plugins.append({"name": name, "commit": commit_id})
+            print(f"{tty_cyan}{name}{tty_reset} --> {commit_id}")
         plugins = sorted(plugins, key=lambda plugin: plugin["name"])
         result[type] = plugins
     with open(snapshot_path, "w") as f:
@@ -87,12 +94,14 @@ def rollback():
                 .format(path))
             exit(1)
         cur_commit_id = exec_git(path, ["rev-parse", "--short", "HEAD"])
-        if cur_commit_id == plugin["commit"]:
-            print("{}: {} is up to date".format(type, plugin["name"]))
+        commit = plugin["commit"]
+        name = plugin["name"]
+        if cur_commit_id == commit:
             continue
         exec_git(path, ["reset", "--hard", plugin["commit"]])
-        print("{}: {} set to {}".format(type, plugin["name"],
-                                        plugin["commit"]))
+        print(
+            f"{tty_cyan}{name}{tty_reset} rollback to {tty_blue}{commit}{tty_reset}"
+        )
 
 
 def search():
@@ -118,6 +127,28 @@ def update():
     print("update {} done".format(plugin["path"]))
 
 
+def check_update():
+    plugins = list()
+    updates = []
+    for plugin in plugins:
+        path = plugin["path"]
+        name = plugin["name"]
+        print(f"fetching {tty_cyan}{name}{tty_reset}")
+        exec_git(path, ["fetch"])
+        commit_id = exec_git(path, ["rev-parse", "HEAD"])
+        new_commit_id = exec_git(path, ["rev-parse", "@{u}"])
+        if commit_id != new_commit_id:
+            updates.append({"name": name, "commit": new_commit_id})
+    print()
+    if len(updates) == 0:
+        print("everything is up to date")
+        return
+    print("Plugin(s) that can be updated:")
+    for item in updates:
+        name = item["name"]
+        print(f"{tty_yellow}{name}{tty_reset}")
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("invalid args")
@@ -131,6 +162,8 @@ if __name__ == "__main__":
         home()
     elif action == "update":
         update()
+    elif action == "check-update":
+        check_update()
     else:
         print("unknown action {}".format(action))
         exit(1)
