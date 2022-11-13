@@ -1,5 +1,11 @@
 local autogroup_definitions = {
-	bufs = {},
+	bufs = {
+		{
+			"BufEnter",
+			"*",
+			[[if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]],
+		},
+	},
 
 	ft = {
 		{ "FileType", "alpha", "set showtabline=0" },
