@@ -13,11 +13,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Set version
-      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+    - name: Setup release
+      run: bash scripts/github-release.sh
 
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
-        name: stable-${{ env.RELEASE_VERSION }}
+        name: ${{ env.RELEASE_TITLE }}
         token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
