@@ -14,6 +14,10 @@ update:
 check-update:
 	@python3 ./hack/snapshot.py check-update
 
+.PHONY: fetch-check-update
+fetch-check-update:
+	@python3 ./hack/snapshot.py fetch-check-update
+
 .PHONY: build-snapshot
 build-snapshot:
 	@python3 ./hack/snapshot.py build

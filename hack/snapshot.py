@@ -130,19 +130,21 @@ def update():
     print("update {} done".format(plugin["path"]))
 
 
-def check_update():
+def check_update(fetch: bool):
     plugins = list()
     updates = []
     for plugin in plugins:
         path = plugin["path"]
         name = plugin["name"]
-        print(f"fetching {tty_cyan}{name}{tty_reset}")
-        exec_git(path, ["fetch"])
+        if fetch:
+            print(f"fetching {tty_cyan}{name}{tty_reset}")
+            exec_git(path, ["fetch"])
         commit_id = exec_git(path, ["rev-parse", "HEAD"])
         new_commit_id = exec_git(path, ["rev-parse", "@{u}"])
         if commit_id != new_commit_id:
             updates.append({"name": name, "commit": new_commit_id})
-    print()
+    if fetch:
+        print()
     if len(updates) == 0:
         print("everything is up to date")
         return
@@ -168,7 +170,9 @@ if __name__ == "__main__":
     elif action == "update":
         update()
     elif action == "check-update":
-        check_update()
+        check_update(False)
+    elif action == "fetch-check-update":
+        check_update(True)
     else:
         print("unknown action {}".format(action))
         exit(1)
