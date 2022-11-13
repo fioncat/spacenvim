@@ -2,7 +2,7 @@
   "start": [
     {
       "name": "catppuccin",
-      "commit": "80b3705"
+      "commit": "05d4698"
     },
     {
       "name": "cmp-under-comparator",
@@ -124,7 +124,7 @@
     },
     {
       "name": "gitsigns.nvim",
-      "commit": "d3a8ba0"
+      "commit": "9ff7dfb"
     },
     {
       "name": "hop.nvim",
@@ -228,7 +228,7 @@
     },
     {
       "name": "todo-comments.nvim",
-      "commit": "530eb3a"
+      "commit": "d736930"
     },
     {
       "name": "undotree",
@@ -240,7 +240,7 @@
     },
     {
       "name": "vim-matchup",
-      "commit": "09576fd"
+      "commit": "55e3330"
     },
     {
       "name": "wilder.nvim",
