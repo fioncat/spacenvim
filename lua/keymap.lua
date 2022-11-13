@@ -126,9 +126,10 @@ local key_mapping = {
 	["n|gw"] = map_cr("FormatWrite"):with_noremap():with_silent(),
 
 	-- Golang tool
-	["n|<leader>gat"] = map_cmd(":GoModifyTagsAdd "):with_noremap(),
-	["n|<leader>grt"] = map_cmd(":GoModifyTagsRemove "):with_noremap(),
-	["n|<leader>gct"] = map_cr("GoModifyTagsClear"):with_noremap():with_silent(),
+	["n|gat"] = map_cmd(":GoModifyTagsAdd "):with_noremap(),
+	["n|grt"] = map_cmd(":GoModifyTagsRemove "):with_noremap(),
+	["n|gct"] = map_cr("GoModifyTagsClear"):with_noremap():with_silent(),
+	["n|gie"] = map_cr("GoIferr"):with_noremap():with_silent(),
 }
 
 vim.g.mapleader = " "

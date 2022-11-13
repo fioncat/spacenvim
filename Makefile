@@ -9,12 +9,20 @@ rollback:
 	@rm -f ./plugin/packer_compiled.lua
 	@git pull
 	@nvim +"PackerInstall"
-	@python3 ./scripts/snapshot/rollback.py
+	@python3 ./hack/rollback-snapshot.py
+	@nvim +"PackerCompile"
+
+.PHONY: upgrade
+upgrade:
+	@rm -f ./plugin/packer_compiled.lua
+	@git pull
+	@nvim +"PackerUpdate"
+	@python3 ./hack/rollback-snapshot.py
 	@nvim +"PackerCompile"
 
 .PHONY: build-snapshot
 build-snapshot:
-	@python3 ./scripts/snapshot/build.py
+	@python3 ./hack/build-snapshot.py
 
 .PHONY: clean
 clean:
