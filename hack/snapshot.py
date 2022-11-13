@@ -5,12 +5,19 @@ import sys
 from pathlib import Path
 import subprocess
 import json
-from colorama import Fore, Style
 
-tty_yellow = Fore.YELLOW
-tty_cyan = Fore.CYAN
-tty_blue = Fore.BLUE
-tty_reset = Style.RESET_ALL
+tty_yellow = ""
+tty_cyan = ""
+tty_blue = ""
+tty_reset = ""
+try:
+    from colorama import Fore, Style
+    tty_yellow = Fore.YELLOW
+    tty_cyan = Fore.CYAN
+    tty_blue = Fore.BLUE
+    tty_reset = Style.RESET_ALL
+except Exception as e:
+    pass
 
 home_dir = Path.home()
 nvim_dir = os.path.join(home_dir, ".config/nvim")
