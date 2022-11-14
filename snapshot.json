@@ -136,11 +136,11 @@
     },
     {
       "name": "lsp_signature.nvim",
-      "commit": "7a1845e"
+      "commit": "12c0807"
     },
     {
       "name": "lspsaga.nvim",
-      "commit": "361e1ad"
+      "commit": "201dbbd"
     },
     {
       "name": "lualine.nvim",
@@ -156,19 +156,19 @@
     },
     {
       "name": "nvim-cmp",
-      "commit": "9bb8ee6"
+      "commit": "aee4011"
     },
     {
       "name": "nvim-dap",
-      "commit": "3d0d731"
+      "commit": "6164368"
     },
     {
       "name": "nvim-dap-ui",
-      "commit": "f889edb"
+      "commit": "1e21b3b"
     },
     {
       "name": "nvim-lspconfig",
-      "commit": "67f0d00"
+      "commit": "2b802ab"
     },
     {
       "name": "nvim-navic",
@@ -180,11 +180,11 @@
     },
     {
       "name": "nvim-treesitter",
-      "commit": "80503a99"
+      "commit": "2072692a"
     },
     {
       "name": "nvim-treesitter-textobjects",
-      "commit": "13739a5"
+      "commit": "1f1cdc8"
     },
     {
       "name": "nvim-ts-context-commentstring",
