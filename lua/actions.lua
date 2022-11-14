@@ -81,7 +81,6 @@ local goinstall = function(repo)
 		vim.notify("failed to install " .. repo .. ":\n" .. out, "error")
 		return false
 	end
-	vim.notify("installed " .. repo)
 	return true
 end
 
