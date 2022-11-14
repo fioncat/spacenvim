@@ -105,10 +105,10 @@ def rollback(fetch: bool):
         name = plugin["name"]
         if cur_commit_id == commit:
             continue
-        exec_git(path, ["reset", "--hard", plugin["commit"]])
         if fetch:
             print(f"fetching {tty_cyan}{name}{tty_reset}")
             exec_git(path, ["fetch"])
+        exec_git(path, ["reset", "--hard", plugin["commit"]])
         print(
             f"{tty_cyan}{name}{tty_reset} rollback to {tty_blue}{commit}{tty_reset}"
         )
