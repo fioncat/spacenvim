@@ -22,7 +22,7 @@
     },
     {
       "name": "mason.nvim",
-      "commit": "bf170f8"
+      "commit": "4c85c89"
     },
     {
       "name": "nvim-comment",
@@ -34,7 +34,7 @@
     },
     {
       "name": "nvim-web-devicons",
-      "commit": "9061e2d"
+      "commit": "c873091"
     },
     {
       "name": "packer.nvim",
@@ -56,7 +56,7 @@
     },
     {
       "name": "LuaSnip",
-      "commit": "663d544"
+      "commit": "619796e"
     },
     {
       "name": "alpha-nvim",
@@ -64,7 +64,7 @@
     },
     {
       "name": "auto-session",
-      "commit": "39319bf"
+      "commit": "609c952"
     },
     {
       "name": "better-escape.vim",
@@ -72,7 +72,7 @@
     },
     {
       "name": "bufferline.nvim",
-      "commit": "028a879"
+      "commit": "7c07dee"
     },
     {
       "name": "cmp-buffer",
@@ -108,7 +108,7 @@
     },
     {
       "name": "diffview.nvim",
-      "commit": "94a3422"
+      "commit": "e0c8118"
     },
     {
       "name": "fidget.nvim",
@@ -116,7 +116,7 @@
     },
     {
       "name": "formatter.nvim",
-      "commit": "1646b0b"
+      "commit": "804b96c"
     },
     {
       "name": "fzy-lua-native",
@@ -172,11 +172,11 @@
     },
     {
       "name": "nvim-navic",
-      "commit": "eebc4f1"
+      "commit": "2fad334"
     },
     {
       "name": "nvim-tree.lua",
-      "commit": "6ca6f99"
+      "commit": "cf90837"
     },
     {
       "name": "nvim-treesitter",
@@ -212,7 +212,7 @@
     },
     {
       "name": "telescope-frecency.nvim",
-      "commit": "9634c35"
+      "commit": "10771fd"
     },
     {
       "name": "telescope-fzf-native.nvim",
@@ -224,7 +224,7 @@
     },
     {
       "name": "telescope.nvim",
-      "commit": "4bd4205"
+      "commit": "7a4ffef"
     },
     {
       "name": "todo-comments.nvim",
