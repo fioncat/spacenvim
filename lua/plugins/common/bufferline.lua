@@ -3,7 +3,7 @@ return function()
 
 	local opts = {
 		options = {
-			number = nil,
+			numbers = "ordinal",
 			modified_icon = icons.ui.Modified,
 			buffer_close_icon = icons.ui.Close,
 			left_trunc_marker = icons.ui.Left,
@@ -16,7 +16,7 @@ return function()
 			show_tab_indicators = true,
 			diagnostics = "nvim_lsp",
 			always_show_bufferline = true,
-			separator_style = "slant",
+			separator_style = "thin",
 			offsets = {
 				{
 					filetype = "NvimTree",
