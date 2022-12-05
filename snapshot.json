@@ -231,6 +231,10 @@
       "commit": "d736930"
     },
     {
+      "name": "trouble.nvim",
+      "commit": "897542f"
+    },
+    {
       "name": "undotree",
       "commit": "bd60cb5"
     },
