@@ -56,4 +56,10 @@ M["j-hui/fidget.nvim"] = {
 	end,
 }
 
+M["folke/trouble.nvim"] = {
+	opt = true,
+	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
+	config = require("plugins.lsp.trouble"),
+}
+
 return M
