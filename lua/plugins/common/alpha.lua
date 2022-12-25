@@ -28,6 +28,7 @@ return function()
 		[[⠀⠀⠉⠉⠳⢄⡙⠢⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢆⠀⠀⢸⠀⢀⡠⠊⠀⠘⢦⣢⡈⠉⠻⢿⠿⠋⢀⠔⠁⠀ ]],
 		[[⠀⠀⠀⠀⠀⠀⠈⠙⠒⠒⠶⠒⠒⠒⠈⠉⠉⠉⠉⠉⠉⠒⠒⠪⠷⠒⠛⠊⠉⠀⠠⠄⠀⠤⣌⠛⠳⠦⠤⠴⠒⠁⠀⠀⠀ ]],
 	}
+	dashboard.section.header.opts.hl = "Type"
 
 	local function button(sc, txt, leader_txt, keybind, keybind_opts)
 		local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
