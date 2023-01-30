@@ -5,13 +5,14 @@ return function()
 	vim.cmd([[packadd telescope-project.nvim]])
 	vim.cmd([[packadd telescope-frecency.nvim]])
 
+	local icons = { ui = require("icons").get("ui", true) }
 	local telescope_actions = require("telescope.actions.set")
 	local fixfolds = {
 		hidden = true,
 		attach_mappings = function(_)
 			telescope_actions.select:enhance({
 				post = function()
-					vim.cmd(":normal! zx")
+					vim.api.nvim_command([[:normal! zx"]])
 				end,
 			})
 			return true
@@ -21,15 +22,15 @@ return function()
 	require("telescope").setup({
 		defaults = {
 			initial_mode = "insert",
-			prompt_prefix = "  ",
-			selection_caret = " ",
+			prompt_prefix = " " .. icons.ui.Telescope .. " ",
+			selection_caret = icons.ui.ChevronRight,
 			entry_prefix = " ",
 			scroll_strategy = "limit",
 			results_title = false,
 			layout_strategy = "horizontal",
 			path_display = { "truncate" },
+			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
 			layout_config = {
-				prompt_position = "bottom",
 				horizontal = {
 					preview_width = 0.5,
 				},
@@ -39,19 +40,6 @@ return function()
 			qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 			file_sorter = require("telescope.sorters").get_fuzzy_file,
 			generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-			border = {},
-			borderchars = {
-				"─",
-				"│",
-				"─",
-				"│",
-				"╭",
-				"╮",
-				"╯",
-				"╰",
-			},
-			dynamic_preview_title = true,
-			file_ignore_patterns = { "vendor", "*.git/*" },
 		},
 		extensions = {
 			fzf = {
@@ -63,7 +51,7 @@ return function()
 			frecency = {
 				show_scores = true,
 				show_unindexed = true,
-				ignore_patterns = { "*.git/*", "*/tmp/*", "*/vendor/*" },
+				ignore_patterns = { "*.git/*", "*/tmp/*" },
 			},
 		},
 		pickers = {
