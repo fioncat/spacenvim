@@ -152,7 +152,7 @@ return function()
 					["@property"] = { fg = cp.yellow },
 
 					["@include"] = { fg = cp.teal },
-					["@operator"] = { fg = cp.sky },
+					-- ["@operator"] = { fg = cp.sky },
 					["@keyword.operator"] = { fg = cp.sky },
 					["@punctuation.special"] = { fg = cp.maroon },
 
@@ -169,13 +169,14 @@ return function()
 					["@constant.builtin"] = { fg = cp.lavender },
 					-- ["@function.builtin"] = { fg = cp.peach, style = { "italic" } },
 					-- ["@type.builtin"] = { fg = cp.yellow, style = { "italic" } },
+					["@type.qualifier"] = { link = "@keyword" },
 					["@variable.builtin"] = { fg = cp.red, style = { "italic" } },
 
 					-- ["@function"] = { fg = cp.blue },
 					["@function.macro"] = { fg = cp.red, style = {} },
 					["@parameter"] = { fg = cp.rosewater },
+					["@keyword"] = { fg = cp.red, style = { "italic" } },
 					["@keyword.function"] = { fg = cp.maroon },
-					["@keyword"] = { fg = cp.red },
 					["@keyword.return"] = { fg = cp.pink, style = {} },
 
 					-- ["@text.note"] = { fg = cp.base, bg = cp.blue },
@@ -184,14 +185,14 @@ return function()
 					-- ["@constant.macro"] = { fg = cp.mauve },
 
 					-- ["@label"] = { fg = cp.blue },
-					["@method"] = { style = { "italic" } },
+					["@method"] = { fg = cp.blue, style = { "italic" } },
 					["@namespace"] = { fg = cp.rosewater, style = {} },
 
 					["@punctuation.delimiter"] = { fg = cp.teal },
 					["@punctuation.bracket"] = { fg = cp.overlay2 },
 					-- ["@string"] = { fg = cp.green },
 					-- ["@string.regex"] = { fg = cp.peach },
-					-- ["@type"] = { fg = cp.yellow },
+					["@type"] = { fg = cp.yellow },
 					["@variable"] = { fg = cp.text },
 					["@tag.attribute"] = { fg = cp.mauve, style = { "italic" } },
 					["@tag"] = { fg = cp.peach },
@@ -228,7 +229,10 @@ return function()
 					["@type.css"] = { fg = cp.lavender },
 					["@property.css"] = { fg = cp.yellow, style = { "italic" } },
 
+					["@type.builtin.c"] = { fg = cp.yellow, style = {} },
+
 					["@property.cpp"] = { fg = cp.text },
+					["@type.builtin.cpp"] = { fg = cp.yellow, style = {} },
 
 					-- ["@symbol"] = { fg = cp.flamingo },
 				}
