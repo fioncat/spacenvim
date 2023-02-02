@@ -2,7 +2,7 @@
   "start": [
     {
       "name": "catppuccin",
-      "commit": "491f0a5"
+      "commit": "8769e76"
     },
     {
       "name": "cmp-under-comparator",
@@ -18,11 +18,11 @@
     },
     {
       "name": "mason-lspconfig.nvim",
-      "commit": "422b974"
+      "commit": "53f3a8b"
     },
     {
       "name": "mason.nvim",
-      "commit": "2469bfc"
+      "commit": "07de1d1"
     },
     {
       "name": "nvim-comment",
@@ -42,7 +42,7 @@
     },
     {
       "name": "plenary.nvim",
-      "commit": "1c7e3e6"
+      "commit": "9a0d3bf"
     },
     {
       "name": "which-key.nvim",
@@ -64,7 +64,7 @@
     },
     {
       "name": "auto-session",
-      "commit": "609c952"
+      "commit": "c8b2f40"
     },
     {
       "name": "better-escape.vim",
@@ -108,7 +108,7 @@
     },
     {
       "name": "diffview.nvim",
-      "commit": "dc77f48"
+      "commit": "ab3757c"
     },
     {
       "name": "fidget.nvim",
@@ -136,11 +136,11 @@
     },
     {
       "name": "lsp_signature.nvim",
-      "commit": "b86f249"
+      "commit": "c153692"
     },
     {
       "name": "lspsaga.nvim",
-      "commit": "4fd71bc"
+      "commit": "f514660"
     },
     {
       "name": "lualine.nvim",
@@ -152,7 +152,7 @@
     },
     {
       "name": "nvim-autopairs",
-      "commit": "31042a5"
+      "commit": "5a3523d"
     },
     {
       "name": "nvim-cmp",
@@ -164,11 +164,11 @@
     },
     {
       "name": "nvim-dap-ui",
-      "commit": "3953824"
+      "commit": "885e958"
     },
     {
       "name": "nvim-lspconfig",
-      "commit": "1e98825"
+      "commit": "902d6aa"
     },
     {
       "name": "nvim-navic",
@@ -176,15 +176,15 @@
     },
     {
       "name": "nvim-tree.lua",
-      "commit": "f3b7372"
+      "commit": "215b29b"
     },
     {
       "name": "nvim-treesitter",
-      "commit": "cda8b291"
+      "commit": "f0e08391"
     },
     {
       "name": "nvim-treesitter-textobjects",
-      "commit": "9011d33"
+      "commit": "249d90a"
     },
     {
       "name": "nvim-ts-context-commentstring",
@@ -224,7 +224,7 @@
     },
     {
       "name": "telescope.nvim",
-      "commit": "dce1156"
+      "commit": "203bf56"
     },
     {
       "name": "todo-comments.nvim",
