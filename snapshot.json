@@ -22,7 +22,7 @@
     },
     {
       "name": "mason.nvim",
-      "commit": "07de1d1"
+      "commit": "24846a0"
     },
     {
       "name": "nvim-comment",
@@ -56,7 +56,7 @@
     },
     {
       "name": "LuaSnip",
-      "commit": "94f192c"
+      "commit": "d404ec3"
     },
     {
       "name": "alpha-nvim",
@@ -124,7 +124,7 @@
     },
     {
       "name": "gitsigns.nvim",
-      "commit": "0d4fe37"
+      "commit": "ec4742a"
     },
     {
       "name": "hop.nvim",
@@ -136,11 +136,11 @@
     },
     {
       "name": "lsp_signature.nvim",
-      "commit": "c153692"
+      "commit": "6f6252f"
     },
     {
       "name": "lspsaga.nvim",
-      "commit": "f514660"
+      "commit": "ded98e0"
     },
     {
       "name": "lualine.nvim",
@@ -180,7 +180,7 @@
     },
     {
       "name": "nvim-treesitter",
-      "commit": "f0e08391"
+      "commit": "588cdb6c"
     },
     {
       "name": "nvim-treesitter-textobjects",
