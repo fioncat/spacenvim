@@ -1,9 +1,8 @@
 name: rolling update
 
-# on:
-#   # Scheduled update (each day)
-#   schedule: [{ cron: "30 01 * * *" }]
-on: [push, pull_request]
+on:
+  # Scheduled update (each day)
+  schedule: [{ cron: "30 01 * * *" }]
 
 jobs:
   update-lockfile:
