@@ -132,6 +132,14 @@ function autocmd.load_autocmds()
 				"c,cpp",
 				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
 			},
+
+			{ "FileType", "json", "setlocal tabstop=2" },
+			{ "FileType", "json", "setlocal shiftwidth=2" },
+			{ "FileType", "json", "setlocal expandtab" },
+
+			{ "FileType", "yaml", "setlocal tabstop=2" },
+			{ "FileType", "yaml", "setlocal shiftwidth=2" },
+			{ "FileType", "yaml", "setlocal expandtab" },
 		},
 		yank = {
 			{

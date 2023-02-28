@@ -104,8 +104,8 @@ return function()
 			auto_open = true,
 		},
 		update_focused_file = {
-			enable = true,
-			update_root = true,
+			enable = false,
+			update_root = false,
 			ignore_list = {},
 		},
 		ignore_ft_on_setup = {},
@@ -117,7 +117,7 @@ return function()
 		actions = {
 			use_system_clipboard = true,
 			change_dir = {
-				enable = true,
+				enable = false,
 				global = false,
 			},
 			open_file = {
@@ -153,7 +153,7 @@ return function()
 		},
 		git = {
 			enable = true,
-			ignore = true,
+			ignore = false,
 			show_on_dirs = true,
 			timeout = 400,
 		},

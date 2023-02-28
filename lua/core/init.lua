@@ -112,6 +112,32 @@ local clipboard_config = function()
 	end
 end
 
+local mapwrite = function ()
+	vim.api.nvim_command([[cnoreabbrev W w]])
+	vim.api.nvim_command([[cnoreabbrev Wq wq]])
+end
+
+local clean_hidden_buffer = function ()
+	local non_hidden_buffer = {}
+	for _, win in ipairs(vim.api.nvim_list_wins()) do
+		local buf = vim.api.nvim_win_get_buf(win)
+		non_hidden_buffer[buf] = true
+	end
+
+	local buffers = vim.api.nvim_list_bufs()
+	for _, buf in ipairs(buffers) do
+		local modified = vim.fn.getbufvar(buf, "&modified")
+		-- we won't delete modified buffer
+		if modified ~= 1 and non_hidden_buffer[buf] == nil then
+			vim.api.nvim_buf_delete(buf, {
+				force = false,
+			})
+		end
+	end
+	-- Force bufferline to reload
+	vim.api.nvim_exec("BufferLineSortByTabs", false)
+end
+
 local load_core = function()
 	createdir()
 	disable_distribution_plugins()
@@ -119,6 +145,9 @@ local load_core = function()
 
 	neovide_config()
 	clipboard_config()
+
+	mapwrite()
+	vim.api.nvim_create_user_command("CleanHiddenBuffer", clean_hidden_buffer, {})
 
 	require("core.options")
 	require("core.mapping")

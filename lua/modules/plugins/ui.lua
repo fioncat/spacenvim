@@ -18,6 +18,12 @@ ui["catppuccin/nvim"] = {
 	config = require("ui.catppuccin"),
 }
 
+ui["j-hui/fidget.nvim"] = {
+	lazy = true,
+	event = "BufReadPost",
+	config = require("ui.fidget"),
+}
+
 ui["lewis6991/gitsigns.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufNewFile" },
@@ -52,6 +58,12 @@ ui["rcarriga/nvim-notify"] = {
 	lazy = true,
 	event = "VeryLazy",
 	config = require("ui.notify"),
+}
+
+ui["folke/paint.nvim"] = {
+	lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
+	config = require("ui.paint"),
 }
 
 ui["edluffy/specs.nvim"] = {

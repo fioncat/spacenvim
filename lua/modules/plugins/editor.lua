@@ -18,12 +18,6 @@ editor["max397574/better-escape.nvim"] = {
 	config = require("editor.better-escape"),
 }
 
-editor["numToStr/Comment.nvim"] = {
-	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
-	config = require("editor.comment"),
-}
-
 editor["sindrets/diffview.nvim"] = {
 	lazy = true,
 	cmd = { "DiffviewOpen", "DiffviewClose" },
@@ -71,6 +65,10 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 		{
 			"abecodes/tabout.nvim",
 			config = require("editor.tabout"),
+		},
+		{
+			"terrortylor/nvim-comment",
+			config = require("editor.comment"),
 		},
 	},
 }
