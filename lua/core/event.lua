@@ -66,52 +66,14 @@ function autocmd.load_autocmds()
 	local definitions = {
 		lazy = {},
 		bufs = {
-			-- Reload vim config automatically
-			-- {
-			-- 	"BufWritePost",
-			-- 	[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]],
-			-- },
-			-- Reload Vim script automatically if setlocal autoread
-			-- {
-			-- 	"BufWritePost,FileWritePost",
-			-- 	"*.vim",
-			-- 	[[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]],
-			-- },
+			{ "BufWritePost", "*", "FormatWrite" },
 			{ "BufWritePre", "/tmp/*", "setlocal noundofile" },
 			{ "BufWritePre", "COMMIT_EDITMSG", "setlocal noundofile" },
 			{ "BufWritePre", "MERGE_MSG", "setlocal noundofile" },
 			{ "BufWritePre", "*.tmp", "setlocal noundofile" },
 			{ "BufWritePre", "*.bak", "setlocal noundofile" },
-			-- auto place to last edit
-			-- {
-			-- 	"BufReadPost",
-			-- 	"*",
-			-- 	[[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]],
-			-- },
-			-- Auto toggle fcitx5
-			-- {"InsertLeave", "* :silent", "!fcitx5-remote -c"},
-			-- {"BufCreate", "*", ":silent !fcitx5-remote -c"},
-			-- {"BufEnter", "*", ":silent !fcitx5-remote -c "},
-			-- {"BufLeave", "*", ":silent !fcitx5-remote -c "}
 		},
 		wins = {
-			-- Highlight current line only on focused window
-			{
-				"WinEnter,BufEnter,InsertLeave",
-				"*",
-				[[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]],
-			},
-			{
-				"WinLeave,BufLeave,InsertEnter",
-				"*",
-				[[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]],
-			},
-			-- Force write shada on leaving nvim
-			-- {
-			-- 	"VimLeave",
-			-- 	"*",
-			-- 	[[if has('nvim') | wshada! | else | wviminfo! | endif]],
-			-- },
 			-- Check if file changed when its window is focus, more eager than 'autoread'
 			{ "FocusGained", "* checktime" },
 			-- Equalize window dimensions when resizing vim window
@@ -120,16 +82,6 @@ function autocmd.load_autocmds()
 		ft = {
 			{ "FileType", "alpha", "set showtabline=0" },
 			{ "FileType", "markdown", "set wrap" },
-			{
-				"FileType",
-				"*",
-				[[setlocal formatoptions-=cro]],
-			},
-			{
-				"FileType",
-				"c,cpp",
-				"nnoremap <leader>h :ClangdSwitchSourceHeaderVSplit<CR>",
-			},
 
 			{ "FileType", "json", "setlocal tabstop=2" },
 			{ "FileType", "json", "setlocal shiftwidth=2" },

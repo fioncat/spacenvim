@@ -10,8 +10,8 @@ local plug_map = {
 	["n|<A-q>"] = map_cr("BufDel"):with_noremap():with_silent():with_desc("buffer: Close current"),
 
 	-- Plugin: nvim_comment
-	["n|<leader>c"] = map_cr("CommentToggle"):with_noremap():with_silent():with_desc("Toggle comment"),
-	["v|<leader>c"] = map_cr("CommentToggle"):with_silent():with_desc("Toggle comment"),
+	["n|<leader>ci"] = map_cr("CommentToggle"):with_noremap():with_silent():with_desc("Toggle comment"),
+	["v|<leader>ci"] = map_cr("CommentToggle"):with_silent():with_desc("Toggle comment"),
 
 	-- Plugin: diffview
 	["n|<leader>dv"] = map_cr("DiffviewOpen"):with_silent():with_noremap():with_desc("git: Show diff"),

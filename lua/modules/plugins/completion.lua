@@ -12,14 +12,6 @@ completion["neovim/nvim-lspconfig"] = {
 			"glepnir/lspsaga.nvim",
 			config = require("completion.lspsaga"),
 		},
-		{
-			"jose-elias-alvarez/null-ls.nvim",
-			dependencies = {
-				"nvim-lua/plenary.nvim",
-				"jay-babu/mason-null-ls.nvim",
-			},
-			config = require("completion.null-ls"),
-		},
 	},
 }
 completion["hrsh7th/nvim-cmp"] = {
@@ -43,15 +35,6 @@ completion["hrsh7th/nvim-cmp"] = {
 		{ "hrsh7th/cmp-buffer" },
 		{ "kdheepak/cmp-latex-symbols" },
 		{ "ray-x/cmp-treesitter" },
-		-- { "tzachar/cmp-tabnine", build = "./install.sh", config = require("completion.tabnine") },
-		-- {
-		-- 	"jcdickinson/codeium.nvim",
-		-- 	dependencies = {
-		-- 		"nvim-lua/plenary.nvim",
-		-- 		"MunifTanjim/nui.nvim",
-		-- 	},
-		-- 	config = require("completion.codeium"),
-		-- },
 	},
 }
 
