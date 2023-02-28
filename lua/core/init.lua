@@ -155,6 +155,8 @@ local load_core = function()
 	require("core.event")
 	require("core.pack")
 
+	require("core.golang")
+
 	local colorscheme = require("core.settings").colorscheme
 	local background = require("core.settings").background
 	vim.api.nvim_command("set background=" .. background)
