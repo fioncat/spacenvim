@@ -67,27 +67,27 @@ function autocmd.load_autocmds()
 		lazy = {},
 		bufs = {
 			-- Reload vim config automatically
-			{
-				"BufWritePost",
-				[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]],
-			},
+			-- {
+			-- 	"BufWritePost",
+			-- 	[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]],
+			-- },
 			-- Reload Vim script automatically if setlocal autoread
-			{
-				"BufWritePost,FileWritePost",
-				"*.vim",
-				[[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]],
-			},
+			-- {
+			-- 	"BufWritePost,FileWritePost",
+			-- 	"*.vim",
+			-- 	[[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]],
+			-- },
 			{ "BufWritePre", "/tmp/*", "setlocal noundofile" },
 			{ "BufWritePre", "COMMIT_EDITMSG", "setlocal noundofile" },
 			{ "BufWritePre", "MERGE_MSG", "setlocal noundofile" },
 			{ "BufWritePre", "*.tmp", "setlocal noundofile" },
 			{ "BufWritePre", "*.bak", "setlocal noundofile" },
 			-- auto place to last edit
-			{
-				"BufReadPost",
-				"*",
-				[[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]],
-			},
+			-- {
+			-- 	"BufReadPost",
+			-- 	"*",
+			-- 	[[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]],
+			-- },
 			-- Auto toggle fcitx5
 			-- {"InsertLeave", "* :silent", "!fcitx5-remote -c"},
 			-- {"BufCreate", "*", ":silent !fcitx5-remote -c"},
@@ -107,11 +107,11 @@ function autocmd.load_autocmds()
 				[[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]],
 			},
 			-- Force write shada on leaving nvim
-			{
-				"VimLeave",
-				"*",
-				[[if has('nvim') | wshada! | else | wviminfo! | endif]],
-			},
+			-- {
+			-- 	"VimLeave",
+			-- 	"*",
+			-- 	[[if has('nvim') | wshada! | else | wviminfo! | endif]],
+			-- },
 			-- Check if file changed when its window is focus, more eager than 'autoread'
 			{ "FocusGained", "* checktime" },
 			-- Equalize window dimensions when resizing vim window
@@ -120,8 +120,6 @@ function autocmd.load_autocmds()
 		ft = {
 			{ "FileType", "alpha", "set showtabline=0" },
 			{ "FileType", "markdown", "set wrap" },
-			{ "FileType", "make", "set noexpandtab shiftwidth=8 softtabstop=0" },
-			{ "FileType", "dap-repl", "lua require('dap.ext.autocompl').attach()" },
 			{
 				"FileType",
 				"*",
@@ -141,13 +139,7 @@ function autocmd.load_autocmds()
 			{ "FileType", "yaml", "setlocal shiftwidth=2" },
 			{ "FileType", "yaml", "setlocal expandtab" },
 		},
-		yank = {
-			{
-				"TextYankPost",
-				"*",
-				[[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=300})]],
-			},
-		},
+		yank = {},
 	}
 
 	autocmd.nvim_create_augroups(definitions)
