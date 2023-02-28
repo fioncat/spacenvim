@@ -30,6 +30,7 @@ settings["lsp"] = {
 	"lua_ls",
 	"pyright",
 	"gopls",
+	"rust_analyzer",
 }
 
 return settings
