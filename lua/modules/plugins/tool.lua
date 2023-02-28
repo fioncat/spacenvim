@@ -24,6 +24,19 @@ tool["nvim-tree/nvim-tree.lua"] = {
 	config = require("tool.nvim-tree"),
 }
 
+tool["akinsho/toggleterm.nvim"] = {
+	lazy = true,
+	cmd = {
+		"ToggleTerm",
+		"ToggleTermSetName",
+		"ToggleTermToggleAll",
+		"ToggleTermSendVisualLines",
+		"ToggleTermSendCurrentLine",
+		"ToggleTermSendVisualSelection",
+	},
+	config = require("tool.toggleterm"),
+}
+
 tool["folke/trouble.nvim"] = {
 	lazy = true,
 	cmd = { "Trouble", "TroubleToggle", "TroubleRefresh" },
@@ -48,11 +61,6 @@ tool["nvim-telescope/telescope.nvim"] = {
 		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-lua/popup.nvim" },
 		{ "debugloop/telescope-undo.nvim" },
-		{
-			"ahmedkhalf/project.nvim",
-			event = "BufReadPost",
-			config = require("tool.project"),
-		},
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		{ "nvim-telescope/telescope-frecency.nvim", dependencies = {
 			{ "kkharji/sqlite.lua" },

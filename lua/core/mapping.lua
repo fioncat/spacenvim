@@ -22,11 +22,6 @@ local core_map = {
 	["n|<leader>w["] = map_cmd(":vertical resize+"):with_noremap(),
 	["n|<leader>w]"] = map_cmd(":vertical resize-"):with_noremap(),
 
-	-- Terminal
-	['n|<leader>"'] = map_cr("VTerm"):with_noremap():with_silent(),
-	["n|<leader>'"] = map_cr("Term"):with_noremap():with_silent(),
-	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
-
 	["n|<C-K>"] = map_cr("noh"):with_noremap():with_silent(),
 
 	["n|<leader>bc"] = map_cr("CleanHiddenBuffer"):with_noremap():with_silent(),

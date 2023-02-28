@@ -46,12 +46,6 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("edit: Show undo history"),
-	["n|<leader>sp"] = map_callback(function()
-			require("telescope").extensions.projects.projects({})
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("find: Project"),
 	["n|<leader>sf"] = map_callback(function()
 			require("telescope").extensions.frecency.frecency()
 		end)
@@ -124,6 +118,12 @@ local plug_map = {
 		:with_noremap()
 		:with_silent()
 		:with_desc("debug: Run last"),
+
+	-- Terminal
+	["t|<C-]>"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
+	['n|<leader>"'] = map_cr("ToggleTerm direction=horizontal"):with_noremap():with_silent(),
+	["n|<leader>'"] = map_cr("ToggleTerm direction=vertical"):with_noremap():with_silent(),
+	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
 }
 
 bind.nvim_load_mapping(plug_map)

@@ -13,10 +13,6 @@ local plug_map = {
 	["n|<leader>ci"] = map_cr("CommentToggle"):with_noremap():with_silent():with_desc("Toggle comment"),
 	["v|<leader>ci"] = map_cr("CommentToggle"):with_silent():with_desc("Toggle comment"),
 
-	-- Plugin: diffview
-	["n|<leader>dv"] = map_cr("DiffviewOpen"):with_silent():with_noremap():with_desc("git: Show diff"),
-	["n|<leader>dq"] = map_cr("DiffviewClose"):with_silent():with_noremap():with_desc("git: Close diff"),
-
 	-- Plugin: hop
 	["n|<leader>jw"] = map_cu("HopWord"):with_noremap():with_desc("jump: Goto word"),
 	["n|<leader>jj"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
