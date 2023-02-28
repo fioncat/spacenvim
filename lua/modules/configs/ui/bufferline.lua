@@ -3,7 +3,7 @@ return function()
 
 	local opts = {
 		options = {
-			number = nil,
+			numbers = "ordinal",
 			modified_icon = icons.ui.Modified,
 			buffer_close_icon = icons.ui.Close,
 			left_trunc_marker = icons.ui.Left,
@@ -20,7 +20,7 @@ return function()
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
 			always_show_bufferline = true,
-			separator_style = "thin",
+			separator_style = "slant",
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(count)
 				return "(" .. count .. ")"
