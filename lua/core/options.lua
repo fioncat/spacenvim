@@ -2,7 +2,7 @@ local global = require("core.global")
 
 local function load_options()
 	local global_local = {
-    	-- Diable compatible with vi
+		-- Diable compatible with vi
 		nocompatible = true,
 
 		-- Some plugins might need this

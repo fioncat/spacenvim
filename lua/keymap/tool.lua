@@ -7,20 +7,11 @@ require("keymap.helpers")
 
 local plug_map = {
 	-- Plugin: nvim-tree
-	["n|<leader>tt"] = map_cr("NvimTreeToggle")
-		:with_noremap()
-		:with_silent()
-		:with_desc("filetree: Toggle"),
+	["n|<leader>tt"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
 
-	["n|<leader>ff"] = map_cr("NvimTreeFindFile")
-		:with_noremap()
-		:with_silent()
-		:with_desc("filetree: Find file"),
+	["n|<leader>ff"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),
 
-	["n|<leader>tr"] = map_cr("NvimTreeRefresh")
-		:with_noremap()
-		:with_silent()
-		:with_desc("filetree: Refresh"),
+	["n|<leader>tr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent():with_desc("filetree: Refresh"),
 
 	-- Plugin: trouble
 	["n|gt"] = map_cr("TroubleToggle"):with_noremap():with_silent():with_desc("lsp: Toggle trouble list"),
