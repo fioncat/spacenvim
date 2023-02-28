@@ -70,7 +70,7 @@ return function()
 		diagnostic = {
 			on_insert = true,
 			on_insert_follow = false,
-			show_code_action = true,
+			show_code_action = false,
 			show_source = true,
 			border_follow = true,
 			jump_num_shortcut = true,
