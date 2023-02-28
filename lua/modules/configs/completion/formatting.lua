@@ -139,11 +139,12 @@ function M.format(opts)
 	end, clients)
 
 	if #clients == 0 then
-		vim.notify(
-			"[LSP]Format request failed, no matching language servers.",
-			vim.log.levels.WARN,
-			{ title = "Formatting Failed!" }
-		)
+		-- vim.notify(
+		-- 	"[LSP]Format request failed, no matching language servers.",
+		-- 	vim.log.levels.WARN,
+		-- 	{ title = "Formatting Failed!" }
+		-- )
+		return
 	end
 
 	local timeout_ms = opts.timeout_ms
