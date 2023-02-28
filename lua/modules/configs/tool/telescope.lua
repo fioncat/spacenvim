@@ -10,7 +10,7 @@ return function()
 			scroll_strategy = "limit",
 			results_title = false,
 			layout_strategy = "horizontal",
-			path_display = { "absolute" },
+			path_display = { "truncate" },
 			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
 			layout_config = {
 				horizontal = {

@@ -4,7 +4,7 @@ return {
 	cmd = { "gopls", "-remote=auto" },
 	settings = {
 		gopls = {
-			usePlaceholders = true,
+			usePlaceholders = false,
 			analyses = {
 				nilness = true,
 				shadow = true,

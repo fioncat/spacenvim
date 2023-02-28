@@ -2,7 +2,7 @@ local global = require("core.global")
 
 local function load_options()
 	local global_local = {
-		-- Diable compatible with vi
+		-- Disable compatible with vi
 		nocompatible = true,
 
 		-- Some plugins might need this
@@ -41,8 +41,10 @@ local function load_options()
 		cmdheight = 1,
 
 		-- The command completion provided by vim
-		wildmenu = true,
-		wildmode = "longest,list",
+		-- wildmenu = true,
+		-- wildmode = "longest,list",
+		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
+		wildignorecase = true,
 
 		-- autoload file when it is changed on disk by other instance
 		autoread = true,
