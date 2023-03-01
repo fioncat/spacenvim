@@ -168,6 +168,15 @@ return function()
 			-- standalone file support
 			-- setting it to false may improve startup time
 			standalone = true,
+			settings = {
+				["rust-analyzer"] = {
+					completion = {
+						callable = {
+							snippets = "none",
+						},
+					},
+				},
+			},
 		}, -- rust-analyer options
 
 		-- debugging stuff

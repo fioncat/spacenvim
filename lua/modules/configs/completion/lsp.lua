@@ -108,11 +108,5 @@ return function()
 			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
 			nvim_lsp.lua_ls.setup(final_opts)
 		end,
-
-		rust_analyzer = function()
-			local _opts = require("completion.servers.rust_analyzer")
-			local final_opts = vim.tbl_deep_extend("keep", _opts, opts)
-			nvim_lsp.rust_analyzer.setup(final_opts)
-		end,
 	})
 end
