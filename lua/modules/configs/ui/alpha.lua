@@ -65,47 +65,7 @@ return function()
 
 	local leader = " "
 	dashboard.section.buttons.val = {
-		button("space f c", " Scheme change", leader, nil, {
-			noremap = true,
-			silent = true,
-			nowait = true,
-			callback = function()
-				require("telescope.builtin").colorscheme()
-			end,
-		}),
-		button("space f r", " File frecency", leader, nil, {
-			noremap = true,
-			silent = true,
-			nowait = true,
-			callback = function()
-				require("telescope").extensions.frecency.frecency()
-			end,
-		}),
-		button("space f e", " File history", leader, nil, {
-			noremap = true,
-			silent = true,
-			nowait = true,
-			callback = function()
-				require("telescope.builtin").oldfiles()
-			end,
-		}),
-		button("space f p", " Project find", leader, nil, {
-			noremap = true,
-			silent = true,
-			nowait = true,
-			callback = function()
-				require("telescope").extensions.projects.projects({})
-			end,
-		}),
-		button("space f f", " File find", leader, nil, {
-			noremap = true,
-			silent = true,
-			nowait = true,
-			callback = function()
-				require("telescope.builtin").find_files()
-			end,
-		}),
-		button("space f n", " File new", leader, nil, {
+		button("space s n", " New file", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -113,12 +73,28 @@ return function()
 				vim.api.nvim_command("enew")
 			end,
 		}),
-		button("space f w", " Word find", leader, nil, {
+		button("space s s", " Search file", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope.builtin").find_files()
+			end,
+		}),
+		button("space s r", " Search ripgrep", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
 			callback = function()
 				require("telescope.builtin").live_grep()
+			end,
+		}),
+		button("space s f", " Search frecency", leader, nil, {
+			noremap = true,
+			silent = true,
+			nowait = true,
+			callback = function()
+				require("telescope").extensions.frecency.frecency()
 			end,
 		}),
 	}
