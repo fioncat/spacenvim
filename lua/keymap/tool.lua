@@ -9,10 +9,7 @@ local plug_map = {
 	-- Plugin: nvim-tree
 	["n|<leader>tt"] = map_cr("NvimTreeToggle"):with_noremap():with_silent():with_desc("filetree: Toggle"),
 
-	["n|<leader>ff"] = map_cr("NvimTreeFindFile | NvimTreeFocus")
-		:with_noremap()
-		:with_silent()
-		:with_desc("filetree: Find file"),
+	["n|<leader>ff"] = map_cr("NvimTreeFindFile"):with_noremap():with_silent():with_desc("filetree: Find file"),
 
 	["n|<leader>tr"] = map_cr("NvimTreeRefresh"):with_noremap():with_silent():with_desc("filetree: Refresh"),
 
