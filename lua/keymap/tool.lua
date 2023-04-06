@@ -68,7 +68,7 @@ local plug_map = {
 		:with_desc("find: file in git project"),
 	["n|<leader>sb"] = map_cu("Telescope buffers"):with_noremap():with_silent():with_desc("find: Buffer opened"),
 	["n|<leader>sw"] = map_cu("Telescope grep_string"):with_noremap():with_silent():with_desc("find: Current word"),
-	["n|<leader>sd"] = map_cr("Telescope diagnostics"):with_noremap():with_silent(),
+	["n|<leader>sd"] = map_cr("Telescope lsp_document_symbols"):with_noremap():with_silent(),
 	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols"):with_noremap():with_silent(),
 
 	-- Plugin: dap

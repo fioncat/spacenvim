@@ -79,7 +79,11 @@ return function()
 				})(entry, vim_item)
 				local strings = vim.split(kind.kind, "%s", { trimempty = true })
 				kind.kind = " " .. strings[1] .. " "
-				kind.menu = "    (" .. strings[2] .. ")"
+				if strings[2] then
+					kind.menu = "    (" .. strings[2] .. ")"
+				else
+					kind.menu = "    (Unknown)"
+				end
 				return kind
 			end,
 		},
