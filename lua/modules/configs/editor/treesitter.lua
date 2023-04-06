@@ -12,7 +12,6 @@ return function()
 			"css",
 			"go",
 			"gomod",
-			"help",
 			"html",
 			"javascript",
 			"json",
