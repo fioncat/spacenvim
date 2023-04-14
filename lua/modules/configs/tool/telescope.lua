@@ -11,7 +11,7 @@ return function()
 			results_title = false,
 			layout_strategy = "horizontal",
 			path_display = { "truncate" },
-			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
+			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip", "vendor/" },
 			layout_config = {
 				horizontal = {
 					preview_width = 0.5,

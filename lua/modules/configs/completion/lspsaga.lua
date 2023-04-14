@@ -2,6 +2,7 @@ return function()
 	require("modules.utils").gen_lspkind_hl()
 
 	local icons = {
+		cmp = require("modules.utils.icons").get("cmp", true),
 		diagnostics = require("modules.utils.icons").get("diagnostics", true),
 		kind = require("modules.utils.icons").get("kind", true),
 		type = require("modules.utils.icons").get("type", true),
@@ -37,7 +38,7 @@ return function()
 		finder = {
 			keys = {
 				jump_to = "e",
-				edit = { "o", "<CR>" },
+				expand_or_jump = "<CR>",
 				vsplit = "s",
 				split = "i",
 				tabe = "t",
@@ -51,7 +52,6 @@ return function()
 			split = "<C-c>s",
 			tabe = "<C-c>t",
 			quit = "q",
-			close = "<Esc>",
 		},
 		code_action = {
 			num_shortcut = true,
@@ -68,16 +68,19 @@ return function()
 			virtual_text = false,
 		},
 		diagnostic = {
+			text_hl_follow = true,
 			on_insert = true,
 			on_insert_follow = false,
-			show_code_action = false,
+			show_code_action = true,
 			show_source = true,
 			border_follow = true,
+			extend_relatedInformation = false,
 			jump_num_shortcut = true,
 			keys = {
-				exec_action = "<CR>",
+				exec_action = "r",
 				quit = "q",
-				go_action = "g",
+				expand_or_jump = "<CR>",
+				quit_in_show = { "q", "<ESC>" },
 			},
 		},
 		rename = {
@@ -87,6 +90,9 @@ return function()
 			exec = "<CR>",
 			in_select = true,
 		},
+		hover = {
+			open_link = "gl",
+		},
 		outline = {
 			win_position = "right",
 			win_with = "_sagaoutline",
@@ -94,9 +100,9 @@ return function()
 			auto_preview = false,
 			auto_refresh = true,
 			auto_close = true,
+			close_after_jump = true,
 			keys = {
-				jump = "<CR>",
-				expand_collapse = "u",
+				expand_or_jump = "<CR>",
 				quit = "q",
 			},
 		},
@@ -112,8 +118,10 @@ return function()
 			frequency = 12,
 		},
 		ui = {
+			title = false,
 			border = "single", -- Can be single, double, rounded, solid, shadow.
 			winblend = 0,
+			actionfix = icons.ui.Spell,
 			expand = icons.ui.ArrowClosed,
 			collapse = icons.ui.ArrowOpen,
 			code_action = icons.ui.CodeAction,
