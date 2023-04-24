@@ -59,7 +59,10 @@ local plug_map = {
 		:with_silent()
 		:with_desc("find: Word in project"),
 	["n|<leader>so"] = map_cu("Telescope oldfiles"):with_noremap():with_silent():with_desc("find: File by history"),
-	["n|<leader>ss"] = map_cu("Telescope find_files"):with_noremap():with_silent():with_desc("find: File in project"),
+	["n|<leader>ss"] = map_cu("lua require('telescope.builtin').find_files({hidden=true})")
+		:with_noremap()
+		:with_silent()
+		:with_desc("find: File in project"),
 	["n|<leader>st"] = map_cu("Telescope colorscheme"):with_noremap():with_silent():with_desc("find: Find colorscheme"),
 	["n|<leader>sn"] = map_cu(":enew"):with_noremap():with_silent():with_desc("buffer: New"),
 	["n|<leader>sg"] = map_cu("Telescope git_files")
