@@ -24,7 +24,6 @@ settings["background"] = "dark"
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 settings["lsp"] = {
 	"bashls",
-	"clangd",
 	"html",
 	"jsonls",
 	"lua_ls",
