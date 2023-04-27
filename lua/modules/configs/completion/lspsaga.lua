@@ -71,7 +71,7 @@ return function()
 			text_hl_follow = true,
 			on_insert = true,
 			on_insert_follow = false,
-			show_code_action = true,
+			show_code_action = false,
 			show_source = true,
 			border_follow = true,
 			extend_relatedInformation = false,
