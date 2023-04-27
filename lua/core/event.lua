@@ -78,6 +78,13 @@ function autocmd.load_autocmds()
 			{ "FocusGained", "* checktime" },
 			-- Equalize window dimensions when resizing vim window
 			-- { "VimResized", "*", [[tabdo wincmd =]] },
+
+			-- Highlight current line only on focused window
+			{
+				"WinEnter,BufEnter,InsertLeave",
+				"*",
+				[[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]],
+			},
 		},
 		ft = {
 			{ "FileType", "alpha", "set showtabline=0" },
