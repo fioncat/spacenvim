@@ -150,6 +150,7 @@ return function()
 			enable = true,
 			show_on_dirs = true,
 			timeout = 400,
+			ignore = false,
 		},
 		trash = {
 			cmd = "gio trash",
