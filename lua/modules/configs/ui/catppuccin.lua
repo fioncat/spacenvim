@@ -49,6 +49,7 @@ return function()
 			aerial = false,
 			barbar = false,
 			beacon = false,
+			alpha = false,
 			cmp = true,
 			coc_nvim = false,
 			dap = { enabled = true, enable_ui = true },
