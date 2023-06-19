@@ -20,6 +20,7 @@ ui["catppuccin/nvim"] = {
 
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
+	branch = "legacy",
 	event = "BufReadPost",
 	config = require("ui.fidget"),
 }

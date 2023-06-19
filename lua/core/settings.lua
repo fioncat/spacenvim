@@ -19,6 +19,10 @@ settings["colorscheme"] = "catppuccin"
 -- Available values are: `dark`, `light`.
 settings["background"] = "dark"
 
+-- Set it to true if your terminal has transparent background.
+---@type boolean
+settings["transparent_background"] = false
+
 -- Set the desired LSPs here.
 -- check the below link for all the supported LSPs:
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
