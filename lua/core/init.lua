@@ -134,8 +134,6 @@ local clean_hidden_buffer = function()
 			})
 		end
 	end
-	-- Force bufferline to reload
-	vim.api.nvim_exec("BufferLineSortByTabs", false)
 end
 
 local load_core = function()
