@@ -4,7 +4,7 @@
   "auto-session": { "branch": "main", "commit": "7afbb149f87be279778689596c781882014f7eef" },
   "autoclose.nvim": { "branch": "main", "commit": "469782b0456f0b4f764378ffda94c18599544e09" },
   "better-escape.nvim": { "branch": "master", "commit": "7031dc734add47bb71c010e0551829fa5799375f" },
-  "bufferline.nvim": { "branch": "main", "commit": "2f391fde91b9c3876eee359ee24cc352050e5e48" },
+  "bufferline.nvim": { "branch": "main", "commit": "60734264a8655a7db3595159fb50076dc24c2f2c" },
   "catppuccin": { "branch": "main", "commit": "cc8d3abc944d78cb6bf2a4cc88871ab383c4da62" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-latex-symbols": { "branch": "main", "commit": "165fb66afdbd016eaa1570e41672c4c557b57124" },

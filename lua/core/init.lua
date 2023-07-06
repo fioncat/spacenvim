@@ -134,6 +134,7 @@ local clean_hidden_buffer = function()
 			})
 		end
 	end
+	require("bufferline").sort_by("directory")
 end
 
 local load_core = function()
