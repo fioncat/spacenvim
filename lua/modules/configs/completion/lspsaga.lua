@@ -47,14 +47,19 @@ return function()
 			},
 		},
 		definition = {
-			edit = "<C-c>o",
-			vsplit = "<C-c>v",
-			split = "<C-c>s",
-			tabe = "<C-c>t",
-			quit = "q",
+			keys = {
+				edit = "<C-c>o",
+				vsplit = "<C-c>v",
+				split = "<C-c>s",
+				tabe = "<C-c>t",
+				close = "<C-c>q",
+				quit = "q",
+			},
 		},
 		code_action = {
 			num_shortcut = true,
+			show_server_name = true,
+			extend_gitsigns = false,
 			keys = {
 				quit = "q",
 				exec = "<CR>",
@@ -63,7 +68,6 @@ return function()
 		lightbulb = {
 			enable = false,
 			sign = true,
-			enable_in_insert = true,
 			sign_priority = 20,
 			virtual_text = false,
 		},
@@ -107,10 +111,10 @@ return function()
 			},
 		},
 		symbol_in_winbar = {
-			enable = false,
+			enable = true,
 			separator = " " .. icons.ui.Separator,
-			hide_keyword = true,
-			show_file = false,
+			hide_keyword = false,
+			show_file = true,
 			color_mode = true,
 		},
 		beacon = {
