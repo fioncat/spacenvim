@@ -79,12 +79,13 @@ return function()
 			nvimtree = true,
 			overseer = false,
 			pounce = false,
+			rainbow_delimiters = true,
 			semantic_tokens = true,
 			symbols_outline = false,
 			telekasten = false,
-			telescope = true,
+			telescope = { enabled = true, style = "nvchad" },
 			treesitter_context = true,
-			ts_rainbow = true,
+			ts_rainbow = false,
 			vim_sneak = false,
 			vimwiki = false,
 			which_key = true,
@@ -140,18 +141,16 @@ return function()
 					TroubleNormal = { bg = transparent_background and cp.none or cp.base },
 
 					-- For telescope.nvim
-					TelescopeBorder = { fg = cp.mantle, bg = cp.mantle },
-					TelescopePromptBorder = { fg = cp.surface0, bg = cp.surface0 },
-					TelescopePromptNormal = { fg = cp.text, bg = cp.surface0 },
-					TelescopePromptPrefix = { fg = cp.flamingo, bg = cp.surface0 },
-					TelescopeNormal = { bg = cp.mantle },
-					TelescopePreviewTitle = { fg = cp.base, bg = cp.green },
-					TelescopePromptTitle = { fg = cp.base, bg = cp.red },
-					TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
-					TelescopeSelection = { fg = cp.text, bg = cp.surface0 },
 					TelescopeResultsDiffAdd = { fg = cp.green },
 					TelescopeResultsDiffChange = { fg = cp.yellow },
 					TelescopeResultsDiffDelete = { fg = cp.red },
+
+					-- For nvim-treehopper
+					TSNodeKey = {
+						fg = cp.peach,
+						bg = transparent_background and cp.none or cp.base,
+						style = { "bold", "underline" },
+					},
 
 					-- For treesitter
 					["@keyword.return"] = { fg = cp.pink, style = clear },
