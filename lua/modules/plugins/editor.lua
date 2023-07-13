@@ -1,11 +1,5 @@
 local editor = {}
 
-editor["rmagatti/auto-session"] = {
-	lazy = true,
-	cmd = { "SaveSession", "RestoreSession", "DeleteSession" },
-	config = require("editor.auto-session"),
-}
-
 editor["m4xshen/autoclose.nvim"] = {
 	lazy = true,
 	event = "InsertEnter",
@@ -28,10 +22,10 @@ editor["junegunn/vim-easy-align"] = {
 	cmd = "EasyAlign",
 }
 
-editor["phaazon/hop.nvim"] = {
+editor["smoka7/hop.nvim"] = {
 	lazy = true,
-	branch = "v2",
-	event = "BufReadPost",
+	version = "*",
+	event = { "CursorHold", "CursorHoldI" },
 	config = require("editor.hop"),
 }
 

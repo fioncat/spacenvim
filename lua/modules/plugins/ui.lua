@@ -12,8 +12,9 @@ ui["akinsho/bufferline.nvim"] = {
 	config = require("ui.bufferline"),
 }
 
-ui["catppuccin/nvim"] = {
+ui["Jint-lzxy/nvim"] = {
 	lazy = false,
+	branch = "refactor/syntax-highlighting",
 	name = "catppuccin",
 	config = require("ui.catppuccin"),
 }
@@ -21,7 +22,7 @@ ui["catppuccin/nvim"] = {
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
 	branch = "legacy",
-	event = "BufReadPost",
+	event = "LspAttach",
 	config = require("ui.fidget"),
 }
 
