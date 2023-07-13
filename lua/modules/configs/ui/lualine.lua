@@ -166,33 +166,6 @@ return function()
 			cond = conditionals.has_comp_before,
 		},
 
-		lsp = {
-			function()
-				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-				local clients = vim.lsp.get_active_clients()
-				local lsp_lists = {}
-				local available_servers = {}
-				if next(clients) == nil then
-					return icons.misc.NoActiveLsp -- No server available
-				end
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					local client_name = client.name
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						-- Avoid adding servers that already exists.
-						if not lsp_lists[client_name] then
-							lsp_lists[client_name] = true
-							table.insert(available_servers, client_name)
-						end
-					end
-				end
-				return next(available_servers) == nil and icons.misc.NoActiveLsp
-					or string.format("%s[%s]", icons.misc.LspAvailable, table.concat(available_servers, ", "))
-			end,
-			color = utils.gen_hl("blue", true, true, nil, "bold"),
-			cond = conditionals.has_enough_room,
-		},
-
 		python_venv = {
 			function()
 				local function env_cleanup(venv)
