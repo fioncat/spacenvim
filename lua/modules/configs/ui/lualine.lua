@@ -92,11 +92,7 @@ return function()
 			return "%="
 		end,
 		abbreviate_path = function(path)
-			local home = require("core.global").home
-			if path:find(home, 1, true) == 1 then
-				path = "~" .. path:sub(#home + 1)
-			end
-			return path
+			return path:match(".+/([^/]+)$")
 		end,
 		---Generate <func>`color` for any component
 		---@param fg string @Foreground hl group
@@ -195,13 +191,6 @@ return function()
 			cond = conditionals.has_enough_room,
 		},
 
-		tabwidth = {
-			function()
-				return icons.ui.Tab .. vim.api.nvim_buf_get_option(0, "shiftwidth")
-			end,
-			padding = 1,
-		},
-
 		cwd = {
 			function()
 				return icons.ui.FolderWithHeart .. utils.abbreviate_path(vim.fs.normalize(vim.fn.getcwd()))
@@ -272,7 +261,7 @@ return function()
 					padding = { right = 1 },
 				},
 
-				{ utils.force_centering },
+				-- { utils.force_centering },
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -284,7 +273,6 @@ return function()
 						hint = icons.diagnostics.Hint_alt,
 					},
 				},
-				components.lsp,
 			},
 			lualine_x = {
 				{
@@ -302,7 +290,6 @@ return function()
 					},
 					padding = { left = 1 },
 				},
-				components.tabwidth,
 			},
 			lualine_y = {
 				components.separator,
