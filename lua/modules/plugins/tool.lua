@@ -10,6 +10,7 @@ tool["folke/which-key.nvim"] = {
 	lazy = true,
 	event = "VeryLazy",
 	config = require("tool.which-key"),
+	pin = true,
 }
 
 tool["nvim-tree/nvim-tree.lua"] = {
