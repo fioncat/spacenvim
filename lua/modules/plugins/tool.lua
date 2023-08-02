@@ -5,14 +5,6 @@ tool["tpope/vim-fugitive"] = {
 	cmd = { "Git", "G" },
 }
 
--- Please don't remove which-key.nvim otherwise you need to set timeoutlen=300 at `lua/core/options.lua`
-tool["folke/which-key.nvim"] = {
-	lazy = true,
-	event = "VeryLazy",
-	config = require("tool.which-key"),
-	pin = true,
-}
-
 tool["nvim-tree/nvim-tree.lua"] = {
 	lazy = true,
 	cmd = {
