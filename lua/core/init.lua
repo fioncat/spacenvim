@@ -112,11 +112,6 @@ local clipboard_config = function()
 	end
 end
 
-local mapwrite = function()
-	vim.api.nvim_command([[cnoreabbrev W w]])
-	vim.api.nvim_command([[cnoreabbrev Wq wq]])
-end
-
 local clean_hidden_buffer = function()
 	local non_hidden_buffer = {}
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -137,6 +132,14 @@ local clean_hidden_buffer = function()
 	require("bufferline").sort_by("directory")
 end
 
+local write_file = function()
+	vim.api.nvim_command([[w]])
+end
+
+local write_exit = function()
+	vim.api.nvim_command([[wq]])
+end
+
 local load_core = function()
 	createdir()
 	disable_distribution_plugins()
@@ -145,8 +148,9 @@ local load_core = function()
 	neovide_config()
 	clipboard_config()
 
-	mapwrite()
 	vim.api.nvim_create_user_command("CleanHiddenBuffer", clean_hidden_buffer, {})
+	vim.api.nvim_create_user_command("W", write_file, {})
+	vim.api.nvim_create_user_command("Wq", write_exit, {})
 
 	require("core.options")
 	require("core.mapping")
