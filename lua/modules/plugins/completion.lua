@@ -21,6 +21,18 @@ completion["nvimdev/lspsaga.nvim"] = {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 }
 
+completion["dnlhc/glance.nvim"] = {
+	lazy = true,
+	event = "LspAttach",
+	config = require("completion.glance"),
+}
+
+completion["simrat39/symbols-outline.nvim"] = {
+	lazy = true,
+	event = "LspAttach",
+	config = require("completion.symbols-outline"),
+}
+
 completion["hrsh7th/nvim-cmp"] = {
 	lazy = true,
 	event = "InsertEnter",
