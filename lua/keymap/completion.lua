@@ -7,7 +7,7 @@ local map_callback = bind.map_callback
 local plug_map = {
 	-- LSP
 	["n|gd"] = map_cr("Telescope lsp_definitions"):with_noremap():with_silent(),
-	["n|gg"] = map_cr("Glance definitions"):with_noremap():with_silent(),
+	-- ["n|gg"] = map_cr("Glance definitions"):with_noremap():with_silent(),
 	["n|gr"] = map_cr("Glance references"):with_noremap():with_silent(),
 	["n|gi"] = map_cr("Glance implementations"):with_noremap():with_silent(),
 	["n|gt"] = map_cr("Glance lsp_type_definitions"):with_noremap():with_silent(),
