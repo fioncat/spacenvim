@@ -37,6 +37,7 @@ ui["lukas-reineke/indent-blankline.nvim"] = {
 	lazy = true,
 	event = "BufReadPost",
 	config = require("ui.indent-blankline"),
+	pin = true,
 }
 
 ui["nvim-lualine/lualine.nvim"] = {
