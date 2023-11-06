@@ -75,7 +75,7 @@ return function()
 				vim.api.nvim_command("enew")
 			end,
 		}),
-		button("space s s", " Search file", leader, nil, {
+		button("space s s", "󰈞 Search file", leader, nil, {
 			noremap = true,
 			silent = true,
 			nowait = true,
@@ -112,7 +112,7 @@ return function()
 			.. vim.version().minor
 			.. "."
 			.. vim.version().patch
-			.. "   "
+			.. "  󰂖 "
 			.. stats.count
 			.. " plugins in "
 			.. ms
