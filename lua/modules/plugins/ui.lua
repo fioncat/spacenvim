@@ -10,7 +10,6 @@ ui["akinsho/bufferline.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("ui.bufferline"),
-	pin = true,
 }
 
 ui["Jint-lzxy/nvim"] = {

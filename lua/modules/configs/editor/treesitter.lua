@@ -63,6 +63,7 @@ return function()
 			},
 		},
 		context_commentstring = { enable = true, enable_autocmd = false },
+		indent = { enable = true },
 		matchup = { enable = true },
 	})
 	require("nvim-treesitter.install").prefer_git = true

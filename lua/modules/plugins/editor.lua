@@ -23,9 +23,7 @@ editor["junegunn/vim-easy-align"] = {
 }
 
 editor["smoka7/hop.nvim"] = {
-	lazy = true,
 	version = "*",
-	event = { "CursorHold", "CursorHoldI" },
 	config = require("editor.hop"),
 }
 

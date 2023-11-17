@@ -129,7 +129,7 @@ local clean_hidden_buffer = function()
 			})
 		end
 	end
-	require("bufferline").sort_by("directory")
+	require("bufferline.ui").refresh()
 end
 
 local write_file = function()
