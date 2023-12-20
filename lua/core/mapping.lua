@@ -1,7 +1,15 @@
 local bind = require("keymap.bind")
 local map_cr = bind.map_cr
-local map_cu = bind.map_cu
+-- local map_cu = bind.map_cu
 local map_cmd = bind.map_cmd
+-- local map_callback = bind.map_callback
+
+local timestamp_cmd
+if require("core.global").is_mac then
+	timestamp_cmd = [[!read timestamp && date -r "$timestamp" +'\%Y-\%m-\%d \%H:\%M:\%S']]
+else
+	timestamp_cmd = [[!read timestamp && date -d "@$timestamp" +'\%Y-\%m-\%d \%H:\%M:\%S']]
+end
 
 local core_map = {
 	-- Use <C-a> to jump to the first non-empty character (Like emacs)
@@ -26,10 +34,20 @@ local core_map = {
 
 	["n|<leader>bc"] = map_cr("CleanHiddenBuffer"):with_noremap():with_silent(),
 
-	["n|XX"] = map_cr("q!"):with_noremap():with_silent(),
+	["n|XX"] = map_cr("quitall!"):with_noremap():with_silent(),
 
-	["n|<leader>jq"] = map_cr("%!jq"):with_noremap():with_silent(),
+	-- View diff for two files(buffers)
+	["n|wd"] = map_cr("windo diffthis"):with_noremap():with_silent(),
+
+	-- Format JSON string
 	["v|<leader>jq"] = map_cr("!jq"):with_noremap():with_silent(),
+
+	-- Encode/Decode base64 string
+	["v|<leader>bd"] = map_cr("!base64 -d"):with_noremap():with_silent(),
+	["v|<leader>be"] = map_cr("!base64"):with_noremap():with_silent(),
+
+	-- Convert timestamp to human-readable datetime
+	["v|<leader>ts"] = map_cr(timestamp_cmd):with_noremap():with_silent(),
 }
 
 bind.nvim_load_mapping(core_map)
