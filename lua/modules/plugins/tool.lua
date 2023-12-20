@@ -43,6 +43,11 @@ tool["gelguy/wilder.nvim"] = {
 	dependencies = { "romgrk/fzy-lua-native" },
 }
 
+tool["taybart/b64.nvim"] = {
+	lazy = true,
+	cmd = { "B64Encode", "B64Decode" },
+}
+
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --
 ----------------------------------------------------------------------

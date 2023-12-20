@@ -25,6 +25,11 @@ local core_map = {
 	["n|<C-K>"] = map_cr("noh"):with_noremap():with_silent(),
 
 	["n|<leader>bc"] = map_cr("CleanHiddenBuffer"):with_noremap():with_silent(),
+
+	["n|XX"] = map_cr("q!"):with_noremap():with_silent(),
+
+	["n|<leader>jq"] = map_cr("%!jq"):with_noremap():with_silent(),
+	["v|<leader>jq"] = map_cr("!jq"):with_noremap():with_silent(),
 }
 
 bind.nvim_load_mapping(core_map)

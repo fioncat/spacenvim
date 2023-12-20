@@ -130,6 +130,10 @@ local plug_map = {
 	['n|<leader>"'] = map_cr("ToggleTerm direction=horizontal"):with_noremap():with_silent(),
 	["n|<leader>'"] = map_cr("ToggleTerm direction=vertical"):with_noremap():with_silent(),
 	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
+
+	-- Plugin: b64
+	["v|<leader>bd"] = map_cr("B64Decode"):with_noremap():with_silent(),
+	["v|<leader>be"] = map_cr("B64Encode"):with_noremap():with_silent(),
 }
 
 bind.nvim_load_mapping(plug_map)
