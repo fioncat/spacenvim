@@ -37,7 +37,7 @@ local core_map = {
 	["n|XX"] = map_cr("quitall!"):with_noremap():with_silent(),
 
 	-- View diff for two files(buffers)
-	["n|wd"] = map_cr("windo diffthis"):with_noremap():with_silent(),
+	["n|<leader>wd"] = map_cr("windo diffthis"):with_noremap():with_silent(),
 
 	-- Format JSON string
 	["v|<leader>jq"] = map_cr("!jq"):with_noremap():with_silent(),
