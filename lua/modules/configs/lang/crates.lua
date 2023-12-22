@@ -10,7 +10,6 @@ return function()
 	require("crates").setup({
 		smart_insert = true,
 		insert_closing_quote = true,
-		avoid_prerelease = true,
 		autoload = true,
 		autoupdate = true,
 		autoupdate_throttle = 250,
