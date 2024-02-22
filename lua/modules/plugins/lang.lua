@@ -6,9 +6,10 @@ lang["mhartington/formatter.nvim"] = {
 	config = require("lang.formatter"),
 }
 
-lang["MunifTanjim/rust-tools.nvim"] = {
+lang["mrcjkb/rustaceanvim"] = {
 	lazy = true,
 	ft = "rust",
+	version = "^4",
 	config = require("lang.rust-tools"),
 	dependencies = { "nvim-lua/plenary.nvim" },
 }
