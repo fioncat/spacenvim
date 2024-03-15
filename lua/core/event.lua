@@ -90,16 +90,28 @@ function autocmd.load_autocmds()
 			{ "FileType", "alpha", "set showtabline=0" },
 			{ "FileType", "markdown", "set wrap" },
 
-			{ "FileType", "json", "setlocal tabstop=2" },
-			{ "FileType", "json", "setlocal shiftwidth=2" },
+			{ "FileType", "json", "setlocal tabstop=4" },
+			{ "FileType", "json", "setlocal shiftwidth=4" },
+			{ "FileType", "json", "setlocal expandtab" },
+
+			{ "FileType", "jsonc", "setlocal tabstop=4" },
+			{ "FileType", "jsonc", "setlocal shiftwidth=4" },
+			{ "FileType", "jsonc", "setlocal expandtab" },
+
+			{ "FileType", "json", "setlocal tabstop=4" },
+			{ "FileType", "json", "setlocal shiftwidth=4" },
 			{ "FileType", "json", "setlocal expandtab" },
 
 			{ "FileType", "yaml", "setlocal tabstop=2" },
 			{ "FileType", "yaml", "setlocal shiftwidth=2" },
 			{ "FileType", "yaml", "setlocal expandtab" },
 
-			{ "FileType", "toml", "setlocal tabstop=2" },
-			{ "FileType", "toml", "setlocal shiftwidth=2" },
+			{ "FileType", "css", "setlocal tabstop=4" },
+			{ "FileType", "css", "setlocal shiftwidth=4" },
+			{ "FileType", "css", "setlocal expandtab" },
+
+			{ "FileType", "toml", "setlocal tabstop=4" },
+			{ "FileType", "toml", "setlocal shiftwidth=4" },
 			{ "FileType", "toml", "setlocal expandtab" },
 		},
 		yank = {},
