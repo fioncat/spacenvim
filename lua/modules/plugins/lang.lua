@@ -6,14 +6,6 @@ lang["mhartington/formatter.nvim"] = {
 	config = require("lang.formatter"),
 }
 
-lang["mrcjkb/rustaceanvim"] = {
-	lazy = true,
-	ft = "rust",
-	version = "^4",
-	config = require("lang.rust-tools"),
-	dependencies = { "nvim-lua/plenary.nvim" },
-}
-
 lang["Saecki/crates.nvim"] = {
 	lazy = true,
 	event = "BufReadPost Cargo.toml",
