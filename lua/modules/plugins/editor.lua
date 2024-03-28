@@ -38,6 +38,12 @@ editor["RRethy/vim-illuminate"] = {
 	config = require("editor.vim-illuminate"),
 }
 
+-- Search and replacp
+editor["nvim-pack/nvim-spectre"] = {
+	lazy = true,
+	cmd = { "Spectre" },
+}
+
 ----------------------------------------------------------------------
 --                  :treesitter related plugins                    --
 ----------------------------------------------------------------------

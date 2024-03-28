@@ -38,6 +38,9 @@ local plug_map = {
 	-- Plugin: hop
 	["n|<leader>jw"] = map_cu("HopWord"):with_noremap():with_desc("jump: Goto word"),
 	["n|<leader>jj"] = map_cu("HopLine"):with_noremap():with_desc("jump: Goto line"),
+
+	-- Plugin: nvim-spectre, search and replace
+	["n|<leader>sp"] = map_cu("Spectre"):with_noremap():with_silent():with_desc("Search and replace"),
 }
 
 bind.nvim_load_mapping(plug_map)
