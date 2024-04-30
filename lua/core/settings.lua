@@ -3,6 +3,10 @@ local settings = {}
 -- Set it to false if you want to use https to update plugins and treesitter parsers.
 settings["use_ssh"] = true
 
+-- Set it to false if you don't use copilot
+---@type boolean
+settings["use_copilot"] = true
+
 ---Change the colors of the global palette here.
 ---Settings will complete their replacement at initialization.
 ---Parameters will be automatically completed as you type.

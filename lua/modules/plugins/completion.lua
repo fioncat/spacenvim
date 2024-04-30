@@ -1,4 +1,5 @@
 local completion = {}
+local use_copilot = require("core.settings").use_copilot
 
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
@@ -56,5 +57,20 @@ completion["hrsh7th/nvim-cmp"] = {
 		{ "ray-x/cmp-treesitter" },
 	},
 }
+
+if use_copilot then
+	completion["zbirenbaum/copilot.lua"] = {
+		lazy = true,
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = require("completion.copilot"),
+		dependencies = {
+			{
+				"zbirenbaum/copilot-cmp",
+				config = require("completion.copilot-cmp"),
+			},
+		},
+	}
+end
 
 return completion
