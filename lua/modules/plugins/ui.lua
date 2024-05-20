@@ -62,10 +62,4 @@ ui["folke/paint.nvim"] = {
 	config = require("ui.paint"),
 }
 
-ui["edluffy/specs.nvim"] = {
-	lazy = true,
-	event = "CursorMoved",
-	config = require("ui.specs"),
-}
-
 return ui
