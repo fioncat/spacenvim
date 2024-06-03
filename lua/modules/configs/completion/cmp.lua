@@ -129,7 +129,7 @@ return function()
 		},
 		-- You can set mappings if you want
 		mapping = cmp.mapping.preset.insert({
-			["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
+			["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 			["<C-p>"] = cmp.mapping.select_prev_item(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
 			["<C-d>"] = cmp.mapping.scroll_docs(-4),
@@ -139,7 +139,7 @@ return function()
 				if cmp.visible() then
 					cmp.select_next_item()
 				elseif require("luasnip").expand_or_locally_jumpable() then
-					vim.fn.feedkeys(t("<Plug>luasnip-expand-or-jump"))
+					require("luasnip").expand_or_jump()
 				else
 					fallback()
 				end
@@ -148,7 +148,7 @@ return function()
 				if cmp.visible() then
 					cmp.select_prev_item()
 				elseif require("luasnip").jumpable(-1) then
-					vim.fn.feedkeys(t("<Plug>luasnip-jump-prev"), "")
+					require("luasnip").jump(-1)
 				else
 					fallback()
 				end
@@ -169,7 +169,14 @@ return function()
 			{ name = "spell" },
 			{ name = "tmux" },
 			{ name = "orgmode" },
-			{ name = "buffer" },
+			{
+				name = "buffer",
+				option = {
+					get_bufnrs = function()
+						return vim.api.nvim_list_bufs()
+					end,
+				},
+			},
 			{ name = "latex_symbols" },
 			{ name = "copilot" },
 			-- { name = "codeium" },

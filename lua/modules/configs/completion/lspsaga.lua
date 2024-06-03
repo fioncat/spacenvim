@@ -63,13 +63,14 @@ return function()
 		},
 		-- Diagnostics: https://nvimdev.github.io/lspsaga/diagnostic/
 		diagnostic = {
-			show_code_action = true,
-			jump_num_shortcut = true,
+			show_code_action = false,
+			jump_num_shortcut = false,
+			auto_preview = false,
 			max_width = 0.5,
 			max_height = 0.6,
 			text_hl_follow = true,
 			border_follow = true,
-			extend_relatedInformation = true,
+			extend_relatedInformation = false,
 			show_layout = "float",
 			show_normal_height = 10,
 			max_show_width = 0.9,
