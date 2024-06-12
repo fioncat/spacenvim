@@ -8,6 +8,10 @@ M.setup = function()
 	local mason_lspconfig = require("mason-lspconfig")
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 
+	require("mason-lspconfig").setup({
+		ensure_installed = require("core.settings").lsp_deps,
+	})
+
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		signs = true,
 		underline = true,

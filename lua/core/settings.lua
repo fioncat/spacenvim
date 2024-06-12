@@ -47,14 +47,41 @@ settings["transparent_background"] = false
 -- Set the desired LSPs here.
 -- check the below link for all the supported LSPs:
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
-settings["lsp"] = {
+settings["lsp_deps"] = {
 	"bashls",
 	"html",
 	"jsonls",
 	"lua_ls",
-	"pyright",
+	"pylsp",
 	"gopls",
 	"rust_analyzer",
+}
+
+-- Set the Treesitter parsers that will be installed during bootstrap here.
+-- Check the below link for all supported languages:
+-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+---@type string[]
+settings["treesitter_deps"] = {
+	"bash",
+	"c",
+	"cpp",
+	"css",
+	"go",
+	"gomod",
+	"html",
+	"javascript",
+	"json",
+	"latex",
+	"lua",
+	"make",
+	"markdown",
+	"markdown_inline",
+	"python",
+	"rust",
+	"typescript",
+	"vue",
+	"vimdoc",
+	"yaml",
 }
 
 return settings
