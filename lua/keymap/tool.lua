@@ -130,6 +130,9 @@ local plug_map = {
 	['n|<leader>"'] = map_cr("ToggleTerm direction=horizontal"):with_noremap():with_silent(),
 	["n|<leader>'"] = map_cr("ToggleTerm direction=vertical"):with_noremap():with_silent(),
 	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
+
+	-- Plugin:dropbar
+	["n|<leader>jd"] = map_cr([[lua require('dropbar.api').pick()]]):with_noremap():with_silent(),
 }
 
 bind.nvim_load_mapping(plug_map)

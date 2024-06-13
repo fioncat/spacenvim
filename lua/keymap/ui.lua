@@ -6,7 +6,7 @@ local map_cr = bind.map_cr
 
 local plug_map = {
 	-- Plugin: bufferline
-	["n|<leader>bb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
+	["n|<leader>jb"] = map_cr("BufferLinePick"):with_noremap():with_silent(),
 	["n|<leader>bd"] = map_cr("BufferLinePickClose"):with_noremap():with_silent(),
 
 	["n|<leader>bn"] = map_cr("BufferLineCycleNext"):with_noremap():with_silent(),

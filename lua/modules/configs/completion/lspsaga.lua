@@ -28,7 +28,7 @@ return function()
 	require("lspsaga").setup({
 		-- Breadcrumbs: https://nvimdev.github.io/lspsaga/breadcrumbs/
 		symbol_in_winbar = {
-			enable = true,
+			enable = false,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = false,
 			show_file = true,
@@ -149,7 +149,6 @@ return function()
 				Method = { icons.kind.Method, "LspKindMethod" },
 				Module = { icons.kind.Module, "LspKindModule" },
 				Namespace = { icons.kind.Namespace, "LspKindNamespace" },
-				Number = { icons.kind.Number, "LspKindNumber" },
 				Operator = { icons.kind.Operator, "LspKindOperator" },
 				Package = { icons.kind.Package, "LspKindPackage" },
 				Property = { icons.kind.Property, "LspKindProperty" },
@@ -160,6 +159,7 @@ return function()
 				Array = { icons.type.Array, "LspKindArray" },
 				Boolean = { icons.type.Boolean, "LspKindBoolean" },
 				Null = { icons.type.Null, "LspKindNull" },
+				Number = { icons.type.Number, "LspKindNumber" },
 				Object = { icons.type.Object, "LspKindObject" },
 				String = { icons.type.String, "LspKindString" },
 				-- ccls-specific icons.
