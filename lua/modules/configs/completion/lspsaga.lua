@@ -28,7 +28,7 @@ return function()
 	require("lspsaga").setup({
 		-- Breadcrumbs: https://nvimdev.github.io/lspsaga/breadcrumbs/
 		symbol_in_winbar = {
-			enable = false,
+			enable = true,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = false,
 			show_file = true,
