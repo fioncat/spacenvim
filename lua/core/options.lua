@@ -2,9 +2,6 @@ local global = require("core.global")
 
 local function load_options()
 	local global_local = {
-		-- Disable compatible with vi
-		nocompatible = true,
-
 		-- Some plugins might need this
 		encoding = "UTF-8",
 
@@ -36,8 +33,6 @@ local function load_options()
 		-- Search ignore case
 		ignorecase = true,
 
-		noswapfile = true,
-
 		cmdheight = 1,
 
 		-- The command completion provided by vim
@@ -48,11 +43,6 @@ local function load_options()
 
 		-- autoload file when it is changed on disk by other instance
 		autoread = true,
-
-		-- Disable bell in terminal
-		noeb = true,
-		vb = true,
-		t_vb = "",
 
 		laststatus = 2,
 		display = "lastline",
@@ -85,7 +75,7 @@ local function load_options()
 	end
 
 	for name, value in pairs(global_local) do
-		vim.o[name] = value
+		vim.api.nvim_set_option_value(name, value, {})
 	end
 
 	-- Fix sqlite3 missing-lib issue on Windows

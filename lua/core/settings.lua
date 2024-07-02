@@ -23,8 +23,8 @@ settings["diagnostics_virtual_text"] = true
 -- Priority: `Error` > `Warning` > `Information` > `Hint`.
 --  > e.g. if you set this option to `Warning`, only lsp warnings and errors will be shown.
 -- NOTE: This entry only works when `diagnostics_virtual_text` is true.
----@type "Error"|"Warning"|"Information"|"Hint"
-settings["diagnostics_level"] = "Hint"
+---@type "ERROR"|"WARN"|"INFO"|"HINT"
+settings["diagnostics_level"] = "HINT"
 
 -- Set the command for handling external URLs here. The executable must be available on your $PATH.
 -- This entry is IGNORED on Windows and macOS, which have their default handlers builtin.
@@ -47,14 +47,41 @@ settings["transparent_background"] = false
 -- Set the desired LSPs here.
 -- check the below link for all the supported LSPs:
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
-settings["lsp"] = {
+settings["lsp_deps"] = {
 	"bashls",
 	"html",
 	"jsonls",
 	"lua_ls",
-	"pyright",
+	"pylsp",
 	"gopls",
 	"rust_analyzer",
+}
+
+-- Set the Treesitter parsers that will be installed during bootstrap here.
+-- Check the below link for all supported languages:
+-- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+---@type string[]
+settings["treesitter_deps"] = {
+	"bash",
+	"c",
+	"cpp",
+	"css",
+	"go",
+	"gomod",
+	"html",
+	"javascript",
+	"json",
+	"latex",
+	"lua",
+	"make",
+	"markdown",
+	"markdown_inline",
+	"python",
+	"rust",
+	"typescript",
+	"vue",
+	"vimdoc",
+	"yaml",
 }
 
 return settings

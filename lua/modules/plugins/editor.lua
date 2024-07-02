@@ -38,7 +38,7 @@ editor["RRethy/vim-illuminate"] = {
 	config = require("editor.vim-illuminate"),
 }
 
--- Search and replacp
+-- Search and replace
 editor["nvim-pack/nvim-spectre"] = {
 	lazy = true,
 	cmd = { "Spectre" },

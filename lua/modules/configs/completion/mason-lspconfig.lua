@@ -8,13 +8,19 @@ M.setup = function()
 	local mason_lspconfig = require("mason-lspconfig")
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 
+	require("mason-lspconfig").setup({
+		ensure_installed = require("core.settings").lsp_deps,
+	})
+
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 		signs = true,
 		underline = true,
 		virtual_text = diagnostics_virtual_text and {
-			severity_limit = diagnostics_level,
+			severity = {
+				min = vim.diagnostic.severity[diagnostics_level],
+			},
 		} or false,
-		-- set update_in_insert to false bacause it was enabled by lspsaga
+		-- set update_in_insert to false because it was enabled by lspsaga
 		update_in_insert = false,
 	})
 

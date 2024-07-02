@@ -28,12 +28,6 @@ completion["dnlhc/glance.nvim"] = {
 	config = require("completion.glance"),
 }
 
-completion["simrat39/symbols-outline.nvim"] = {
-	lazy = true,
-	event = "LspAttach",
-	config = require("completion.symbols-outline"),
-}
-
 completion["hrsh7th/nvim-cmp"] = {
 	lazy = true,
 	event = "InsertEnter",
