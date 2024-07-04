@@ -5,31 +5,18 @@ return function()
 	vim.api.nvim_set_option_value("foldexpr", "nvim_treesitter#foldexpr()", {})
 
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = {
-			"bash",
-			"c",
-			"cpp",
-			"css",
-			"go",
-			"gomod",
-			"html",
-			"javascript",
-			"json",
-			"latex",
-			"lua",
-			"make",
-			"markdown",
-			"markdown_inline",
-			"python",
-			"rust",
-			"typescript",
-			"vue",
-			"yaml",
-		},
+		ensure_installed = require("core.settings").treesitter_deps,
 		highlight = {
 			enable = true,
-			disable = { "vim" },
-			additional_vim_regex_highlighting = { "c", "cpp" },
+			disable = function(ft, bufnr)
+				if vim.tbl_contains({ "vim" }, ft) then
+					return true
+				end
+
+				local ok, is_large_file = pcall(vim.api.nvim_buf_get_var, bufnr, "bigfile_disable_treesitter")
+				return ok and is_large_file
+			end,
+			additional_vim_regex_highlighting = false,
 		},
 		textobjects = {
 			select = {

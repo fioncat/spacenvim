@@ -152,6 +152,9 @@ return function()
 						style = { "bold", "underline" },
 					},
 
+					-- For DropBar
+					DropBarMenuCurrentContext = { bg = cp.overlay0 },
+
 					-- For treesitter
 					["@keyword.return"] = { fg = cp.pink, style = clear },
 				}

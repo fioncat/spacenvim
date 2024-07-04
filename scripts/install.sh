@@ -10,7 +10,7 @@ set -u
 DEST_DIR="${HOME}/.config/nvim"
 BACKUP_DIR="${DEST_DIR}_backup-$(date +%Y%m%dT%H%M%S)"
 CLONE_ATTR=("--progress")
-REQUIRED_NVIM_VERSION=0.8
+REQUIRED_NVIM_VERSION=0.10.0
 USE_SSH=1
 
 abort() {
