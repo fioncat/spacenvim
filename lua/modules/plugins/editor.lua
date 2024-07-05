@@ -6,12 +6,6 @@ editor["m4xshen/autoclose.nvim"] = {
 	config = require("editor.autoclose"),
 }
 
-editor["max397574/better-escape.nvim"] = {
-	lazy = true,
-	event = { "CursorHold", "CursorHoldI" },
-	config = require("editor.better-escape"),
-}
-
 editor["sindrets/diffview.nvim"] = {
 	lazy = true,
 	cmd = { "DiffviewOpen", "DiffviewClose" },
