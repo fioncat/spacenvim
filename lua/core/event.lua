@@ -113,6 +113,10 @@ function autocmd.load_autocmds()
 			{ "FileType", "toml", "setlocal tabstop=4" },
 			{ "FileType", "toml", "setlocal shiftwidth=4" },
 			{ "FileType", "toml", "setlocal expandtab" },
+
+			{ "FileType", "sh", "setlocal tabstop=4" },
+			{ "FileType", "sh", "setlocal shiftwidth=4" },
+			{ "FileType", "sh", "setlocal expandtab" },
 		},
 		yank = {},
 	}
