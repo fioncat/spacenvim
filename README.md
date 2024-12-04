@@ -7,12 +7,7 @@ My personal neovim config forked from [ayamir/nvimdots](https://github.com/ayami
 ArchLinux:
 
 ```bash
-sudo pacman -S git lazygit ripgrep fd yarn lldb nvm make unzip python-pynvim fzf
-
-# nodejs required by copilot.lua
-# node version must > 16.x (18 for example)
-nvm install 18
-nvm use 18
+sudo pacman -S git lazygit ripgrep fd yarn lldb make unzip python-pynvim fzf nodejs
 
 # cargo/rustc required by sniprun and rustfmt
 sudo pacman -S rustup
