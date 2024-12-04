@@ -9,7 +9,10 @@ return function()
 		highlight = {
 			enable = true,
 			disable = function(ft, bufnr)
-				if vim.tbl_contains({ "vim" }, ft) then
+				if
+					vim.tbl_contains({ "gitcommit" }, ft)
+					or (vim.api.nvim_buf_line_count(bufnr) > 7500 and ft ~= "vimdoc")
+				then
 					return true
 				end
 
@@ -21,6 +24,7 @@ return function()
 		textobjects = {
 			select = {
 				enable = true,
+				lookahead = true,
 				keymaps = {
 					["af"] = "@function.outer",
 					["if"] = "@function.inner",
@@ -49,7 +53,6 @@ return function()
 				},
 			},
 		},
-		-- context_commentstring = { enable = true, enable_autocmd = false },
 		indent = { enable = true },
 		matchup = { enable = true },
 	})

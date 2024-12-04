@@ -48,23 +48,6 @@ return function()
 		}
 	end
 
-	local mini_sections = {
-		lualine_a = { "filetype" },
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	}
-	local outline = {
-		sections = mini_sections,
-		filetypes = { "lspsagaoutline" },
-	}
-	local diffview = {
-		sections = mini_sections,
-		filetypes = { "DiffviewFiles" },
-	}
-
 	local conditionals = {
 		has_enough_room = function()
 			return vim.o.columns > 100
@@ -134,6 +117,7 @@ return function()
 			end,
 			padding = 0,
 			color = utils.gen_hl("surface1", true, true),
+			separator = { left = "", right = "" },
 		},
 
 		file_status = {
@@ -162,6 +146,33 @@ return function()
 			cond = conditionals.has_comp_before,
 		},
 
+		lsp = {
+			function()
+				local buf_ft = vim.bo.filetype
+				local clients = vim.lsp.get_clients({ buffer = vim.api.nvim_get_current_buf() })
+				local lsp_lists = {}
+				local available_servers = {}
+				if next(clients) == nil then
+					return icons.misc.NoActiveLsp -- No server available
+				end
+				for _, client in ipairs(clients) do
+					local filetypes = client.config.filetypes
+					local client_name = client.name
+					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+						-- Avoid adding servers that already exists.
+						if not lsp_lists[client_name] then
+							lsp_lists[client_name] = true
+							table.insert(available_servers, client_name)
+						end
+					end
+				end
+				return next(available_servers) == nil and icons.misc.NoActiveLsp
+					or string.format("%s[%s]", icons.misc.LspAvailable, table.concat(available_servers, ", "))
+			end,
+			color = utils.gen_hl("blue", true, true, nil, "bold"),
+			cond = conditionals.has_enough_room,
+		},
+
 		python_venv = {
 			function()
 				local function env_cleanup(venv)
@@ -175,20 +186,27 @@ return function()
 					return venv
 				end
 
-				if vim.api.nvim_buf_get_option(0, "filetype") == "python" then
+				if vim.bo.filetype == "python" then
 					local venv = os.getenv("CONDA_DEFAULT_ENV")
 					if venv then
-						return string.format("%s", env_cleanup(venv))
+						return icons.misc.PyEnv .. env_cleanup(venv)
 					end
 					venv = os.getenv("VIRTUAL_ENV")
 					if venv then
-						return string.format("%s", env_cleanup(venv))
+						return icons.misc.PyEnv .. env_cleanup(venv)
 					end
 				end
 				return ""
 			end,
 			color = utils.gen_hl("green", true, true),
 			cond = conditionals.has_enough_room,
+		},
+
+		tabwidth = {
+			function()
+				return icons.ui.Tab .. vim.bo.tabstop
+			end,
+			padding = 1,
 		},
 
 		cwd = {
@@ -261,7 +279,7 @@ return function()
 					padding = { right = 1 },
 				},
 
-				-- { utils.force_centering },
+				{ utils.force_centering },
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -277,6 +295,7 @@ return function()
 			lualine_x = {
 				{
 					"encoding",
+					show_bomb = true,
 					fmt = string.upper,
 					padding = { left = 1 },
 					cond = conditionals.has_enough_room,
@@ -290,6 +309,7 @@ return function()
 					},
 					padding = { left = 1 },
 				},
+				components.tabwidth,
 			},
 			lualine_y = {
 				components.separator,
@@ -307,14 +327,6 @@ return function()
 			lualine_z = {},
 		},
 		tabline = {},
-		extensions = {
-			"quickfix",
-			"nvim-tree",
-			"nvim-dap-ui",
-			"toggleterm",
-			"fugitive",
-			outline,
-			diffview,
-		},
+		extensions = {},
 	})
 end

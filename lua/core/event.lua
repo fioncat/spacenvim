@@ -3,10 +3,11 @@ local autocmd = {}
 
 function autocmd.nvim_create_augroups(definitions)
 	for group_name, definition in pairs(definitions) do
-		vim.api.nvim_command("augroup " .. group_name)
+		-- Prepend an underscore to avoid name clashes
+		vim.api.nvim_command("augroup _" .. group_name)
 		vim.api.nvim_command("autocmd!")
 		for _, def in ipairs(definition) do
-			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+			local command = table.concat(vim.iter({ "autocmd", def }):flatten(math.huge):totable(), " ")
 			vim.api.nvim_command(command)
 		end
 		vim.api.nvim_command("augroup END")
@@ -72,19 +73,36 @@ function autocmd.load_autocmds()
 			{ "BufWritePre", "MERGE_MSG", "setlocal noundofile" },
 			{ "BufWritePre", "*.tmp", "setlocal noundofile" },
 			{ "BufWritePre", "*.bak", "setlocal noundofile" },
+			-- auto place to last edit
+			{
+				"BufReadPost",
+				"*",
+				[[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif]],
+			},
 		},
 		wins = {
-			-- Check if file changed when its window is focus, more eager than 'autoread'
-			{ "FocusGained", "* checktime" },
-			-- Equalize window dimensions when resizing vim window
-			-- { "VimResized", "*", [[tabdo wincmd =]] },
-
 			-- Highlight current line only on focused window
 			{
 				"WinEnter,BufEnter,InsertLeave",
 				"*",
 				[[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]],
 			},
+			{
+				"WinLeave,BufLeave,InsertEnter",
+				"*",
+				[[if &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal nocursorline | endif]],
+			},
+			-- Attempt to write shada when leaving nvim
+			{
+				"VimLeave",
+				"*",
+				[[if has('nvim') | wshada | else | wviminfo! | endif]],
+			},
+
+			-- Check if file changed when its window is focus, more eager than 'autoread'
+			{ "FocusGained", "* checktime" },
+			-- Equalize window dimensions when resizing vim window
+			{ "VimResized", "*", [[tabdo wincmd =]] },
 		},
 		ft = {
 			{ "FileType", "alpha", "set showtabline=0" },
@@ -118,7 +136,13 @@ function autocmd.load_autocmds()
 			{ "FileType", "sh", "setlocal shiftwidth=4" },
 			{ "FileType", "sh", "setlocal expandtab" },
 		},
-		yank = {},
+		yank = {
+			{
+				"TextYankPost",
+				"*",
+				[[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=300})]],
+			},
+		},
 	}
 
 	autocmd.nvim_create_augroups(definitions)

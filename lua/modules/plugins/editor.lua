@@ -63,6 +63,10 @@ editor["nvim-treesitter/nvim-treesitter"] = {
 			config = require("editor.autotag"),
 		},
 		{
+			"nvim-treesitter/nvim-treesitter-context",
+			config = require("editor.ts-context"),
+		},
+		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			config = require("editor.ts-context-commentstring"),
 		},

@@ -54,6 +54,15 @@ tool["nvim-telescope/telescope.nvim"] = {
 			{ "kkharji/sqlite.lua" },
 		} },
 		{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		{
+			"aaronhallaert/advanced-git-search.nvim",
+			cmd = { "AdvancedGitSearch" },
+			dependencies = {
+				"tpope/vim-rhubarb",
+				"tpope/vim-fugitive",
+				"sindrets/diffview.nvim",
+			},
+		},
 	},
 }
 

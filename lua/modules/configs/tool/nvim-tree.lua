@@ -17,6 +17,10 @@ return function()
 		respect_buf_cwd = false,
 		sort_by = "name",
 		sync_root_with_cwd = true,
+		on_attach = function(bufnr)
+			require("nvim-tree.api").config.mappings.default_on_attach(bufnr)
+			vim.keymap.del("n", "<C-e>", { buffer = bufnr })
+		end,
 		view = {
 			adaptive_size = false,
 			centralize_selection = false,
@@ -66,25 +70,25 @@ return function()
 					git = true,
 				},
 				padding = " ",
-				symlink_arrow = "  ",
+				symlink_arrow = " 󰁔 ",
 				glyphs = {
 					default = icons.documents.Default, --
 					symlink = icons.documents.Symlink, --
 					bookmark = icons.ui.Bookmark,
 					git = {
 						unstaged = icons.git.Mod_alt,
-						staged = icons.git.Add, --
+						staged = icons.git.Add, --󰄬
 						unmerged = icons.git.Unmerged,
-						renamed = icons.git.Rename, --
-						untracked = icons.git.Untracked, -- "ﲉ"
+						renamed = icons.git.Rename, --󰁔
+						untracked = icons.git.Untracked, -- "󰞋"
 						deleted = icons.git.Remove, --
 						ignored = icons.git.Ignore, --◌
 					},
 					folder = {
-						-- arrow_open = "",
-						-- arrow_closed = "",
-						arrow_open = "",
-						arrow_closed = "",
+						arrow_open = icons.ui.ArrowOpen,
+						arrow_closed = icons.ui.ArrowClosed,
+						-- arrow_open = "",
+						-- arrow_closed = "",
 						default = icons.ui.Folder,
 						open = icons.ui.FolderOpen,
 						empty = icons.ui.EmptyFolder,
@@ -122,8 +126,27 @@ return function()
 					enable = true,
 					chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
 					exclude = {
-						filetype = { "notify", "qf", "diff", "fugitive", "fugitiveblame" },
-						buftype = { "terminal", "help" },
+						buftype = {
+							"help",
+							"nofile",
+							"prompt",
+							"quickfix",
+							"terminal",
+						},
+						filetype = {
+							"dap-repl",
+							"diff",
+							"fugitive",
+							"fugitiveblame",
+							"git",
+							"notify",
+							"NvimTree",
+							"Outline",
+							"qf",
+							"TelescopePrompt",
+							"toggleterm",
+							"undotree",
+						},
 					},
 				},
 			},

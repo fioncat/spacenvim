@@ -2,87 +2,125 @@ local global = require("core.global")
 
 local function load_options()
 	local global_local = {
-		-- Some plugins might need this
-		encoding = "UTF-8",
-
-		-- Relative Number
-		number = true,
-		relativenumber = true,
-
+		autoindent = true,
+		autoread = true,
+		autowrite = true,
+		background = "dark",
+		backspace = "indent,eol,start",
+		backup = false,
+		backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
+		breakat = [[\ \	;:,!?]],
+		breakindentopt = "shift:2,min:20",
+		clipboard = "unnamedplus",
+		cmdheight = 1,
+		cmdwinheight = 5,
+		complete = ".,w,b,k,kspell",
+		completeopt = "menuone,noselect,popup",
+		concealcursor = "niv",
+		conceallevel = 0,
+		cursorcolumn = false,
 		cursorline = true,
-
-		showmatch = true,
-
+		diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience",
+		display = "lastline",
+		encoding = "utf-8",
+		equalalways = false,
+		errorbells = true,
+		fileformats = "unix,mac,dos",
 		foldenable = true,
 		foldlevelstart = 99,
-
-		ts = 4,
-		shiftwidth = 4,
-
-		-- NOTE: If you enable this, the <TAB> will be replaced to spaces
-		-- expandtab = true,
-
-		autoindent = true,
-
-		splitright = true,
-		splitbelow = true,
-
-		incsearch = true,
-		-- Use command `:noh` or shortcut <C-L> to clean hlsearch
+		formatoptions = "1jcroql",
+		grepformat = "%f:%l:%c:%m",
+		grepprg = "rg --hidden --vimgrep --smart-case --",
+		helpheight = 12,
+		hidden = true,
+		history = 2000,
 		hlsearch = true,
-		-- Search ignore case
 		ignorecase = true,
-
-		cmdheight = 1,
-
-		-- The command completion provided by vim
-		-- wildmenu = true,
-		-- wildmode = "longest,list",
+		inccommand = "nosplit",
+		incsearch = true,
+		infercase = true,
+		jumpoptions = "stack",
+		laststatus = 3,
+		linebreak = false,
+		list = true,
+		listchars = [[tab:  ,trail:•]],
+		magic = true,
+		mousescroll = "ver:3,hor:6",
+		number = true,
+		previewheight = 12,
+		pumblend = 0,
+		pumheight = 15,
+		redrawtime = 1500,
+		relativenumber = true,
+		ruler = true,
+		scrolloff = 2,
+		sessionoptions = "buffers,curdir,folds,help,tabpages,winpos,winsize",
+		shada = "!,'500,<50,@100,s10,h",
+		shiftround = true,
+		shiftwidth = 4,
+		shortmess = "aoOTIcF",
+		showbreak = "",
+		showcmd = false,
+		showmatch = true,
+		showmode = false,
+		showtabline = 2,
+		sidescrolloff = 5,
+		signcolumn = "yes:1",
+		smartcase = true,
+		smarttab = true,
+		smoothscroll = true,
+		splitbelow = true,
+		splitkeep = "screen",
+		splitright = true,
+		startofline = false,
+		swapfile = false,
+		switchbuf = "usetab,uselast",
+		synmaxcol = 2500,
+		tabstop = 4,
+		termguicolors = true,
+		timeout = true,
+		timeoutlen = 300,
+		ttimeout = true,
+		ttimeoutlen = 0,
+		undodir = global.cache_dir .. "/undo/",
+		undofile = true,
+		updatetime = 200,
+		viewoptions = "folds,cursor,curdir,slash,unix",
+		virtualedit = "block",
+		visualbell = true,
+		whichwrap = "h,l,<,>,[,],~",
 		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
 		wildignorecase = true,
-
-		-- autoload file when it is changed on disk by other instance
-		autoread = true,
-
-		laststatus = 2,
-		display = "lastline",
-
-		background = "dark",
-		termguicolors = true,
-
-		-- Always show signcolumn
-		signcolumn = "yes:1",
-
-		-- Show tail whitespace
-		listchars = [[tab:  ,trail:•]],
-		list = true,
+		winblend = 0,
+		winminwidth = 10,
+		winwidth = 30,
+		wrap = true,
+		wrapscan = true,
+		writebackup = false,
 	}
 	local function isempty(s)
 		return s == nil or s == ""
+	end
+	local function use_if_defined(val, fallback)
+		return val ~= nil and val or fallback
 	end
 
 	-- custom python provider
 	local conda_prefix = os.getenv("CONDA_PREFIX")
 	if not isempty(conda_prefix) then
-		vim.g.python_host_prog = conda_prefix .. "/bin/python"
-		vim.g.python3_host_prog = conda_prefix .. "/bin/python"
-	elseif global.is_mac then
-		vim.g.python_host_prog = "/usr/bin/python"
-		vim.g.python3_host_prog = "/usr/local/bin/python3"
+		vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, conda_prefix .. "/bin/python")
+		vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, conda_prefix .. "/bin/python")
 	else
-		vim.g.python_host_prog = "/usr/bin/python"
-		vim.g.python3_host_prog = "/usr/bin/python3"
+		vim.g.python_host_prog = use_if_defined(vim.g.python_host_prog, "python")
+		vim.g.python3_host_prog = use_if_defined(vim.g.python3_host_prog, "python3")
 	end
 
 	for name, value in pairs(global_local) do
 		vim.api.nvim_set_option_value(name, value, {})
 	end
-
-	-- Fix sqlite3 missing-lib issue on Windows
-	if global.is_windows then
-		-- Download the DLLs form https://www.sqlite.org/download.html
-		vim.g.sqlite_clib_path = global.home .. "/Documents/sqlite-dll-win64-x64-3400100/sqlite3.dll"
-	end
 end
+
+-- Newtrw liststyle: https://medium.com/usevim/the-netrw-style-options-3ebe91d42456
+vim.g.netrw_liststyle = 3
 
 load_options()

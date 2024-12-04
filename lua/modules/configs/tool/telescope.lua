@@ -4,6 +4,14 @@ return function()
 
 	require("telescope").setup({
 		defaults = {
+			vimgrep_arguments = {
+				"rg",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+			},
 			initial_mode = "insert",
 			prompt_prefix = " " .. icons.ui.Telescope .. " ",
 			selection_caret = icons.ui.ChevronRight,
@@ -11,10 +19,13 @@ return function()
 			results_title = false,
 			layout_strategy = "horizontal",
 			path_display = { "truncate" },
+			selection_strategy = "reset",
+			sorting_strategy = "ascending",
+			color_devicons = true,
 			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip", "vendor/" },
 			layout_config = {
 				horizontal = {
-					prompt_position = "bottom",
+					prompt_position = "top",
 					preview_width = 0.55,
 					results_width = 0.8,
 				},
@@ -58,15 +69,16 @@ return function()
 				side_by_side = true,
 				mappings = { -- this whole table is the default
 					i = {
-						-- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
-						-- you want to use the following actions. This means installing as a dependency of
-						-- telescope in it's `requirements` and loading this extension from there instead of
-						-- having the separate plugin definition as outlined above. See issue #6.
 						["<cr>"] = require("telescope-undo.actions").yank_additions,
 						["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
 						["<C-cr>"] = require("telescope-undo.actions").restore,
 					},
 				},
+			},
+			advanced_git_search = {
+				diff_plugin = "diffview",
+				git_flags = { "-c", "delta.side-by-side=true" },
+				entry_default_author_or_date = "author", -- one of "author" or "date"
 			},
 		},
 	})
@@ -76,4 +88,5 @@ return function()
 	require("telescope").load_extension("live_grep_args")
 	require("telescope").load_extension("notify")
 	require("telescope").load_extension("undo")
+	require("telescope").load_extension("advanced_git_search")
 end

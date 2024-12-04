@@ -21,7 +21,6 @@ ui["Jint-lzxy/nvim"] = {
 
 ui["j-hui/fidget.nvim"] = {
 	lazy = true,
-	branch = "legacy",
 	event = "LspAttach",
 	config = require("ui.fidget"),
 }
@@ -46,7 +45,7 @@ ui["nvim-lualine/lualine.nvim"] = {
 
 ui["karb94/neoscroll.nvim"] = {
 	lazy = true,
-	event = "BufReadPost",
+	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.neoscroll"),
 }
 
@@ -60,6 +59,12 @@ ui["folke/paint.nvim"] = {
 	lazy = true,
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.paint"),
+}
+
+ui["mrjones2014/smart-splits.nvim"] = {
+	lazy = true,
+	event = { "CursorHoldI", "CursorHold" },
+	config = require("ui.splits"),
 }
 
 return ui
