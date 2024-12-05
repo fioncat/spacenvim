@@ -71,7 +71,6 @@ settings["treesitter_deps"] = {
 	"html",
 	"javascript",
 	"json",
-	"latex",
 	"lua",
 	"make",
 	"markdown",
