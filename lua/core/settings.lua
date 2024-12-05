@@ -1,7 +1,7 @@
 local settings = {}
 
 -- Set it to false if you want to use https to update plugins and treesitter parsers.
-settings["use_ssh"] = true
+settings["use_ssh"] = false
 
 -- Set it to false if you don't use copilot
 ---@type boolean
