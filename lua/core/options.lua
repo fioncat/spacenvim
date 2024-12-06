@@ -11,7 +11,7 @@ local function load_options()
 		backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
 		breakat = [[\ \	;:,!?]],
 		breakindentopt = "shift:2,min:20",
-		clipboard = "unnamedplus",
+		clipboard = "",
 		cmdheight = 1,
 		cmdwinheight = 5,
 		complete = ".,w,b,k,kspell",
