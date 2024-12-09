@@ -11,14 +11,14 @@ local function load_options()
 		backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
 		breakat = [[\ \	;:,!?]],
 		breakindentopt = "shift:2,min:20",
-		clipboard = "",
+		clipboard = "", -- "unnamedplus"
 		cmdheight = 1,
 		cmdwinheight = 5,
 		complete = ".,w,b,k,kspell",
 		completeopt = "menuone,noselect,popup",
 		concealcursor = "niv",
 		conceallevel = 0,
-		cursorcolumn = false,
+		cursorcolumn = false, -- true
 		cursorline = true,
 		diffopt = "filler,iwhite,internal,linematch:60,algorithm:patience",
 		display = "lastline",
@@ -41,13 +41,14 @@ local function load_options()
 		infercase = true,
 		jumpoptions = "stack",
 		laststatus = 3,
-		linebreak = false,
+		linebreak = true,
 		list = true,
-		listchars = [[tab:  ,trail:•]],
+		listchars = [[tab:  ,trail:•]], -- "tab:»·,nbsp:+,trail:·,extends:→,precedes:←"
 		magic = true,
 		mousescroll = "ver:3,hor:6",
 		number = true,
 		previewheight = 12,
+		-- Do NOT adjust the following option (pumblend) if you're using transparent background
 		pumblend = 0,
 		pumheight = 15,
 		redrawtime = 1500,
@@ -59,7 +60,7 @@ local function load_options()
 		shiftround = true,
 		shiftwidth = 4,
 		shortmess = "aoOTIcF",
-		showbreak = "",
+		showbreak = "", -- "↳  "
 		showcmd = false,
 		showmatch = true,
 		showmode = false,
@@ -84,6 +85,7 @@ local function load_options()
 		ttimeoutlen = 0,
 		undodir = global.cache_dir .. "/undo/",
 		undofile = true,
+		-- Please do NOT set `updatetime` to above 500, otherwise most plugins may not function correctly
 		updatetime = 200,
 		viewoptions = "folds,cursor,curdir,slash,unix",
 		virtualedit = "block",
@@ -91,6 +93,7 @@ local function load_options()
 		whichwrap = "h,l,<,>,[,],~",
 		wildignore = ".git,.hg,.svn,*.pyc,*.o,*.out,*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store,**/node_modules/**,**/bower_modules/**",
 		wildignorecase = true,
+		-- Do NOT adjust the following option (winblend) if you're using transparent background
 		winblend = 0,
 		winminwidth = 10,
 		winwidth = 30,

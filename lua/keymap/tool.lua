@@ -71,72 +71,34 @@ local plug_map = {
 		:with_desc("find: file in git project"),
 	["n|<leader>sb"] = map_cu("Telescope buffers"):with_noremap():with_silent():with_desc("find: Buffer opened"),
 	["n|<leader>sw"] = map_cu("Telescope grep_string"):with_noremap():with_silent():with_desc("find: Current word"),
-	["n|<leader>sd"] = map_cr("Telescope lsp_document_symbols"):with_noremap():with_silent(),
-	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols"):with_noremap():with_silent(),
-
-	-- Plugin: dap
-	["n|<leader>dc"] = map_callback(function()
-			require("dap").continue()
-		end)
+	["n|<leader>sd"] = map_cr("Telescope lsp_document_symbols")
 		:with_noremap()
 		:with_silent()
-		:with_desc("debug: Run/Continue"),
-	["n|<leader>dq"] = map_callback(function()
-			require("dap").terminate()
-			require("dapui").close()
-		end)
+		:with_desc("find: lsp symbols"),
+	["n|<leader>sl"] = map_cr("Telescope lsp_dynamic_workspace_symbols")
 		:with_noremap()
 		:with_silent()
-		:with_desc("debug: Stop"),
-	["n|<leader>db"] = map_callback(function()
-			require("dap").toggle_breakpoint()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Toggle breakpoint"),
-	["n|<leader>di"] = map_callback(function()
-			require("dap").step_into()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Step into"),
-	["n|<leader>do"] = map_callback(function()
-			require("dap").step_out()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Step out"),
-	["n|<leader>dn"] = map_callback(function()
-			require("dap").step_over()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Step over"),
-	["n|<leader>dt"] = map_callback(function()
-			require("dap").run_to_cursor()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Run to cursor"),
-	["n|<leader>dl"] = map_callback(function()
-			require("dap").run_last()
-		end)
-		:with_noremap()
-		:with_silent()
-		:with_desc("debug: Run last"),
+		:with_desc("find: lsp symbols in workspace"),
 
 	-- Terminal
-	["t|<C-]>"] = map_cmd([[<C-\><C-n>]]):with_silent(), -- switch to normal mode in terminal.
-	['n|<leader>"'] = map_cr("ToggleTerm direction=horizontal"):with_noremap():with_silent(),
-	["n|<leader>'"] = map_cr("ToggleTerm direction=vertical"):with_noremap():with_silent(),
-	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent(),
+	["t|<C-]>"] = map_cmd([[<C-\><C-n>]]):with_silent():with_desc("terminal: switch to normal mode"),
+	['n|<leader>"'] = map_cr("ToggleTerm direction=horizontal")
+		:with_noremap()
+		:with_silent()
+		:with_desc("terminal: trigger horizontal"),
+	["n|<leader>'"] = map_cr("ToggleTerm direction=vertical")
+		:with_noremap()
+		:with_silent()
+		:with_desc("terminal: trigger vertical"),
+	["t|<C-Q>"] = map_cmd("exit<CR>"):with_noremap():with_silent():with_desc("terminal: quit"),
 
 	-- lazygit
 	["n|<leader>gg"] = map_callback(function()
 			_toggle_lazygit()
 		end)
 		:with_noremap()
-		:with_silent(),
+		:with_silent()
+		:with_desc("git: trigger git TUI"),
 }
 
 bind.nvim_load_mapping(plug_map)
