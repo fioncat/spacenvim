@@ -106,7 +106,8 @@ function autocmd.load_autocmds()
 		},
 		ft = {
 			{ "FileType", "alpha", "set showtabline=0" },
-			{ "FileType", "markdown", "set wrap" },
+			{ "FileType", "markdown", "setlocal wrap" },
+			{ "FileType", "markdown", "setlocal nolinebreak" },
 
 			{ "FileType", "json", "setlocal tabstop=4" },
 			{ "FileType", "json", "setlocal shiftwidth=4" },
