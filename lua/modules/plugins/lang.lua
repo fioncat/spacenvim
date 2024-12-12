@@ -1,5 +1,10 @@
 local lang = {}
 
+local minimal_mode = os.getenv("NVIM_MINI") == "true"
+if minimal_mode then
+	return lang
+end
+
 lang["mhartington/formatter.nvim"] = {
 	lazy = true,
 	cmd = { "Format", "FormatWrite" },

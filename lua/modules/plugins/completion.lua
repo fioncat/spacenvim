@@ -1,6 +1,11 @@
 local completion = {}
 local use_copilot = require("core.settings").use_copilot
 
+local minimal_mode = os.getenv("NVIM_MINI") == "true"
+if minimal_mode then
+	return completion
+end
+
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },

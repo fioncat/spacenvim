@@ -1,5 +1,10 @@
 local editor = {}
 
+local minimal_mode = os.getenv("NVIM_MINI") == "true"
+if minimal_mode then
+	return editor
+end
+
 editor["m4xshen/autoclose.nvim"] = {
 	lazy = true,
 	event = "InsertEnter",
