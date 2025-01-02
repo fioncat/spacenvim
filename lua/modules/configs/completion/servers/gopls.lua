@@ -30,7 +30,7 @@ return {
 	settings = {
 		gopls = {
 			staticcheck = true,
-			semanticTokens = true,
+			semanticTokens = false,
 			noSemanticString = true,
 			usePlaceholders = false,
 			completeUnimported = true,
