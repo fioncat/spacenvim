@@ -61,7 +61,7 @@ return function()
 			},
 		},
 		hooks = {
-			before_open = function(results, open, _, method)
+			before_open = function(results, open, jump, method)
 				if #results == 0 then
 					vim.notify(
 						"This method is not supported by any of the servers registered for the current buffer",
@@ -74,6 +74,9 @@ return function()
 						vim.log.levels.INFO,
 						{ title = "Glance" }
 					)
+				elseif #results == 1 and method == "definitions" then
+					-- Jump to the only definition
+					jump(results[1])
 				else
 					open(results)
 				end

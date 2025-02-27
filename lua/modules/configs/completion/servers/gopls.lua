@@ -31,11 +31,13 @@ return {
 		gopls = {
 			staticcheck = true,
 			semanticTokens = false,
-			noSemanticString = true,
 			usePlaceholders = false,
 			completeUnimported = true,
 			symbolMatcher = "Fuzzy",
 			buildFlags = { "-tags", "integration" },
+			semanticTokenTypes = {
+				string = false,
+			},
 			codelenses = {
 				generate = true,
 				gc_details = true,
