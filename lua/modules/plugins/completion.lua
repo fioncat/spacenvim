@@ -63,6 +63,7 @@ if use_copilot then
 		cmd = "Copilot",
 		event = "InsertEnter",
 		config = require("completion.copilot"),
+		commit = "30321e33b03cb924fdcd6a806a0dc6fa0b0eafb9",
 		dependencies = {
 			{
 				"zbirenbaum/copilot-cmp",
