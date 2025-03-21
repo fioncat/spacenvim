@@ -53,7 +53,7 @@
   "smart-splits.nvim": { "branch": "master", "commit": "a3ccaa1ea09e21712ded3ffdabdbdc577f784054" },
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
-  "telescope-frecency.nvim": { "branch": "master", "commit": "eeda21e429c86bd38ea287700e77f96058331be7" },
+  "telescope-frecency.nvim": { "branch": "master", "commit": "55ca623ae9e366fabccd5bbe7e612ca0879e98c8" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope-live-grep-args.nvim": { "branch": "master", "commit": "b80ec2c70ec4f32571478b501218c8979fab5201" },
   "telescope-undo.nvim": { "branch": "main", "commit": "928d0c2dc9606e01e2cc547196f48d2eaecf58e5" },
