@@ -23,6 +23,9 @@ return function()
 				["log"] = false,
 				["toggleterm"] = false,
 			},
+			logger = {
+				print_log = false,
+			},
 		})
 	end, 100)
 end
