@@ -28,6 +28,7 @@ ui["j-hui/fidget.nvim"] = {
 ui["lewis6991/gitsigns.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufNewFile" },
+	commit = "3d01bad",
 	config = require("ui.gitsigns"),
 }
 
