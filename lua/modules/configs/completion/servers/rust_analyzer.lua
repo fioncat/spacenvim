@@ -47,10 +47,14 @@ return function(opts)
 					snippets = "none",
 				},
 			},
-			checkOnSave = {
-				allFeatures = true,
+			checkOnSave = true,
+			check = {
+				enable = true,
 				command = "clippy",
-				extraArgs = { "--no-deps" },
+				features = "all",
+			},
+			procMacro = {
+				enable = true,
 			},
 		},
 	}
