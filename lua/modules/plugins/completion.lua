@@ -12,7 +12,10 @@ completion["neovim/nvim-lspconfig"] = {
 	config = require("completion.lsp"),
 	dependencies = {
 		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" },
+		{
+			"williamboman/mason-lspconfig.nvim",
+			commit = "5c142464ea29ceca3b4d77d2c80b9e8e3fca02d9",
+		},
 		{
 			"ray-x/lsp_signature.nvim",
 			config = require("completion.lsp-signature"),
