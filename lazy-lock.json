@@ -50,7 +50,7 @@
   "paint.nvim": { "branch": "main", "commit": "ef6f717a8669619ebbd098fb72f85115d64c6c92" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
-  "smart-splits.nvim": { "branch": "master", "commit": "fdb4e812b615bbdc94b403a0c0b21c9e0af2cf2a" },
+  "smart-splits.nvim": { "branch": "master", "commit": "720b42a92d3a1627b883f5f3cae1e2ffdf511fae" },
   "sqlite.lua": { "branch": "master", "commit": "50092d60feb242602d7578398c6eb53b4a8ffe7b" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "telescope-frecency.nvim": { "branch": "master", "commit": "03a0efd1a8668b902bddef4b82cb7d46cd5ab22c" },
