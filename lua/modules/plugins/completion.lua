@@ -8,19 +8,14 @@ end
 
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
-	event = { "BufReadPost", "BufAdd", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	config = require("completion.lsp"),
 	dependencies = {
+		{ "mason-org/mason.nvim" },
+		{ "mason-org/mason-lspconfig.nvim" },
+		{ "folke/neoconf.nvim" },
 		{
-			"williamboman/mason.nvim",
-			version = "^1.0.0",
-		},
-		{
-			"williamboman/mason-lspconfig.nvim",
-			version = "^1.0.0",
-		},
-		{
-			"ray-x/lsp_signature.nvim",
+			"Jint-lzxy/lsp_signature.nvim",
 			config = require("completion.lsp-signature"),
 		},
 	},
