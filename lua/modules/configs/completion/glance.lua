@@ -2,7 +2,7 @@ return function()
 	local icons = { ui = require("modules.utils.icons").get("ui", true) }
 	local actions = require("glance").actions
 
-	require("glance").setup({
+	require("modules.utils").load_plugin("glance", {
 		height = 20,
 		zindex = 50,
 		preview_win_opts = {

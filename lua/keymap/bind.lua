@@ -10,6 +10,7 @@
 ---@field buffer boolean|number
 local rhs_options = {}
 
+---@return map_rhs
 function rhs_options:new()
 	local instance = {
 		cmd = "",
@@ -19,7 +20,6 @@ function rhs_options:new()
 			expr = false,
 			nowait = false,
 			callback = nil,
-			desc = "",
 		},
 		buffer = false,
 	}
@@ -72,10 +72,10 @@ function rhs_options:with_silent()
 	return self
 end
 
----@param description_string string
+---@param desc_string string
 ---@return map_rhs
-function rhs_options:with_desc(description_string)
-	self.options.desc = description_string
+function rhs_options:with_desc(desc_string)
+	self.options.desc = desc_string
 	return self
 end
 
@@ -150,15 +150,17 @@ end
 ---@param mapping table<string, map_rhs>
 function bind.nvim_load_mapping(mapping)
 	for key, value in pairs(mapping) do
-		local mode, keymap = key:match("([^|]*)|?(.*)")
+		local modes, keymap = key:match("([^|]*)|?(.*)")
 		if type(value) == "table" then
-			local rhs = value.cmd
-			local options = value.options
-			local buf = value.buffer
-			if buf and type(buf) == "number" then
-				vim.api.nvim_buf_set_keymap(buf, mode, keymap, rhs, options)
-			else
-				vim.api.nvim_set_keymap(mode, keymap, rhs, options)
+			for _, mode in ipairs(vim.split(modes, "")) do
+				local rhs = value.cmd
+				local options = value.options
+				local buf = value.buffer
+				if buf and type(buf) == "number" then
+					vim.api.nvim_buf_set_keymap(buf, mode, keymap, rhs, options)
+				else
+					vim.api.nvim_set_keymap(mode, keymap, rhs, options)
+				end
 			end
 		end
 	end

@@ -62,9 +62,11 @@ local data = {
 		Default = "",
 		File = "",
 		Files = "",
+		FileFind = "󰈞",
 		FileTree = "󰙅",
 		Import = "",
 		Symlink = "",
+		Word = "",
 	},
 	git = {
 		Add = "",
@@ -183,25 +185,16 @@ local data = {
 	},
 	cmp = {
 		buffer = "󰉿",
+		copilot = "",
+		copilot_alt = "",
 		latex_symbols = "",
 		luasnip = "󰃐",
 		nvim_lsp = "",
-		nvim_lua = "",
-		orgmode = "",
 		path = "",
 		spell = "󰓆",
 		tmux = "",
 		treesitter = "",
 		undefined = "",
-		-- Add source-specific icons here
-		codeium = "",
-		Codeium = "",
-		copilot = "",
-		copilot_alt = "",
-		Copilot = "",
-		Copilot_alt = "",
-		TabNine = "",
-		cmp_tabnine = "",
 	},
 	dap = {
 		Breakpoint = "󰝥",
@@ -218,11 +211,16 @@ local data = {
 		Stopped = "",
 		Terminate = "󰝤",
 	},
+	aichat = {
+		Chat = "󱜸",
+		Copilot = "",
+		Me = "",
+	},
 }
 
 ---Get a specific icon set.
----@param category "kind"|"type"|"documents"|"git"|"ui"|"diagnostics"|"misc"|"cmp"|"dap"
----@param add_space? boolean @Add trailing space after the icon.
+---@param category "kind"|"type"|"documents"|"git"|"ui"|"diagnostics"|"misc"|"cmp"|"dap"|"aichat"
+---@param add_space? boolean @Add trailing whitespace after the icon.
 function icons.get(category, add_space)
 	if add_space then
 		return setmetatable({}, {

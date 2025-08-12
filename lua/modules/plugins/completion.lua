@@ -1,14 +1,8 @@
 local completion = {}
-local use_copilot = require("core.settings").use_copilot
-
-local minimal_mode = os.getenv("NVIM_MINI") == "true"
-if minimal_mode then
-	return completion
-end
 
 completion["neovim/nvim-lspconfig"] = {
 	lazy = true,
-	event = { "BufReadPre", "BufNewFile" },
+	event = { "CursorHold", "CursorHoldI" },
 	config = require("completion.lsp"),
 	dependencies = {
 		{ "mason-org/mason.nvim" },
@@ -20,20 +14,34 @@ completion["neovim/nvim-lspconfig"] = {
 		},
 	},
 }
-
 completion["nvimdev/lspsaga.nvim"] = {
 	lazy = true,
 	event = "LspAttach",
 	config = require("completion.lspsaga"),
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = "nvim-tree/nvim-web-devicons",
 }
-
-completion["dnlhc/glance.nvim"] = {
+completion["DNLHC/glance.nvim"] = {
 	lazy = true,
 	event = "LspAttach",
 	config = require("completion.glance"),
 }
-
+completion["rachartier/tiny-inline-diagnostic.nvim"] = {
+	lazy = false,
+	config = require("completion.tiny-inline-diagnostic"),
+}
+completion["joechrisellis/lsp-format-modifications.nvim"] = {
+	lazy = true,
+	event = "LspAttach",
+}
+completion["nvimtools/none-ls.nvim"] = {
+	lazy = true,
+	event = { "CursorHold", "CursorHoldI" },
+	config = require("completion.null-ls"),
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"jay-babu/mason-null-ls.nvim",
+	},
+}
 completion["hrsh7th/nvim-cmp"] = {
 	lazy = true,
 	event = "InsertEnter",
@@ -42,35 +50,31 @@ completion["hrsh7th/nvim-cmp"] = {
 		{
 			"L3MON4D3/LuaSnip",
 			build = "make install_jsregexp",
-			dependencies = { "rafamadriz/friendly-snippets" },
 			config = require("completion.luasnip"),
+			dependencies = "rafamadriz/friendly-snippets",
 		},
 		{ "lukas-reineke/cmp-under-comparator" },
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "hrsh7th/cmp-nvim-lsp" },
-		{ "hrsh7th/cmp-nvim-lua" },
 		{ "andersevenrud/cmp-tmux" },
 		{ "hrsh7th/cmp-path" },
 		{ "f3fora/cmp-spell" },
 		{ "hrsh7th/cmp-buffer" },
 		{ "kdheepak/cmp-latex-symbols" },
-		{ "ray-x/cmp-treesitter", commit = "c8e3a74" },
 	},
 }
-
-if use_copilot then
-	completion["zbirenbaum/copilot.lua"] = {
-		lazy = true,
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = require("completion.copilot"),
-		dependencies = {
-			{
-				"zbirenbaum/copilot-cmp",
-				config = require("completion.copilot-cmp"),
-			},
+completion["zbirenbaum/copilot.lua"] = {
+	lazy = true,
+	cond = require("core.settings").use_copilot,
+	cmd = "Copilot",
+	event = "InsertEnter",
+	config = require("completion.copilot"),
+	dependencies = {
+		{
+			"zbirenbaum/copilot-cmp",
+			config = require("completion.copilot-cmp"),
 		},
-	}
-end
+	},
+}
 
 return completion

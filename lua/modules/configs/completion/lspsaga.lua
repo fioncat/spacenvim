@@ -25,13 +25,13 @@ return function()
 
 	set_sidebar_icons()
 
-	require("lspsaga").setup({
+	require("modules.utils").load_plugin("lspsaga", {
 		-- Breadcrumbs: https://nvimdev.github.io/lspsaga/breadcrumbs/
 		symbol_in_winbar = {
-			enable = true,
+			enable = false,
 			separator = " " .. icons.ui.Separator,
 			hide_keyword = false,
-			show_file = true,
+			show_file = false,
 			folder_level = 1,
 			color_mode = true,
 			delay = 100,
@@ -63,14 +63,13 @@ return function()
 		},
 		-- Diagnostics: https://nvimdev.github.io/lspsaga/diagnostic/
 		diagnostic = {
-			show_code_action = false,
-			jump_num_shortcut = false,
-			auto_preview = false,
+			show_code_action = true,
+			jump_num_shortcut = true,
 			max_width = 0.5,
 			max_height = 0.6,
 			text_hl_follow = true,
 			border_follow = true,
-			extend_relatedInformation = false,
+			extend_relatedInformation = true,
 			show_layout = "float",
 			show_normal_height = 10,
 			max_show_width = 0.9,

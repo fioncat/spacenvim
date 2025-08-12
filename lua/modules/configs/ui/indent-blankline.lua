@@ -463,7 +463,7 @@ return function()
 		},
 	}
 
-	require("ibl").setup({
+	require("modules.utils").load_plugin("ibl", {
 		enabled = true,
 		debounce = 200,
 		indent = {
@@ -552,7 +552,6 @@ return function()
 			filetypes = {
 				"", -- for all buffers without a file type
 				"alpha",
-				"bigfile",
 				"checkhealth",
 				"dap-repl",
 				"diff",

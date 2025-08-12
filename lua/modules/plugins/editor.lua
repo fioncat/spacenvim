@@ -1,10 +1,5 @@
 local editor = {}
 
-local minimal_mode = os.getenv("NVIM_MINI") == "true"
-if minimal_mode then
-	return editor
-end
-
 editor["m4xshen/autoclose.nvim"] = {
 	lazy = true,
 	event = "InsertEnter",
@@ -49,19 +44,18 @@ editor["nvim-pack/nvim-spectre"] = {
 editor["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	build = function()
-		if #vim.api.nvim_list_uis() ~= 0 then
+		if #vim.api.nvim_list_uis() > 0 then
 			vim.api.nvim_command([[TSUpdate]])
 		end
 	end,
 	event = "BufReadPre",
 	config = require("editor.treesitter"),
 	dependencies = {
-		{ "andymass/vim-matchup" },
 		{ "mfussenegger/nvim-treehopper" },
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		{
-			"abecodes/tabout.nvim",
-			config = require("editor.tabout"),
+			"andymass/vim-matchup",
+			init = require("editor.matchup"),
 		},
 		{
 			"windwp/nvim-ts-autotag",

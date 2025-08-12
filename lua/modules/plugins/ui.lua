@@ -19,12 +19,6 @@ ui["Jint-lzxy/nvim"] = {
 	config = require("ui.catppuccin"),
 }
 
-ui["j-hui/fidget.nvim"] = {
-	lazy = true,
-	event = "LspAttach",
-	config = require("ui.fidget"),
-}
-
 ui["lewis6991/gitsigns.nvim"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufNewFile" },

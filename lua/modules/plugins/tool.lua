@@ -1,4 +1,5 @@
 local tool = {}
+local settings = require("core.settings")
 
 tool["tpope/vim-fugitive"] = {
 	lazy = true,
@@ -36,6 +37,17 @@ tool["gelguy/wilder.nvim"] = {
 	config = require("tool.wilder"),
 	dependencies = { "romgrk/fzy-lua-native" },
 }
+
+if settings.use_chat then
+	tool["olimorris/codecompanion.nvim"] = {
+		lazy = true,
+		event = "VeryLazy",
+		config = require("tool.codecompanion"),
+		dependencies = {
+			{ "ravitemer/codecompanion-history.nvim" },
+		},
+	}
+end
 
 ----------------------------------------------------------------------
 --                        Telescope Plugins                         --

@@ -2,7 +2,7 @@ return function()
 	local icons = { ui = require("modules.utils.icons").get("ui", true) }
 	local lga_actions = require("telescope-live-grep-args.actions")
 
-	require("telescope").setup({
+	require("modules.utils").load_plugin("telescope", {
 		defaults = {
 			vimgrep_arguments = {
 				"rg",
@@ -17,17 +17,14 @@ return function()
 			selection_caret = icons.ui.ChevronRight,
 			scroll_strategy = "limit",
 			results_title = false,
-			layout_strategy = "horizontal",
-			path_display = { "truncate" },
+			layout_strategy = "flex",
+			path_display = { "absolute" },
 			selection_strategy = "reset",
-			sorting_strategy = "ascending",
 			color_devicons = true,
-			file_ignore_patterns = { ".git/", ".cache", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip", "vendor/" },
+			file_ignore_patterns = { ".git/", ".cache", "build/", "%.class", "%.pdf", "%.mkv", "%.mp4", "%.zip" },
 			layout_config = {
 				horizontal = {
-					prompt_position = "top",
 					preview_width = 0.55,
-					results_width = 0.8,
 				},
 				vertical = {
 					mirror = false,
@@ -57,7 +54,6 @@ return function()
 			},
 			live_grep_args = {
 				auto_quoting = true, -- enable/disable auto-quoting
-				-- define mappings, e.g.
 				mappings = { -- extend mappings
 					i = {
 						["<C-k>"] = lga_actions.quote_prompt(),
@@ -67,7 +63,7 @@ return function()
 			},
 			undo = {
 				side_by_side = true,
-				mappings = { -- this whole table is the default
+				mappings = {
 					i = {
 						["<cr>"] = require("telescope-undo.actions").yank_additions,
 						["<S-cr>"] = require("telescope-undo.actions").yank_deletions,

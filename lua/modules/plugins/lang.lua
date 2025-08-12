@@ -1,14 +1,17 @@
 local lang = {}
 
-local minimal_mode = os.getenv("NVIM_MINI") == "true"
-if minimal_mode then
-	return lang
-end
-
 lang["mhartington/formatter.nvim"] = {
 	lazy = true,
 	cmd = { "Format", "FormatWrite" },
 	config = require("lang.formatter"),
+}
+
+lang["mrcjkb/rustaceanvim"] = {
+	lazy = true,
+	ft = "rust",
+	version = "*",
+	init = require("lang.rust"),
+	dependencies = "nvim-lua/plenary.nvim",
 }
 
 lang["Saecki/crates.nvim"] = {
